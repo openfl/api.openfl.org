@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.system.Security - API Reference</title><meta name="description" content="The Security class lets you specify how content in different domains can
+communicate with each other."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+a, code .type {
+	color: #24afc4;
+}
+table {
+	margin-bottom: 20px;
+}
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+}
+.nav-list>.active>a.treeLink, .nav-list>.active>a.treeLink:hover, .nav-list>.active>a.treeLink:focus {
+	background: #24afc4;
+	color: #ffffff;
+	text-shadow: 0 0 0 transparent;
+}
+.navbar .container {
+	width: 940px ;
+}
+@media (max-width: 767px) {
+	.navbar .container {
+		width: auto;
+	}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	.navbar .container {
+		width: 724px;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar .container {
+		width: 1170px;
+	}
+}
+.navbar .container img {
+	margin: 5px 0 0 4px;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" href="http://www.openfl.org"><img alt="" src="/images/logo.png"/></a><a class="brand" style="color:#777777" href="../../">API Reference</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/system/Security.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> Security</h1><h4><small>package <a href="../../openfl/system/index.html">openfl.system</a></small></h4>    <span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The Security class lets you specify how content in different domains can
+communicate with each other.</p></div><h3 class="section">Static variables</h3><div class="fields"><div class="field "><a name="LOCAL_TRUSTED"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;localTrusted&quot;)</span><span class="label label-static">static</span><span class="label label-inline">inline</span><span class="label">read only</span><a href="#LOCAL_TRUSTED"><span class="identifier">LOCAL_TRUSTED</span></a>:<span class="type">String</span><span> = &quot;localTrusted&quot;</span></code></h3><div class="doc"><p>The file is a local file and has been trusted by the user, using
+either the Flash Player Settings Manager or a FlashPlayerTrust
+configuration file. The file can read from local data sources and
+communicate with the Internet.</p></div></div><div class="field "><a name="LOCAL_WITH_FILE"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;localWithFile&quot;)</span><span class="label label-static">static</span><span class="label label-inline">inline</span><span class="label">read only</span><a href="#LOCAL_WITH_FILE"><span class="identifier">LOCAL_WITH_FILE</span></a>:<span class="type">String</span><span> = &quot;localWithFile&quot;</span></code></h3><div class="doc"><p>The file is a local file, has not been trusted by the user, and it is
+not a SWF file that was published with a networking designation. In
+Adobe AIR, the local file is <em>not</em> in the application resource
+directory; such files are put in the application security sandbox. The
+file may read from local data sources but may not communicate with the
+Internet.</p></div></div><div class="field "><a name="LOCAL_WITH_NETWORK"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;localWithNetwork&quot;)</span><span class="label label-static">static</span><span class="label label-inline">inline</span><span class="label">read only</span><a href="#LOCAL_WITH_NETWORK"><span class="identifier">LOCAL_WITH_NETWORK</span></a>:<span class="type">String</span><span> = &quot;localWithNetwork&quot;</span></code></h3><div class="doc"><p>The file is a local file, has not been trusted by the user, and it is
+a SWF file that was published with a networking designation. The file
+can communicate with the Internet but cannot read from local data
+sources.</p></div></div><div class="field "><a name="REMOTE"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;remote&quot;)</span><span class="label label-static">static</span><span class="label label-inline">inline</span><span class="label">read only</span><a href="#REMOTE"><span class="identifier">REMOTE</span></a>:<span class="type">String</span><span> = &quot;remote&quot;</span></code></h3><div class="doc"><p>The file is from an Internet URL and operates under domain-based
+sandbox rules.</p></div></div><div class="field "><a name="exactSettings"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#exactSettings"><span class="identifier">exactSettings</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Determines how Flash Player or AIR chooses the domain to use for
+certain content settings, including settings for camera and microphone
+permissions, storage quotas, and storage of persistent shared objects.
+To have the SWF file use the same settings that were used in Flash
+Player 6, set <code>exactSettings</code> to <code>false</code>.
+In Flash Player 6, the domain used for these player settings was based
+on the trailing portion of the domain of the SWF file. If the domain
+of a SWF file includes more than two segments, such as
+www.example.com, the first segment of the domain ("www") is removed,
+and the remaining portion of the domain is used: example.com. So, in
+Flash Player 6, www.example.com and store.example.com both use
+example.com as the domain for these settings. Similarly,
+www.example.co.uk and store.example.co.uk both use example.co.uk as
+the domain for these settings. In Flash Player 7 and later, player
+settings are chosen by default according to a SWF file's exact domain;
+for example, a SWF file from www.example.com would use the player
+settings for www.example.com, and a SWF file from store.example.com
+would use the separate player settings for store.example.com.</p>
+<p>When <code><a href="../../openfl/system/Security.html#exactSettings">Security.exactSettings</a></code> is set to <code>true</code>, Flash Player or AIR
+uses exact domains for player settings. The default value for
+<code>exactSettings</code> is <code>true</code>. If you change <code>exactSettings</code> from its
+default value, do so before any events occur that require Flash Player
+or AIR to choose player settings נfor example, using a camera or
+microphone, or retrieving a persistent shared object.</p>
+<p>If you previously published a version 6 SWF file and created
+persistent shared objects from it, and you now need to retrieve those
+persistent shared objects from that SWF file after porting it to
+version 7 or later, or from a different SWF file of version 7 or
+later, set <code><a href="../../openfl/system/Security.html#exactSettings">Security.exactSettings</a></code> to <code>false</code> before calling
+<code><a href="../../openfl/net/SharedObject.html#getLocal">SharedObject.getLocal</a>()</code>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>A Flash Player or AIR application already used
+the value of <code>exactSettings</code> at least once in a
+decision about player settings.</p></td></tr></table></div></div><div class="field "><a name="sandboxType"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#sandboxType"><span class="identifier">sandboxType</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Indicates the type of security sandbox in which the calling file is
+operating.
+<code><a href="../../openfl/system/Security.html#sandboxType">Security.sandboxType</a></code> has one of the following values:</p><ul><li><code>remote</code> (<code><a href="../../openfl/system/Security.html#REMOTE">Security.REMOTE</a></code>)הhis file is from an Internet URL and
+operates under domain-based sandbox rules.</li><li><code>localWithFile</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_FILE">Security.LOCAL_WITH_FILE</a></code>)הhis file is a local
+file, has not been trusted by the user, and it is not a SWF file that
+was published with a networking designation. The file may read from
+local data sources but may not communicate with the Internet.</li><li><code>localWithNetwork</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_NETWORK">Security.LOCAL_WITH_NETWORK</a></code>)הhis SWF file
+is a local file, has not been trusted by the user, and was published
+with a networking designation. The SWF file can communicate with the
+Internet but cannot read from local data sources.</li><li><code>localTrusted</code> (<code><a href="../../openfl/system/Security.html#LOCAL_TRUSTED">Security.LOCAL_TRUSTED</a></code>)הhis file is a local
+file and has been trusted by the user, using either the Flash Player
+Settings Manager or a FlashPlayerTrust configuration file. The file
+can read from local data sources and communicate with the Internet.</li><li><code>application</code> (<code><a href="../../openfl/system/Security.html#APPLICATION">Security.APPLICATION</a></code>)הhis file is running in an
+AIR application, and it was installed with the package (AIR file) for
+that application. By default, files in the AIR application sandbox can
+cross-script any file from any domain (although files outside the AIR
+application sandbox may not be permitted to cross-script the AIR
+file). By default, files in the AIR application sandbox can load
+content and data from any domain.</li></ul>
+<p>For more information related to security, see the Flash Player
+Developer Center Topic: &lt;a
+href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
+scope="external">Security</a>.</p></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="allowDomain"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ p5 : null, p4 : null, p3 : null, p2 : null, p1 : null })</span><span class="label label-static">static</span><a href="#allowDomain"><span class="identifier">allowDomain</span></a>(<span style="white-space:nowrap">?p1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p2:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p3:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p4:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p5:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Lets SWF files in the identified domains access objects and variables
+in the SWF file that contains the <code>allowDomain()</code> call.
+<em>Note:</em> Calling this method from code in the AIR application sandbox
+throws a SecurityError exception. Content outside of the application
+security domain cannot directly cross-script content in the
+application sandbox. However, content outside of the application
+sandbox can communicate with content in the application security
+sandbox using a sandbox bridge.</p>
+<p>If two SWF files are served from the same domain נfor example,
+http://mysite.com/swfA.swf and http://mysite.com/swfB.swf נthen
+swfA.swf can examine and modify variables, objects, properties,
+methods, and so on in swfB.swf, and swfB.swf can do the same for
+swfA.swf. This is called <em>cross-movie scripting</em> or <em>cross-scripting</em>.</p>
+<p>If two SWF files are served from different domains נfor example,
+http://siteA.com/swfA.swf and http://siteB.com/siteB.swf נthen, by
+default, Flash Player does not allow swfA.swf to script swfB.swf, nor
+swfB.swf to script swfA.swf. A SWF file gives permission to SWF files
+from other domains by calling <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>. This is called
+<em>cross-domain scripting</em>. By calling
+<code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>("siteA.com")</code>, siteB.swf gives siteA.swf
+permission to script it.</p>
+<p>In any cross-domain situation, it is important to be clear about the
+two parties involved. For the purposes of this discussion, the side
+performing the cross-scripting is called the <em>accessing party</em>
+(usually the accessing SWF), and the other side is called <em>the party
+being accessed</em> (usually the SWF file being accessed). When siteA.swf
+scripts siteB.swf, siteA.swf is the accessing party, and siteB.swf is
+the party being accessed.</p>
+<p><img src="/images/crossScript_load.jpg" alt="Cross-domain diagram" /></p>
+<p>Cross-domain permissions that are established with <code>allowDomain()</code> are
+asymmetrical. In the previous example, siteA.swf can script siteB.swf,
+but siteB.swf cannot script siteA.swf, because siteA.swf has not
+called <code>allowDomain()</code> to give SWF files at siteB.com permission to
+script it. You can set up symmetrical permissions by having both SWF
+files call <code>allowDomain()</code>.</p>
+<p>In addition to protecting SWF files from cross-domain scripting
+originated by other SWF files, Flash Player protects SWF files from
+cross-domain scripting originated by HTML files. HTML-to-SWF scripting
+can occur with older browser functions such as <code>SetVariable</code> or
+callbacks established through <code><a href="../../openfl/external/ExternalInterface.html#addCallback">ExternalInterface.addCallback</a>()</code>. When
+HTML-to-SWF scripting crosses domains, the SWF file being accessed
+must call <code>allowDomain()</code>, just as when the accessing party is a SWF
+file, or the operation will fail.</p>
+<p>Specifying an IP address as a parameter to <code>allowDomain()</code> does not
+permit access by all parties that originate at the specified IP
+address. Instead, it permits access only by a party that contains the
+specified IP address it its URL, rather than a domain name that maps
+to that IP address.</p>
+<p><strong>Version-specific differences</strong></p>
+<p>Flash Player's cross-domain security rules have evolved from version
+to version. The following table summarizes the differences.</p><table><thead><th>Latest SWF version involved in cross-scripting</th><th><code>allowDomain()</code> needed?</th><th><code>allowInsecureDomain()</code> needed?</th><th>Which SWF file must call <code>allowDomain()</code> or <code>allowInsecureDomain()</code>?</th><th>What can be specified in <code>allowDomain()</code> or <code>allowInsecureDomain()</code>?</th></thead><tbody><tr><td>5 or earlier</td><td>No</td><td>No</td><td>N/A</td><td>N/A</td></tr><tr><td>6</td><td>Yes, if superdomains don't match</td><td>No</td><td>The SWF file being accessed, or any SWF file with the same superdomain as the SWF file being accessed</td><td><ul><li>Text-based domain (mysite.com)</li><li>IP address (192.168.1.1)</li></ul></td></tr><tr><td>7</td><td>Yes, if domains don't match exactly</td><td>Yes, if performing HTTP-to-HTTPS access (even if domains match exactly)</td><td>The SWF file being accessed, or any SWF file with exactly the same domain as the SWF file being accessed</td><td><ul><li>Text-based domain (mysite.com)</li><li>IP address (192.168.1.1)</li></ul></td></tr><tr><td>8 or later</td><td>Yes, if domains don't match exactly</td><td>Yes, if performing HTTP-to-HTTPS access (even if domains match exactly)</td><td>SWF file being accessed</td><td><ul><li>Text-based domain (mysite.com)</li><li>IP address (192.168.1.1)</li><li>Wildcard (*)</li></ul></td></tr></tbody></table>
+<p>The versions that control the behavior of Flash Player are <em>SWF
+versions</em> (the published version of a SWF file), not the version of
+Flash Player itself. For example, when Flash Player 8 is playing a SWF
+file published for version 7, it applies behavior that is consistent
+with version 7. This practice ensures that player upgrades do not
+change the behavior of <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> in deployed SWF files.</p>
+<p>The version column in the previous table shows the latest SWF version
+involved in a cross-scripting operation. Flash Player determines its
+behavior according to either the accessing SWF file's version or the
+version of the SWF file that is being accessed, whichever is later.</p>
+<p>The following paragraphs provide more detail about Flash Player
+security changes involving <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>.</p>
+<p><strong>Version 5</strong>. There are no cross-domain scripting restrictions.</p>
+<p><strong>Version 6</strong>. Cross-domain scripting security is introduced. By
+default, Flash Player forbids cross-domain scripting;
+<code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> can permit it. To determine whether two files
+are in the same domain, Flash Player uses each file's superdomain,
+which is the exact host name from the file's URL, minus the first
+segment, down to a minimum of two segments. For example, the
+superdomain of www.mysite.com is mysite.com. SWF files from
+www.mysite.com and store.mysite.com to script each other without a
+call to <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>.</p>
+<p><strong>Version 7</strong>. Superdomain matching is changed to exact domain
+matching. Two files are permitted to script each other only if the
+host names in their URLs are identical; otherwise, a call to
+<code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> is required. By default, files loaded from
+non-HTTPS URLs are no longer permitted to script files loaded from
+HTTPS URLs, even if the files are loaded from exactly the same domain.
+This restriction helps protect HTTPS files, because a non-HTTPS file
+is vulnerable to modification during download, and a maliciously
+modified non-HTTPS file could corrupt an HTTPS file, which is
+otherwise immune to such tampering. <code><a href="../../openfl/system/Security.html#allowInsecureDomain">Security.allowInsecureDomain</a>()</code>
+is introduced to allow HTTPS SWF files that are being accessed to
+voluntarily disable this restriction, but the use of
+<code><a href="../../openfl/system/Security.html#allowInsecureDomain">Security.allowInsecureDomain</a>()</code> is discouraged.</p>
+<p><strong>Version 8</strong>. There are two major areas of change:</p><ul><li>Calling <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> now permits cross-scripting
+operations only if the SWF file being accessed is the SWF file that
+called <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>. In other words, a SWF file that calls
+<code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> now permits access only to itself. In
+previous versions, calling <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> permitted
+cross-scripting operations where the SWF file being accessed could be
+any SWF file in the same domain as the SWF file that called
+<code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>. Calling <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code> previously
+opened up the entire domain of the calling SWF file.</li><li>Support has been added for wildcard values with
+<code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>("*")</code> and <code><a href="../../openfl/system/Security.html#allowInsecureDomain">Security.allowInsecureDomain</a>("*")</code>.
+The wildcard (*) value permits cross-scripting operations where the
+accessing file is any file at all, loaded from anywhere. Think of the
+wildcard as a global permission. Wildcard permissions are required to
+enable certain kinds of operations under the local file security
+rules. Specifically, for a local SWF file with network-access
+permissions to script a SWF file on the Internet, the Internet SWF
+file being accessed must call <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>("*")</code>, reflecting
+that the origin of a local SWF file is unknown. (If the Internet SWF
+file is loaded from an HTTPS URL, the Internet SWF file must instead
+call <code><a href="../../openfl/system/Security.html#allowInsecureDomain">Security.allowInsecureDomain</a>("*")</code>.)</li></ul>
+<p>Occasionally, you may encounter the following situation: You load a
+child SWF file from a different domain and want to allow the child SWF
+file to script the parent SWF file, but you don't know the final
+domain of the child SWF file. This can happen, for example, when you
+use load-balancing redirects or third-party servers.</p>
+<p>In this situation, you can use the <code>url</code> property of the URLRequest
+object that you pass to <code><a href="../../openfl/display/Loader.html#load">Loader.load</a>()</code>. For example, if you load a
+child SWF file into a parent SWF, you can access the
+<code>contentLoaderInfo</code> property of the Loader object for the parent SWF:</p>
+<pre><code class="prettyprint as3">Security.allowDomain(loader.contentLoaderInfo.url)</code></pre>
+<p>Make sure that you wait until the child SWF file begins loading to get
+the correct value of the <code>url</code> property. To determine when the child
+SWF has begun loading, use the <code>progress</code> event.</p>
+<p>The opposite situation can also occur; that is, you might create a
+child SWF file that wants to allow its parent to script it, but
+doesn't know what the domain of its parent will be. In this situation,
+you can access the <code>loaderInfo</code> property of the display object that is
+the SWF's root object. In the child SWF, call <code> <a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>(
+this.<a href="#root">root</a>.loaderInfo.loaderURL)</code>. You don't have to wait for the
+parent SWF file to load; the parent will already be loaded by the time
+the child loads.</p>
+<p>If you are publishing for Flash Player 8 or later, you can also handle
+these situations by calling <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>("*")</code>. However,
+this can sometimes be a dangerous shortcut, because it allows the
+calling SWF file to be accessed by any other SWF file from any domain.
+It is usually safer to use the <code>_url</code> property.</p>
+<p>For more information related to security, see the Flash Player
+Developer Center Topic: &lt;a
+href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
+scope="external">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Calling this method from code in the AIR
+application security sandbox throws a
+SecurityError exception. Content outside of the
+application security sandbox cannot cross-script
+content in the application security sandbox.</p></td></tr></table></div></div><div class="field "><a name="allowInsecureDomain"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ p5 : null, p4 : null, p3 : null, p2 : null, p1 : null })</span><span class="label label-static">static</span><a href="#allowInsecureDomain"><span class="identifier">allowInsecureDomain</span></a>(<span style="white-space:nowrap">?p1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p2:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p3:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p4:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p5:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Lets SWF files and HTML files in the identified domains access objects
+and variables in the calling SWF file, which is hosted by means of the
+HTTPS protocol.
+Flash Player provides <code>allowInsecureDomain()</code> to maximize flexibility,
+but calling this method is not recommended. Serving a file over HTTPS
+provides several protections for you and your users, and calling
+<code>allowInsecureDomain</code> weakens one of those protections.</p>
+<p><em>Note:</em> Calling this method from code in the AIR application sandbox
+throws a SecurityError exception. Content outside of the application
+security domain cannot directly cross-script content in the
+application sandbox. However, content outside of the application
+sandbox can communicate with content in the application security
+sandbox using a sandbox bridge.</p>
+<p>This method works in the same way as <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>, but it
+also permits operations in which the accessing party is loaded with a
+non-HTTPS protocol, and the party being accessed is loaded with HTTPS.
+In Flash Player 7 and later, non-HTTPS files are not allowed to script
+HTTPS files. The <code>allowInsecureDomain()</code> method lifts this restriction
+when the HTTPS SWF file being accessed uses it.</p>
+<p>Use <code>allowInsecureDomain()</code> only to enable scripting from non-HTTPS
+files to HTTPS files. Use it to enable scripting when the accessing
+non-HTTPS file and the HTTPS file being accessed are served from the
+same domain, for example, if a SWF file at http://mysite.com wants to
+script a SWF file at https://mysite.com. Do not use this method to
+enable scripting between non-HTTPS files, between HTTPS files, or from
+HTTPS files to non-HTTPS files. For those situations, use
+<code>allowDomain()</code> instead.
+The following scenario illustrates how <code>allowInsecureDomain()</code> can
+compromise security, if it is not used with careful consideration.
+Note that the following information is only one possible scenario,
+designed to help you understand <code>allowInsecureDomain()</code> through a
+real-world example of cross-scripting. It does not cover all issues
+with security architecture and should be used for background
+information only. The Flash Player Developer Center contains extensive
+information on Flash Player and security. For more information, see
+the Flash Player Developer Center Topic &lt;a
+href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
+scope="external">Security</a>.</p>
+<p>Suppose you are building an e-commerce site that consists of two
+components: a catalog, which does not need to be secure, because it
+contains only public information; and a shopping cart/checkout
+component, which must be secure to protect users' financial and
+personal information. Suppose you are considering serving the catalog
+from http://mysite.com/catalog.swf and the cart from
+https://mysite.com/cart.swf. One requirement for your site is that a
+third party should not be able to steal your users' credit card
+numbers by taking advantage of a weakness in your security
+architecture.</p>
+<p>Suppose that a middle-party attacker intervenes between your server
+and your users, attempting to steal the credit card numbers that your
+users enter into your shopping cart application. A middle party might,
+for example, be an unscrupulous ISP used by some of your users, or a
+malicious administrator at a user's workplace נanyone who has the
+ability to view or alter network packets transmitted over the public
+Internet between your users and your servers. This situation is not
+uncommon.</p>
+<p>If cart.swf uses HTTPS to transmit credit card information to your
+servers, then the middle-party attacker can't directly steal this
+information from network packets, because the HTTPS transmission is
+encrypted. However, the attacker can use a different technique:
+altering the contents of one of your SWF files as it is delivered to
+the user, replacing your SWF file with an altered version that
+transmits the user's information to a different server, owned by the
+attacker.</p>
+<p>The HTTPS protocol, among other things, prevents this "modification"
+attack from working, because, in addition to being encrypted, HTTPS
+transmissions are tamper-resistant. If a middle-party attacker alters
+a packet, the receiving side detects the alteration and discards the
+packet. So the attacker in this situation can't alter cart.swf,
+because it is delivered over HTTPS.</p>
+<p>However, suppose that you want to allow buttons in catalog.swf, served
+over HTTP, to add items to the shopping cart in cart.swf, served over
+HTTPS. To accomplish this, cart.swf calls <code>allowInsecureDomain()</code>,
+which allows catalog.swf to script cart.swf. This action has an
+unintended consequence: Now the attacker can alter catalog.swf as it
+is initially being downloaded by the user, because catalog.swf is
+delivered with HTTP and is not tamper-resistant. The attacker's
+altered catalog.swf can now script cart.swf, because cart.swf contains
+a call to <code>allowInsecureDomain()</code>. The altered catalog.swf file can
+use ActionScript to access the variables in cart.swf, thus reading the
+user's credit card information and other sensitive data. The altered
+catalog.swf can then send this data to an attacker's server.</p>
+<p>Obviously, this implementation is not desired, but you still want to
+allow cross-scripting between the two SWF files on your site. Here are
+two possible ways to redesign this hypothetical e-commerce site to
+avoid <code>allowInsecureDomain()</code>:</p><ul><li>Serve all SWF files in the application over HTTPS. This is by far
+the simplest and most reliable solution. In the scenario described,
+you would serve both catalog.swf and cart.swf over HTTPS. You might
+experience slightly higher bandwidth consumption and server CPU load
+when switching a file such as catalog.swf from HTTP to HTTPS, and your
+users might experience slightly longer application load times. You
+need to experiment with real servers to determine the severity of
+these effects; usually they are no worse than 10-20% each, and
+sometimes they are not present at all. You can usually improve results
+by using HTTPS-accelerating hardware or software on your servers. A
+major benefit of serving all cooperating SWF files over HTTPS is that
+you can use an HTTPS URL as the main URL in the user's browser without
+generating any mixed-content warnings from the browser. Also, the
+browser's padlock icon becomes visible, providing your users with a
+common and trusted indicator of security.</li><li>Use HTTPS-to-HTTP scripting, rather than HTTP-to-HTTPS scripting. In
+the scenario described, you could store the contents of the user's
+shopping cart in catalog.swf, and have cart.swf manage only the
+checkout process. At checkout time, cart.swf could retrieve the cart
+contents from ActionScript variables in catalog.swf. The restriction
+on HTTP-to-HTTPS scripting is asymmetrical; although an HTTP-delivered
+catalog.swf file cannot safely be allowed to script an HTTPS-delivered
+cart.swf file, an HTTPS cart.swf file can script the HTTP catalog.swf
+file. This approach is more delicate than the all-HTTPS approach; you
+must be careful not to trust any SWF file delivered over HTTP, because
+of its vulnerability to tampering. For example, when cart.swf
+retrieves the ActionScript variable that describes the cart contents,
+the ActionScript code in cart.swf cannot trust that the value of this
+variable is in the format that you expect. You must verify that the
+cart contents do not contain invalid data that might lead cart.swf to
+take an undesired action. You must also accept the risk that a middle
+party, by altering catalog.swf, could supply valid but inaccurate data
+to cart.swf; for example, by placing items in the user's cart. The
+usual checkout process mitigates this risk somewhat by displaying the
+cart contents and total cost for final approval by the user, but the
+risk remains present.</li></ul>
+<p>Web browsers have enforced separation between HTTPS and non-HTTPS
+files for years, and the scenario described illustrates one good
+reason for this restriction. Flash Player gives you the ability to
+work around this security restriction when you absolutely must, but be
+sure to consider the consequences carefully before doing so.</p>
+<p>For more information related to security, see the Flash Player
+Developer Center Topic: &lt;a
+href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
+scope="external">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Calling this method from code in the AIR
+application security sandbox causes a
+SecurityError exception to be thrown. Content
+outside of the application security sandbox
+cannot cross-script content in the application
+security sandbox.</p></td></tr></table></div></div><div class="field "><a name="loadPolicyFile"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#loadPolicyFile"><span class="identifier">loadPolicyFile</span></a>(<span style="white-space:nowrap">url:<span class="type">String</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Looks for a policy file at the location specified by the <code>url</code>
+parameter. Adobe AIR and Flash Player use policy files to determine
+whether to permit applications to load data from servers other than
+their own. Note that even though the method name is <code>
+loadPolicyFile()</code>, the file isn't actually loaded until a network
+request that requires a policy file is made.
+With <code><a href="../../openfl/system/Security.html#loadPolicyFile">Security.loadPolicyFile</a>()</code>, Flash Player or AIR can load policy
+files from arbitrary locations, as shown in the following example:</p>
+<pre><code class="prettyprint as3">Security.loadPolicyFile("http://www.example.com/sub/dir/pf.xml");</code></pre>
+<p>This causes Flash Player or AIR to attempt to retrieve a policy file
+from the specified URL. Any permissions granted by the policy file at
+that location will apply to all content at the same level or lower in
+the virtual directory hierarchy of the server.</p>
+<p>For example, following the previous code, these lines do not throw an
+exception:</p>
+<pre><code class="prettyprint haxe">import openfl.net.*;
+
+var request = new URLRequest("http://www.example.com/sub/dir/vars.txt");
+var loader = new URLLoader();
+loader.load(request);
+
+var loader2 = new URLLoader();
+var request2 = new URLRequest("http://www.example.com/sub/dir/deep/vars2.txt");
+loader2.load(request2);</code></pre>
+<p>However, the following code does throw a security exception:</p>
+<pre><code class="prettyprint haxe">import openfl.net.*;
+
+var request3 = new URLRequest("http://www.example.com/elsewhere/vars3.txt");
+var loader3 = new URLLoader();
+loader3.load(request3);</code></pre>
+<p>You can use <code>loadPolicyFile()</code> to load any number of policy files.
+When considering a request that requires a policy file, Flash Player
+or AIR always waits for the completion of any policy file downloads
+before denying a request. As a final fallback, if no policy file
+specified with <code>loadPolicyFile()</code> authorizes a request, Flash Player
+or AIR consults the original default locations.</p>
+<p>When checking for a master policy file, Flash Player waits three
+seconds for a server response. If a response isn't received, Flash
+Player assumes that no master policy file exists. However, there is no
+default timeout value for calls to <code>loadPolicyFile()</code>; Flash Player
+assumes that the file being called exists, and waits as long as
+necessary to load it. Therefore, if you want to make sure that a
+master policy file is loaded, use <code>loadPolicyFile()</code> to call it
+explicitly.</p>
+<p>You cannot connect to commonly reserved ports. For a complete list of
+blocked ports, see "Restricting Networking APIs" in the <em>ActionScript
+3.0 Developer's Guide</em>.</p>
+<p>Using the <code>xmlsocket</code> protocol along with a specific port number lets
+you retrieve policy files directly from an XMLSocket server, as shown
+in the following example. Socket connections are not subject to the
+reserved port restriction described above.</p>
+<pre><code class="prettyprint haxe">Security.loadPolicyFile("xmlsocket://foo.com:414");</code></pre>
+<p>This causes Flash Player or AIR to attempt to retrieve a policy file
+from the specified host and port. Upon establishing a connection with
+the specified port, Flash Player or AIR transmits
+<code>&lt;policy-file-request /&gt;</code>, terminated by a <code>null</code> byte. The server
+must send a null byte to terminate a policy file, and may thereafter
+close the connection; if the server does not close the connection,
+Flash Player or AIR does so upon receiving the terminating <code>null</code>
+byte.</p>
+<p>You can prevent a SWF file from using this method by setting the
+<code>allowNetworking</code> parameter of the <code>object</code> and <code>embed</code> tags in the
+HTML page that contains the SWF content.</p>
+<p>For more information related to security, see the Flash Player
+Developer Center Topic: &lt;a
+href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
+scope="external">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

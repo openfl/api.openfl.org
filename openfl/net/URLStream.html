@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net.URLStream - API Reference</title><meta name="description" content="The URLStream class provides low-level access to downloading URLs. Data is
+made available to application code immediately as it is downloaded,
+instead of waiting until the entire file is complete as with URLLoader.
+The URLStream class also lets you close a stream before it finishes
+downloading. The contents of the downloaded file are made available as raw
+binary data.
+The read operations in URLStream are nonblocking. This means that you must
+use the &lt;code&gt;bytesAvailable&lt;/code&gt; property to determine whether sufficient data is
+available before reading it. An &lt;code&gt;&lt;a href=&quot;../../openfl/errors/EOFError.html#EOFError&quot;&gt;EOFError&lt;/a&gt;&lt;/code&gt; exception is thrown if
+insufficient data is available."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+a, code .type {
+	color: #24afc4;
+}
+table {
+	margin-bottom: 20px;
+}
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+}
+.nav-list>.active>a.treeLink, .nav-list>.active>a.treeLink:hover, .nav-list>.active>a.treeLink:focus {
+	background: #24afc4;
+	color: #ffffff;
+	text-shadow: 0 0 0 transparent;
+}
+.navbar .container {
+	width: 940px ;
+}
+@media (max-width: 767px) {
+	.navbar .container {
+		width: auto;
+	}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	.navbar .container {
+		width: 724px;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar .container {
+		width: 1170px;
+	}
+}
+.navbar .container img {
+	margin: 5px 0 0 4px;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" href="http://www.openfl.org"><img alt="" src="/images/logo.png"/></a><a class="brand" style="color:#777777" href="../../">API Reference</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/net/URLStream.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> URLStream</h1><h4><small>package <a href="../../openfl/net/index.html">openfl.net</a></small></h4><h4><small>extends <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <h4><small>implements <a class="type" title="openfl.utils.IDataInput - The IDataInput interface provides a set of methods for reading binary data." href="../../openfl/utils/IDataInput.html">IDataInput</a></small></h4><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The URLStream class provides low-level access to downloading URLs. Data is
+made available to application code immediately as it is downloaded,
+instead of waiting until the entire file is complete as with URLLoader.
+The URLStream class also lets you close a stream before it finishes
+downloading. The contents of the downloaded file are made available as raw
+binary data.
+The read operations in URLStream are nonblocking. This means that you must
+use the <code>bytesAvailable</code> property to determine whether sufficient data is
+available before reading it. An <code><a href="../../openfl/errors/EOFError.html#EOFError">EOFError</a></code> exception is thrown if
+insufficient data is available.</p>
+<p>All binary data is encoded by default in big-endian format, with the most
+significant byte first.</p>
+<p>The security rules that apply to URL downloading with the URLStream class
+are identical to the rules applied to URLLoader objects. Policy files may
+be downloaded as needed. Local file security rules are enforced, and
+security warnings are raised as needed.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched when data has loaded successfully.</p></td></tr><tr class="indent"><th style="width:25%;"><code>httpResponseStatus</code></th><td><p>Dispatched if a call to the <code><a href="../../openfl/net/URLStream.html#load">URLStream.load</a>()</code>
+method attempts to access data over HTTP and
+Adobe AIR is able to detect and return the
+status code for the request.
+If a URLStream object registers for an
+<code>httpStatusEvent</code> event, error responses are
+delivered as though they are content. So instead
+of dispatching an <code>ioError</code> event, the URLStream
+dispatches <code>progress</code> and <code>complete</code> events as
+the error data is loaded into the URLStream.</p></td></tr><tr class="indent"><th style="width:25%;"><code>httpStatus</code></th><td><p>Dispatched if a call to <code><a href="../../openfl/net/URLStream.html#load">URLStream.load</a>()</code>
+attempts to access data over HTTP, and Flash
+Player or Adobe AIR is able to detect and return
+the status code for the request. (Some browser
+environments may not be able to provide this
+information.) Note that the <code>httpStatus</code> (if
+any) will be sent before (and in addition to)
+any <code>complete</code> or <code>error</code> event.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>Dispatched when an input/output error occurs
+that causes a load operation to fail.</p></td></tr><tr class="indent"><th style="width:25%;"><code>open</code></th><td><p>Dispatched when a load operation starts.</p></td></tr><tr class="indent"><th style="width:25%;"><code>progress</code></th><td><p>Dispatched when data is received as the download
+operation progresses. Data that has been
+received can be read immediately using the
+methods of the URLStream class.</p></td></tr><tr class="indent"><th style="width:25%;"><code>securityError</code></th><td><p>Dispatched if a call to <code><a href="../../openfl/net/URLStream.html#load">URLStream.load</a>()</code>
+attempts to load data from a server outside the
+security sandbox.</p></td></tr></table></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><a href="#new"><span class="identifier">new</span></a>()</code></h3><div class="doc"><p></p></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="bytesAvailable"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bytesAvailable"><span class="identifier">bytesAvailable</span></a>:<span class="type">UInt</span></code></h3><div class="doc"><p>Returns the number of bytes of data available for reading in the input
+buffer. Your code must call the <code>bytesAvailable</code> property to ensure
+that sufficient data is available before you try to read it with one
+of the <code>read</code> methods.</p></div></div><div class="field "><a name="connected"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#connected"><span class="identifier">connected</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether this URLStream object is currently connected. A call
+to this property returns a value of <code>true</code> if the URLStream object is
+connected, or <code>false</code> otherwise.</p></div></div><div class="field "><a name="endian"></a><h3 class="anchor"><code><a href="#endian"><span class="identifier">endian</span></a>:<a class="type" title="openfl.utils.Endian - The Endian class contains values that denote the byte order used to represent multibyte numbers." href="../../openfl/utils/Endian.html">Endian</a></code></h3><div class="doc"><p>Indicates the byte order for the data. Possible values are
+<code><a href="../../openfl/utils/Endian.html#BIG_ENDIAN">Endian.BIG_ENDIAN</a></code> or <code><a href="../../openfl/utils/Endian.html#LITTLE_ENDIAN">Endian.LITTLE_ENDIAN</a></code>.</p></div></div><div class="field "><a name="objectEncoding"></a><h3 class="anchor"><code><a href="#objectEncoding"><span class="identifier">objectEncoding</span></a>:<a class="type" title="openfl.net.ObjectEncoding - The ObjectEncoding class is used in defining serialization settings in classes that serialize objects (such as FileStream, NetStream, NetConnection, SharedObject, and ByteArray)." href="../../openfl/net/ObjectEncoding.html">ObjectEncoding</a></code></h3><div class="doc"><p>Controls the version of Action Message Format (AMF) used when writing
+or reading an object.</p></div></div></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="close"></a><h3 class="anchor"><code><a href="#close"><span class="identifier">close</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Immediately closes the stream and cancels the download operation. No
+data can be read from the stream after the <code>close()</code> method is called.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The stream could not be closed, or the stream was not
+open.</p></td></tr></table></div></div><div class="field "><a name="load"></a><h3 class="anchor"><code><a href="#load"><span class="identifier">load</span></a>(<span style="white-space:nowrap">request:<a class="type" title="openfl.net.URLRequest - The URLRequest class captures all of the information in a single HTTP request." href="../../openfl/net/URLRequest.html">URLRequest</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Begins downloading the URL specified in the <code>request</code> parameter.
+<strong>Note</strong>: If a file being loaded contains non-ASCII characters (as
+found in many non-English languages), it is recommended that you save
+the file with UTF-8 or UTF-16 encoding, as opposed to a non-Unicode
+format like ASCII.</p>
+<p>If the loading operation fails immediately, an IOError or
+SecurityError (including the local file security error) exception is
+thrown describing the failure. Otherwise, an <code>open</code> event is
+dispatched if the URL download starts downloading successfully, or an
+error event is dispatched if an error occurs.</p>
+<p>By default, the calling SWF file and the URL you load must be in
+exactly the same domain. For example, a SWF file at www.adobe.com can
+load data only from sources that are also at www.adobe.com. To load
+data from a different domain, place a URL policy file on the server
+hosting the data.</p>
+<p>In Flash Player, you cannot connect to commonly reserved ports. For a
+complete list of blocked ports, see "Restricting Networking APIs" in
+the <em>ActionScript 3.0 Developer's Guide</em>.</p>
+<p>In Flash Player, you can prevent a SWF file from using this method by
+setting the <code>allowNetworking</code> parameter of the the <code>object</code> and
+<code>embed</code> tags in the HTML page that contains the SWF content.</p>
+<p>In Flash Player 10 and later, and in AIR 1.5 and later, if you use a
+multipart Content-Type (for example "multipart/form-data") that
+contains an upload (indicated by a "filename" parameter in a
+"content-disposition" header within the POST body), the POST operation
+is subject to the security rules applied to uploads:</p><ul><li>The POST operation must be performed in response to a user-initiated
+action, such as a mouse click or key press.</li><li>If the POST operation is cross-domain (the POST target is not on the
+same server as the SWF file that is sending the POST request), the
+target server must provide a URL policy file that permits cross-domain
+access.</li></ul>
+<p>Also, for any multipart Content-Type, the syntax must be valid
+(according to the RFC2046 standards). If the syntax appears to be
+invalid, the POST operation is subject to the security rules applied
+to uploads.</p>
+<p>These rules also apply to AIR content in non-application sandboxes.
+However, in Adobe AIR, content in the application sandbox (content
+installed with the AIR application) are not restricted by these
+security limitations.</p>
+<p>For more information related to security, see The Flash Player
+Developer Center Topic: &lt;a
+href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
+scope="external">Security</a>.</p>
+<p>In AIR, a URLRequest object can register for the <code>httpResponse</code> status
+event. Unlike the <code>httpStatus</code> event, the <code>httpResponseStatus</code> event
+is delivered before any response data. Also, the <code>httpResponseStatus</code>
+event includes values for the <code>responseHeaders</code> and <code>responseURL</code>
+properties (which are undefined for an <code>httpStatus</code> event. Note that
+the <code>httpResponseStatus</code> event (if any) will be sent before (and in
+addition to) any <code>complete</code> or <code>error</code> event.</p>
+<p>If there <em>is</em> an <code>httpResponseStatus</code> event listener, the body of the
+response message is <em>always</em> sent; and HTTP status code responses
+always results in a <code>complete</code> event. This is true in spite of whether
+the HTTP response status code indicates a success or an error.</p>
+<p>In AIR, if there is <em>no</em> <code>httpResponseStatus</code> event listener, the
+behavior differs based on the SWF version:</p><ul><li>For SWF 9 content, the body of the HTTP response message is sent
+<em>only if</em> the HTTP response status code indicates success. Otherwise
+(if there is an error), no body is sent and the URLRequest object
+dispatches an IOError event.</li><li>For SWF 10 content, the body of the HTTP response message is
+<em>always</em> sent. If there is an error, the URLRequest object dispatches
+an IOError event.</li></ul><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>request</code></th><td><p>A URLRequest object specifying the URL to download. If
+the value of this parameter or the <code><a href="../../openfl/net/URLRequest.html#url">URLRequest.url</a></code>
+property of the URLRequest object passed are <code>null</code>,
+the application throws a null pointer error.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p><code><a href="../../openfl/net/URLRequest.html#requestHeader">URLRequest.requestHeader</a></code> objects may not
+contain certain prohibited HTTP request headers.
+For more information, see the URLRequestHeader
+class description.</p></td></tr><tr class="indent"><th style="width:25%;"><code>MemoryError</code></th><td><p>This error can occur for the following reasons:
+1. Flash Player or Adobe AIR cannot convert the
+<code><a href="../../openfl/net/URLRequest.html#data">URLRequest.data</a></code> parameter from UTF8 to MBCS.
+This error is applicable if the URLRequest
+object passed to <code>load()</code> is set to perform a
+<code>GET</code> operation and if <code><a href="../../openfl/system/System.html#useCodePage">System.useCodePage</a></code> is
+set to <code>true</code>.
+2. Flash Player or Adobe AIR cannot allocate
+memory for the <code>POST</code> data. This error is
+applicable if the URLRequest object passed to
+load is set to perform a <code>POST</code> operation.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Local untrusted SWF files may not communicate
+with the Internet. This may be worked around by
+reclassifying this SWF file as
+local-with-networking or trusted.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>You are trying to connect to a commonly reserved
+port. For a complete list of blocked ports, see
+"Restricting Networking APIs" in the
+<em>ActionScript 3.0 Developer's Guide</em>.</p></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched after data has loaded
+successfully. If there is a
+<code>httpResponseStatus</code> event listener, the
+URLRequest object also dispatches a
+<code>complete</code> event whether the HTTP response
+status code indicates a success <em>or</em> an
+error.</p></td></tr><tr class="indent"><th style="width:25%;"><code>httpResponseStatus</code></th><td><p>Dispatched if a call to the <code>load()</code> method
+attempts to access data over HTTP and Adobe
+AIR is able to detect and return the status
+code for the request.</p></td></tr><tr class="indent"><th style="width:25%;"><code>httpStatus</code></th><td><p>If access is by HTTP and the current
+environment supports obtaining status codes,
+you may receive these events in addition to
+any <code>complete</code> or <code>error</code> event.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>The load operation could not be completed.</p></td></tr><tr class="indent"><th style="width:25%;"><code>open</code></th><td><p>Dispatched when a load operation starts.</p></td></tr><tr class="indent"><th style="width:25%;"><code>securityError</code></th><td><p>A load operation attempted to retrieve data
+from a server outside the caller's security
+sandbox. This may be worked around using a
+policy file on the server.</p></td></tr></table></div></div><div class="field "><a name="readBoolean"></a><h3 class="anchor"><code><a href="#readBoolean"><span class="identifier">readBoolean</span></a>():<span class="type">Bool</span></code></h3><div class="doc"><p>Reads a Boolean value from the stream. A single byte is read, and
+<code>true</code> is returned if the byte is nonzero, <code>false</code> otherwise.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p><code>True</code> is returned if the byte is nonzero, <code>false</code> otherwise.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readByte"></a><h3 class="anchor"><code><a href="#readByte"><span class="identifier">readByte</span></a>():<span class="type">Int</span></code></h3><div class="doc"><p>Reads a signed byte from the stream.
+The returned value is in the range -128...127.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range -128...127.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readBytes"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ length : 0, offset : 0 })</span><a href="#readBytes"><span class="identifier">readBytes</span></a>(<span style="white-space:nowrap">bytes:<a class="type" title="openfl.utils.ByteArray - The ByteArray class provides methods and properties to optimize reading, writing, and working with binary data." href="../../openfl/utils/ByteArray.html">ByteArray</a>,</span> <span style="white-space:nowrap">offset:<span class="type">UInt</span> = 0,</span> <span style="white-space:nowrap">length:<span class="type">Int</span> = 0</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Reads <code>length</code> bytes of data from the stream. The bytes are read into
+the ByteArray object specified by <code>bytes</code>, starting <code>offset</code> bytes
+into the ByteArray object.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>bytes</code></th><td><p>The ByteArray object to read data into.</p></td></tr><tr><th style="width:25%;"><code>offset</code></th><td><p>The offset into <code>bytes</code> at which data read should begin.
+Defaults to 0.</p></td></tr><tr><th style="width:25%;"><code>length</code></th><td><p>The number of bytes to read. The default value of 0 will
+cause all available data to be read.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readDouble"></a><h3 class="anchor"><code><a href="#readDouble"><span class="identifier">readDouble</span></a>():<span class="type">Float</span></code></h3><div class="doc"><p>Reads an IEEE 754 double-precision floating-point number from the
+stream.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>An IEEE 754 double-precision floating-point number from the
+stream.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readFloat"></a><h3 class="anchor"><code><a href="#readFloat"><span class="identifier">readFloat</span></a>():<span class="type">Float</span></code></h3><div class="doc"><p>Reads an IEEE 754 single-precision floating-point number from the
+stream.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>An IEEE 754 single-precision floating-point number from the
+stream.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readInt"></a><h3 class="anchor"><code><a href="#readInt"><span class="identifier">readInt</span></a>():<span class="type">Int</span></code></h3><div class="doc"><p>Reads a signed 32-bit integer from the stream.
+The returned value is in the range -2147483648...2147483647.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range -2147483648...2147483647.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readMultiByte"></a><h3 class="anchor"><code><a href="#readMultiByte"><span class="identifier">readMultiByte</span></a>(<span style="white-space:nowrap">length:<span class="type">UInt</span>,</span> <span style="white-space:nowrap">charSet:<span class="type">String</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Reads a multibyte string of specified length from the byte stream
+using the specified character set.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>length</code></th><td><p>The number of bytes from the byte stream to read.</p></td></tr><tr><th style="width:25%;"><code>charSet</code></th><td><p>The string denoting the character set to use to
+interpret the bytes. Possible character set strings
+include <code>"shift_jis"</code>, <code>"CN-GB"</code>, <code>"iso-8859-1"</code>, and
+others. For a complete list, see &lt;a
+href="../../charset-codes.html">Supported Character
+Sets</a>.
+<strong>Note:</strong> If the value for the <code>charSet</code> parameter is
+not recognized by the current system, the application
+uses the system's default code page as the character
+set. For example, a value for the <code>charSet</code> parameter,
+as in <code>myTest.readMultiByte(22, "iso-8859-01")</code> that
+uses <code>01</code> instead of <code>1</code> might work on your development
+machine, but not on another machine. On the other
+machine, the application will use the system's default
+code page.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>UTF-8 encoded string.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr></table></div></div><div class="field "><a name="readObject"></a><h3 class="anchor"><code><a href="#readObject"><span class="identifier">readObject</span></a>():<span class="type">Dynamic</span></code></h3><div class="doc"><p>Reads an object from the socket, encoded in Action Message Format
+(AMF).</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>The deserialized object.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readShort"></a><h3 class="anchor"><code><a href="#readShort"><span class="identifier">readShort</span></a>():<span class="type">Int</span></code></h3><div class="doc"><p>Reads a signed 16-bit integer from the stream.
+The returned value is in the range -32768...32767.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range -32768...32767.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readUTF"></a><h3 class="anchor"><code><a href="#readUTF"><span class="identifier">readUTF</span></a>():<span class="type">String</span></code></h3><div class="doc"><p>Reads a UTF-8 string from the stream. The string is assumed to be
+prefixed with an unsigned short indicating the length in bytes.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A UTF-8 string.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readUTFBytes"></a><h3 class="anchor"><code><a href="#readUTFBytes"><span class="identifier">readUTFBytes</span></a>(<span style="white-space:nowrap">length:<span class="type">UInt</span></span>):<span class="type">String</span></code></h3><div class="doc"><p>Reads a sequence of <code>length</code> UTF-8 bytes from the stream, and returns
+a string.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>length</code></th><td><p>A sequence of UTF-8 bytes.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A UTF-8 string produced by the byte representation of
+characters of specified length.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readUnsignedByte"></a><h3 class="anchor"><code><a href="#readUnsignedByte"><span class="identifier">readUnsignedByte</span></a>():<span class="type">UInt</span></code></h3><div class="doc"><p>Reads an unsigned byte from the stream.
+The returned value is in the range 0...255.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range 0...255.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readUnsignedInt"></a><h3 class="anchor"><code><a href="#readUnsignedInt"><span class="identifier">readUnsignedInt</span></a>():<span class="type">UInt</span></code></h3><div class="doc"><p>Reads an unsigned 32-bit integer from the stream.
+The returned value is in the range 0...4294967295.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range 0...4294967295.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div><div class="field "><a name="readUnsignedShort"></a><h3 class="anchor"><code><a href="#readUnsignedShort"><span class="identifier">readUnsignedShort</span></a>():<span class="type">UInt</span></code></h3><div class="doc"><p>Reads an unsigned 16-bit integer from the stream.
+The returned value is in the range 0...65535.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range 0...65535.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
+local SWF file triggers a security warning, Flash
+Player prevents the URLStream data from being
+available to ActionScript. When this happens, the
+<code>bytesAvailable</code> property returns 0 even if data has
+been received, and any of the read methods throws an
+EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
+not open.</p></td></tr></table></div></div></div>  <div class="inherited-fields well"><h3 class="section">Inherited Variables</h3><div class="fields"><div style="display:none"></div></div><h3 class="section">Inherited Methods</h3><div class="fields"><h4><a href="#" class="expand-button"><i class="fa fa-arrow-circle-o-right"></i></a> Defined by <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></h4><div style="display:none"><div class="field "><a name="addEventListener"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ useWeakReference : false, priority : 0, useCapture : false })</span><a href="#addEventListener"><span class="identifier">addEventListener</span></a>&lt;<span class="type">T</span>&gt;(<span style="white-space:nowrap">type:<a class="type" title="openfl.events.EventType - The EventType abstract type provides type safety when matching dispatch events with the correct type of listener For example, the following code has the wrong type in the event listener, it should be a MouseEvent: addEventListener(MouseEvent." href="../../openfl/events/EventType.html">EventType</a>&lt;<span class="type">T</span>&gt;,</span> <span style="white-space:nowrap">listener:<span class="type">T</span>&nbsp;&#8209;&gt;&nbsp;<span class="type">Void</span>,</span> <span style="white-space:nowrap">useCapture:<span class="type">Bool</span> = false,</span> <span style="white-space:nowrap">priority:<span class="type">Int</span> = 0,</span> <span style="white-space:nowrap">useWeakReference:<span class="type">Bool</span> = false</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Registers an event listener object with an EventDispatcher object so that
+the listener receives notification of an event. You can register event
+listeners on all nodes in the display list for a specific type of event,
+phase, and priority.</p>
+<p>After you successfully register an event listener, you cannot change
+its priority through additional calls to <code>addEventListener()</code>.
+To change a listener's priority, you must first call
+<code>removeListener()</code>. Then you can register the listener again
+with the new priority level.</p>
+<p>Keep in mind that after the listener is registered, subsequent calls to
+<code>addEventListener()</code> with a different <code>type</code> or
+<code>useCapture</code> value result in the creation of a separate
+listener registration. For example, if you first register a listener with
+<code>useCapture</code> set to <code>true</code>, it listens only during
+the capture phase. If you call <code>addEventListener()</code> again using
+the same listener object, but with <code>useCapture</code> set to
+<code>false</code>, you have two separate listeners: one that listens
+during the capture phase and another that listens during the target and
+bubbling phases.</p>
+<p>You cannot register an event listener for only the target phase or the
+bubbling phase. Those phases are coupled during registration because
+bubbling applies only to the ancestors of the target node.</p>
+<p>If you no longer need an event listener, remove it by calling
+<code>removeEventListener()</code>, or memory problems could result. Event
+listeners are not automatically removed from memory because the garbage
+collector does not remove the listener as long as the dispatching object
+exists(unless the <code>useWeakReference</code> parameter is set to
+<code>true</code>).</p>
+<p>Copying an EventDispatcher instance does not copy the event listeners
+attached to it.(If your newly created node needs an event listener, you
+must attach the listener after creating the node.) However, if you move an
+EventDispatcher instance, the event listeners attached to it move along
+with it.</p>
+<p>If the event listener is being registered on a node while an event is
+being processed on this node, the event listener is not triggered during
+the current phase but can be triggered during a later phase in the event
+flow, such as the bubbling phase.</p>
+<p>If an event listener is removed from a node while an event is being
+processed on the node, it is still triggered by the current actions. After
+it is removed, the event listener is never invoked again(unless
+registered again for future processing).</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr><tr><th style="width:25%;"><code>useCapture</code></th><td><p>Determines whether the listener works in the
+capture phase or the target and bubbling phases.
+If <code>useCapture</code> is set to
+<code>true</code>, the listener processes the
+event only during the capture phase and not in the
+target or bubbling phase. If
+<code>useCapture</code> is <code>false</code>, the
+listener processes the event only during the
+target or bubbling phase. To listen for the event
+in all three phases, call
+<code>addEventListener</code> twice, once with
+<code>useCapture</code> set to <code>true</code>,
+then again with <code>useCapture</code> set to
+<code>false</code>.</p></td></tr><tr><th style="width:25%;"><code>priority</code></th><td><p>The priority level of the event listener. The
+priority is designated by a signed 32-bit integer.
+The higher the number, the higher the priority.
+All listeners with priority <em>n</em> are processed
+before listeners of priority <em>n</em>-1. If two or
+more listeners share the same priority, they are
+processed in the order in which they were added.
+The default priority is 0.</p></td></tr><tr><th style="width:25%;"><code>useWeakReference</code></th><td><p>Determines whether the reference to the listener
+is strong or weak. A strong reference(the
+default) prevents your listener from being
+garbage-collected. A weak reference does not.</p>
+<p>Class-level member functions are not subject to
+garbage collection, so you can set
+<code>useWeakReference</code> to <code>true</code>
+for class-level member functions without
+subjecting them to garbage collection. If you set
+<code>useWeakReference</code> to <code>true</code>
+for a listener that is a nested inner function,
+the function will be garbage-collected and no
+longer persistent. If you create references to the
+inner function(save it in another variable) then
+it is not garbage-collected and stays
+persistent.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The <code>listener</code> specified is not a
+function.</p></td></tr></table></div></div><div class="field "><a name="dispatchEvent"></a><h3 class="anchor"><code><a href="#dispatchEvent"><span class="identifier">dispatchEvent</span></a>(<span style="white-space:nowrap">event:<a class="type" title="openfl.events.Event - The Event class is used as the base class for the creation of Event objects, which are passed as parameters to event listeners when an event occurs." href="../../openfl/events/Event.html">Event</a></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Dispatches an event into the event flow. The event target is the
+EventDispatcher object upon which the <code>dispatchEvent()</code> method
+is called.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>event</code></th><td><p>The Event object that is dispatched into the event flow. If
+the event is being redispatched, a clone of the event is
+created automatically. After an event is dispatched, its
+<code>target</code> property cannot be changed, so you must
+create a new copy of the event for redispatching to work.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if the event was successfully
+dispatched. A value of <code>false</code> indicates failure or
+that <code>preventDefault()</code> was called on the event.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>The event dispatch recursion limit has been reached.</p></td></tr></table></div></div><div class="field "><a name="hasEventListener"></a><h3 class="anchor"><code><a href="#hasEventListener"><span class="identifier">hasEventListener</span></a>(<span style="white-space:nowrap">type:<span class="type">String</span></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Checks whether the EventDispatcher object has any listeners registered for
+a specific type of event. This allows you to determine where an
+EventDispatcher object has altered handling of an event type in the event
+flow hierarchy. To determine whether a specific event type actually
+triggers an event listener, use <code>willTrigger()</code>.</p>
+<p>The difference between <code>hasEventListener()</code> and
+<code>willTrigger()</code> is that <code>hasEventListener()</code>
+examines only the object to which it belongs, whereas
+<code>willTrigger()</code> examines the entire event flow for the event
+specified by the <code>type</code> parameter.</p>
+<p>When <code>hasEventListener()</code> is called from a LoaderInfo
+object, only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
+is registered; <code>false</code> otherwise.</p></div></div></div><div class="field "><a name="removeEventListener"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ useCapture : false })</span><a href="#removeEventListener"><span class="identifier">removeEventListener</span></a>&lt;<span class="type">T</span>&gt;(<span style="white-space:nowrap">type:<a class="type" title="openfl.events.EventType - The EventType abstract type provides type safety when matching dispatch events with the correct type of listener For example, the following code has the wrong type in the event listener, it should be a MouseEvent: addEventListener(MouseEvent." href="../../openfl/events/EventType.html">EventType</a>&lt;<span class="type">T</span>&gt;,</span> <span style="white-space:nowrap">listener:<span class="type">T</span>&nbsp;&#8209;&gt;&nbsp;<span class="type">Void</span>,</span> <span style="white-space:nowrap">useCapture:<span class="type">Bool</span> = false</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Removes a listener from the EventDispatcher object. If there is no
+matching listener registered with the EventDispatcher object, a call to
+this method has no effect.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr><tr><th style="width:25%;"><code>useCapture</code></th><td><p>Specifies whether the listener was registered for the
+capture phase or the target and bubbling phases. If the
+listener was registered for both the capture phase and
+the target and bubbling phases, two calls to
+<code>removeEventListener()</code> are required to
+remove both, one call with <code>useCapture()</code> set
+to <code>true</code>, and another call with
+<code>useCapture()</code> set to <code>false</code>.</p></td></tr></table></div></div><div class="field "><a name="toString"></a><h3 class="anchor"><code><a href="#toString"><span class="identifier">toString</span></a>():<span class="type">String</span></code></h3><div class="doc"><p></p></div></div><div class="field "><a name="willTrigger"></a><h3 class="anchor"><code><a href="#willTrigger"><span class="identifier">willTrigger</span></a>(<span style="white-space:nowrap">type:<span class="type">String</span></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Checks whether an event listener is registered with this EventDispatcher
+object or any of its ancestors for the specified event type. This method
+returns <code>true</code> if an event listener is triggered during any
+phase of the event flow when an event of the specified type is dispatched
+to this EventDispatcher object or any of its descendants.</p>
+<p>The difference between the <code>hasEventListener()</code> and the
+<code>willTrigger()</code> methods is that <code>hasEventListener()</code>
+examines only the object to which it belongs, whereas the
+<code>willTrigger()</code> method examines the entire event flow for the
+event specified by the <code>type</code> parameter.</p>
+<p>When <code>willTrigger()</code> is called from a LoaderInfo object,
+only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

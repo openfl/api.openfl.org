@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net - API Reference</title></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+a, code .type {
+	color: #24afc4;
+}
+table {
+	margin-bottom: 20px;
+}
+.navbar .brand {
+	display: inline-block;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+}
+.nav-list>.active>a.treeLink, .nav-list>.active>a.treeLink:hover, .nav-list>.active>a.treeLink:focus {
+	background: #24afc4;
+	color: #ffffff;
+	text-shadow: 0 0 0 transparent;
+}
+.navbar .container {
+	width: 940px ;
+}
+@media (max-width: 767px) {
+	.navbar .container {
+		width: auto;
+	}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	.navbar .container {
+		width: 724px;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar .container {
+		width: 1170px;
+	}
+}
+.navbar .container img {
+	margin: 5px 0 0 4px;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" href="http://www.openfl.org"><img alt="" src="/images/logo.png"/></a><a class="brand" style="color:#777777" href="../../">API Reference</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><h1>openfl.net </h1><!-- 
+::if full == ""::
+	<h1>Haxe API documentation <small ::cond api.isDefined("version")::>version ::api.getValue('version')::</small></h1>
+	<p>Haxe is an open source toolkit based on a modern, high level, strictly typed programming language, a cross-compiler, a complete cross-platform standard library and ways to access each platform's native capabilities.</p> 
+	<h3>Getting Started With Haxe</h3>
+	<ul>
+		<li>Take a look at our <a href="http://haxe.org/documentation/introduction/">introduction</a></li>
+		<li>Read through the <a href="http://haxe.org/manual/">Haxe Manual</a></li>
+		<li>Look at these <a href="http://haxe.org/use-cases/">use cases for Haxe</a></li>
+		<li>Find and install <a href="http://lib.haxe.org/t/all/">popular Haxe libraries</a></li>
+		<li>Learn by example with the <a href="http://code.haxe.org">Haxe Code Cookbook</a></li>
+	</ul>
+	<hr/>
+	<h3>Top Level</h3>
+::elseif full.split(".").length==1::
+	<h1>Haxe/::full:: API documentation</h1>
+	<p>To get started with the Haxe ::full:: target:</p>
+	<ul>
+		<li>Read through the <a href="http://haxe.org/manual/">Haxe Manual</a></li>
+		<li ::cond full=="js"::>Read the <a href="http://haxe.org/manual/target-javascript.html">Haxe/JavaScript target details</a></li>
+		<li ::cond full=="flash"::>Read the <a href="http://haxe.org/manual/target-flash.html">Haxe/Flash target details</a></li>
+		<li ::cond full=="php"::>Read the <a href="http://haxe.org/manual/target-php.html">Haxe/PHP target details</a></li>
+		<li ::cond full=="cpp"::>Read the <a href="http://haxe.org/manual/target-cpp.html">Haxe/C++ target details</a></li>
+		<li ::cond full=="neko"::>Read the <a href="http://nekovm.org/doc">Neko documentation</a></li>
+		<li>Find and install <a href="http://lib.haxe.org/t/::full::/">popular Haxe/::full:: libraries</a></li>
+		<li>Learn by example with the <a href="http://code.haxe.org">Haxe Code Cookbook</a></li>
+	</ul>
+	<hr/>
+	<h1><small class="directive">package</small> ::full::</h1>
+::else::
+	<h1><small class="directive">package</small> ::full::</h1>
+::end::
+-->
+  <table class="table table-condensed"><tbody><tr><th style="width:200px;"><i class="fa fa-folder-o"></i><a href="../../index.html" title="openfl">..</a></th><td></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/FileFilter.html" title="openfl.net.FileFilter">FileFilter</a></td><td><p>The FileFilter class is used to indicate what files on the user's system
+are shown in the file-browsing dialog box that is displayed when the
+<code><a href="../../openfl/net/FileReference.html#browse">FileReference.browse</a>()</code> method, the <code><a href="../../openfl/net/FileReferenceList.html#browse">FileReferenceList.browse</a>()</code> method
+is called or a browse method of a File, FileReference, or
+FileReferenceList object is called. FileFilter instances are passed as a
+value for the optional <code>typeFilter</code> parameter to the method. If you use a
+FileFilter instance, extensions and file types that aren't specified in
+the FileFilter instance are filtered out; that is, they are not available
+to the user for selection. If no FileFilter object is passed to the
+method, all files are shown in the dialog box.
+You can use FileFilter instances in one of two ways:</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/FileReference.html" title="openfl.net.FileReference">FileReference</a></td><td><p>The FileReference class provides a means to upload and download files
+between a user's computer and a server. An operating-system dialog box
+prompts the user to select a file to upload or a location for download.
+Each FileReference object refers to a single file on the user's disk and
+has properties that contain information about the file's size, type, name,
+creation date, modification date, and creator type (Macintosh only).
+<strong>Note:</strong> In Adobe AIR, the File class, which extends the FileReference
+class, provides more capabilities and has less security restrictions than
+the FileReference class.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/FileReferenceList.html" title="openfl.net.FileReferenceList">FileReferenceList</a></td><td><p>The FileReferenceList class provides a means to let users select one or
+more files for uploading. A FileReferenceList object represents a group of
+one or more local files on the user's disk as an array of FileReference
+objects. For detailed information and important considerations about
+FileReference objects and the FileReference class, which you use with
+FileReferenceList, see the FileReference class.
+To work with the FileReferenceList class:</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/NetConnection.html" title="openfl.net.NetConnection">NetConnection</a></td><td><p>The NetConnection class creates a two-way connection between a client and
+a server. The client can be a Flash Player or AIR application. The server
+can be a web server, Flash Media Server, an application server running
+Flash Remoting, or the &lt;a
+href="<a href="http://labs.adobe.com/technologies/stratus">http://labs.adobe.com/technologies/stratus</a>/" scope="external">Adobe
+Stratus</a> service. Call <code><a href="../../openfl/net/NetConnection.html#connect">NetConnection.connect</a>()</code> to establish the
+connection. Use the NetStream class to send streams of media and data over
+the connection.
+For security information about loading content and data into Flash Player
+and AIR, see the following:</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/NetStream.html" title="openfl.net.NetStream">NetStream</a></td><td><p>The NetStream class opens a one-way streaming channel over a
+NetConnection.
+Use the NetStream class to do the following:</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/net/ObjectEncoding.html" title="openfl.net.ObjectEncoding">ObjectEncoding</a></td><td><p>The ObjectEncoding class is used in defining serialization settings in
+classes that serialize objects (such as FileStream, NetStream,
+NetConnection, SharedObject, and ByteArray).</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/SharedObject.html" title="openfl.net.SharedObject">SharedObject</a></td><td><p>The SharedObject class is used to read and store limited amounts of data on
+a user's computer or on a server. Shared objects offer real-time data
+sharing between multiple client SWF files and objects that are persistent
+on the local computer or remote server. Local shared objects are similar to
+browser cookies and remote shared objects are similar to real-time data
+transfer devices. To use remote shared objects, you need Adobe Flash Media
+Server.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/net/SharedObjectFlushStatus.html" title="openfl.net.SharedObjectFlushStatus">SharedObjectFlushStatus</a></td><td><p>The SharedObjectFlushStatus class provides values for the code returned
+from a call to the <code><a href="../../openfl/net/SharedObject.html#flush">SharedObject.flush</a>()</code> method.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/Socket.html" title="openfl.net.Socket">Socket</a></td><td><p>The Socket class enables code to establish Transport Control Protocol
+(TCP) socket connections for sending and receiving binary data.
+The Socket class is useful for working with servers that use binary
+protocols.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/URLLoader.html" title="openfl.net.URLLoader">URLLoader</a></td><td><p>The URLLoader class downloads data from a URL as text, binary data, or
+URL-encoded variables. It is useful for downloading text files, XML, or
+other information to be used in a dynamic, data-driven application.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/net/URLLoaderDataFormat.html" title="openfl.net.URLLoaderDataFormat">URLLoaderDataFormat</a></td><td><p>The URLLoaderDataFormat class provides values that specify how downloaded
+data is received.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/URLRequest.html" title="openfl.net.URLRequest">URLRequest</a></td><td><p>The URLRequest class captures all of the information in a single HTTP
+request. URLRequest objects are passed to the <code>load()</code> methods
+of the Loader, URLStream, and URLLoader classes, and to other loading
+operations, to initiate URL downloads. They are also passed to the
+<code>upload()</code> and <code>download()</code> methods of the
+FileReference class.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/URLRequestDefaults.html" title="openfl.net.URLRequestDefaults">URLRequestDefaults</a></td><td><p>The URLRequestDefaults class includes static properties that you can set to define
+default values for the properties of the URLRequest class. It also includes a static
+method, <code><a href="../../openfl/net/URLRequestDefaults.html#setLoginCredentialsForHost">URLRequestDefaults.setLoginCredentialsForHost</a>()</code>, which lets you define
+default authentication credentials for requests. The URLRequest class defines the
+information to use in an HTTP request.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/URLRequestHeader.html" title="openfl.net.URLRequestHeader">URLRequestHeader</a></td><td><p>A URLRequestHeader object encapsulates a single HTTP request header and
+consists of a name/value pair. URLRequestHeader objects are used in the
+<code>requestHeaders</code> property of the URLRequest class.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/net/URLRequestMethod.html" title="openfl.net.URLRequestMethod">URLRequestMethod</a></td><td><p>The URLRequestMethod class provides values that specify whether the
+URLRequest object should use the <code>POST</code> method or the
+<code>GET</code> method when sending data to a server.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/URLStream.html" title="openfl.net.URLStream">URLStream</a></td><td><p>The URLStream class provides low-level access to downloading URLs. Data is
+made available to application code immediately as it is downloaded,
+instead of waiting until the entire file is complete as with URLLoader.
+The URLStream class also lets you close a stream before it finishes
+downloading. The contents of the downloaded file are made available as raw
+binary data.
+The read operations in URLStream are nonblocking. This means that you must
+use the <code>bytesAvailable</code> property to determine whether sufficient data is
+available before reading it. An <code><a href="../../openfl/errors/EOFError.html#EOFError">EOFError</a></code> exception is thrown if
+insufficient data is available.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/net/URLVariables.html" title="openfl.net.URLVariables">URLVariables</a></td><td><p>The URLVariables class allows you to transfer variables between an
+application and a server. Use URLVariables objects with methods of the
+URLLoader class, with the <code>data</code> property of the URLRequest
+class, and with openfl.net package functions.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/net/XMLSocket.html" title="openfl.net.XMLSocket">XMLSocket</a></td><td><p>The XMLSocket class implements client sockets that let the Flash Player or
+AIR application communicate with a server computer identified by an IP
+address or domain name. The XMLSocket class is useful for client-server
+applications that require low latency, such as real-time chat systems. A
+traditional HTTP-based chat solution frequently polls the server and
+downloads new messages using an HTTP request. In contrast, an XMLSocket
+chat solution maintains an open connection to the server, which lets the
+server immediately send incoming messages without a request from the
+client. To use the XMLSocket class, the server computer must run a daemon
+that understands the protocol used by the XMLSocket class. The protocol is
+described in the following list:
+<em> XML messages are sent over a full-duplex TCP/IP stream socket
+connection.
+</em> Each XML message is a complete XML document, terminated by a zero (0)
+byte.
+* An unlimited number of XML messages can be sent and received over a
+single XMLSocket connection.</p></td></tr></tbody></table></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
