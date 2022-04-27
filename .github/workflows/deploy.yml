@@ -16,7 +16,13 @@ jobs:
           repository: openfl/openfl
           path: openfl
           ref: 9.1.0
-
+      
+      - uses: actions/checkout@v2
+        with:
+          repository: openfl/lime
+          path: lime
+          ref: 7.9.0
+      
       - uses: krdlab/setup-haxe@v1
         with:
           haxe-version: 4.1.5
@@ -27,12 +33,8 @@ jobs:
 
       - name: Install Haxe dependencies
         run: |
-          haxelib install hxcpp --quiet
-          haxelib install format --quiet
-          haxelib install hxp --quiet
-          haxelib install lime --quiet
-          haxelib install dox --quiet
-          haxelib install openfl --quiet
+          haxelib install dox 1.4.0
+          haxelib dev lime lime
           haxelib dev openfl openfl
 
       - name: Build docs
