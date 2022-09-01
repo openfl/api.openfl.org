@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net.ServerSocket - API Reference</title><meta name="description" content="The ServerSocket class allows code to act as a server for Transport Control Protocol (TCP)
+connections."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+a,
+code a,
+code .type,
+.dark-theme a,
+.dark-theme code a,
+.dark-theme code .type {
+	color: #24afc4;
+}
+table {
+	margin-bottom: 20px;
+}
+.navbar .brand {
+	display: inline-flex;
+	align-items: center;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+	min-height: 70px;
+}
+.nav-list>.active>a.treeLink,
+.nav-list>.active>a.treeLink:hover,
+.nav-list>.active>a.treeLink:focus,
+.dark-theme .nav-list>.active>a.treeLink,
+.dark-theme .nav-list>.active>a.treeLink:hover,
+.dark-theme .nav-list>.active>a.treeLink:focus {
+	background: #24afc4;
+	color: #ffffff;
+	text-shadow: 0 0 0 transparent;
+}
+
+.navbar .container {
+	width: 940px ;
+}
+@media (max-width: 767px) {
+	.navbar .container {
+		width: auto;
+	}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	.navbar .container {
+		width: 724px;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar .container {
+		width: 1170px;
+	}
+}
+.navbar .container img {
+	margin: 5px 0 0 4px;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/net/ServerSocket.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> ServerSocket</h1><h4><small>package <a href="../../openfl/net/index.html">openfl.net</a></small></h4><h4><small>extends <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.net.Socket)</span><hr/><p class="availability"><em>Available on  AIR, Android, Flash, Linux, Neko, Windows, iOS, macOS</em></p></div><div class="body"><div class="doc doc-main"><p>The ServerSocket class allows code to act as a server for Transport Control Protocol (TCP)
+connections.</p>
+<p>This feature is supported on all desktop operating systems, on iOS, and on Android.
+This feature is not supported on html5. You can test for support at run time using the
+ServerSocket.isSupported property.</p>
+<p>A TCP server listens for incoming connections from remote clients. When a client attempts
+to connect, the ServerSocket dispatches a connect event. The ServerSocketConnectEvent object
+dispatched for the event provides a Socket object representing the TCP connection between the
+server and the client. Use this Socket object for subsequent communication with the connected
+client. You can get the client address and port from the Socket object, if needed.</p>
+<p>Note: Your application is responsible for maintaining a reference to the client Socket object.
+If you don't, the object is eligible for garbage collection and may be destroyed by the runtime
+without warning.</p>
+<p>To put a ServerSocket object into the listening state, call the listen() method. In the
+listening state, the server socket object dispatches connect events whenever a client using the
+TCP protocol attempts to connect to the bound address and port. The ServerSocket object
+continues to listen for additional connections until you call the close() method.</p>
+<p>TCP connections are persistent — they exist until one side of the connection closes it (or a
+serious network failure occurs). Any data sent over the connection is broken into transmittable
+packets and reassembled on the other end. All packets are guaranteed to arrive (within reason) —
+any lost packets are retransmitted. In general, the TCP protocol manages the available network
+bandwidth better than the UDP protocol. Most AIR applications that require socket communications
+should use the ServerSocket and Socket classes rather than the DatagramSocket class.</p>
+<p>The ServerSocket class can only be used in targets that support TCP.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>close</code></th><td><p>Dispatched when the operating system closes this socket.</p></td></tr><tr class="indent"><th style="width:25%;"><code>connect</code></th><td><p>Dispatched when a remote socket seeks to connect to this server socket.</p></td></tr></table></div><h3 class="section">Static variables</h3><div class="fields"><div class="field "><a name="isSupported"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(true)</span><span class="label label-static">static</span><span class="label">read only</span><a href="#isSupported"><span class="identifier">isSupported</span></a>:<span class="type">Bool</span><span> = true</span></code></h3><div class="doc"><p>Indicates whether or not ServerSocket features are supported in the run-time environment.</p></div></div></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><a href="#new"><span class="identifier">new</span></a>()</code></h3><div class="doc"><p>Creates a ServerSocket object.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>This error occurs ff the calling content is running outside the AIR
+application security sandbox.</p></td></tr></table></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="bound"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bound"><span class="identifier">bound</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether the socket is bound to a local address and port.</p></div></div><div class="field "><a name="listening"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#listening"><span class="identifier">listening</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether the server socket is listening for incoming connections.</p></div></div><div class="field "><a name="localAddress"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#localAddress"><span class="identifier">localAddress</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>The IP address on which the socket is listening.</p></div></div><div class="field "><a name="localPort"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#localPort"><span class="identifier">localPort</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The port on which the socket is listening.</p></div></div></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="bind"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ localAddress : &quot;0.0.0.0&quot;, localPort : 0 })</span><a href="#bind"><span class="identifier">bind</span></a>(<span style="white-space:nowrap">localPort:<span class="type">Int</span> = 0,</span> <span style="white-space:nowrap">localAddress:<span class="type">String</span> = &quot;0.0.0.0&quot;</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Binds this socket to the specified local address and port.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>localPort</code></th><td><p>(default = 0) The number of the port to bind to on the local computer.
+If localPort, is set to 0 (the default), the next available system port is bound. Permission
+to connect to a port number below 1024 is subject to the system security policy. On Mac and
+Linux systems, for example, the application must be running with root privileges to connect
+to ports below 1024.</p></td></tr><tr><th style="width:25%;"><code>localAddress</code></th><td><p>(default = "0.0.0.0") The IP address on the local machine to bind
+to. This address can be an IPv4 or IPv6 address. If localAddress is set to 0.0.0.0 (the
+default), the socket listens on all available IPv4 addresses. To listen on all available IPv6
+addresses, you must specify "::" as the localAddress argument. To use an IPv6 address, the
+computer and network must both be configured to support IPv6. Furthermore, a socket bound to
+an IPv4 address cannot connect to a socket with an IPv6 address. Likewise, a socket bound to
+an IPv6 address cannot connect to a socket with an IPv4 address. The type of address must
+match.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>RangeError</code></th><td><p>This error occurs when localPort is less than 0 or greater than 65535.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>This error occurs when localAddress is not a syntactically well-formed IP address.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>When the socket cannot be bound, such as when:
+the underlying network socket (IP and port) is already in bound by another object or process.</p>
+<pre><code>				  the application is running under a user account that does not have the privileges necessary to bind to the port. Privilege issues typically occur when attempting to bind to well known ports (localPort &lt; 1024)
+				  this ServerSocket object is already bound. (Call close() before binding to a different socket.)
+				  when localAddress is not a valid local address.
+</code></pre></td></tr></table></div></div><div class="field "><a name="close"></a><h3 class="anchor"><code><a href="#close"><span class="identifier">close</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Closes the socket and stops listening for connections.</p>
+<p>Closed sockets cannot be reopened. Create a new ServerSocket instance instead.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>This error occurs if the socket could not be closed, or the socket was not open.</p></td></tr></table></div></div><div class="field "><a name="listen"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ backlog : 0 })</span><a href="#listen"><span class="identifier">listen</span></a>(<span style="white-space:nowrap">backlog:<span class="type">Int</span> = 0</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Initiates listening for TCP connections on the bound IP address and port.</p>
+<p>The listen() method returns immediately. Once you call listen(), the ServerSocket
+object dispatches a connect event whenever a connection attempt is made. The socket
+property of the ServerSocketConnectEvent event object references a Socket object
+representing the server-client connection.</p>
+<p>The backlog parameter specifies how many pending connections are queued while the
+connect events are processed by your application. If the queue is full, additional
+connections are denied without a connect event being dispatched. If the default
+value of zero is specified, then the system-maximum queue length is used. This
+length varies by platform and can be configured per computer. If the specified
+value exceeds the system-maximum length, then the system-maximum length is used
+instead. No means for discovering the actual backlog value is provided. (The
+system-maximum value is determined by the SOMAXCONN setting of the TCP network
+subsystem on the host computer.)</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>RangeError</code></th><td><p>There is insufficient data available to read.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>This error occurs if the socket is not open or bound.
+This error also occurs if the call to listen() fails for any
+other reason.</p></td></tr></table></div></div></div>  <div class="inherited-fields well"><h3 class="section">Inherited Variables</h3><div class="fields"><div style="display:none"></div></div><h3 class="section">Inherited Methods</h3><div class="fields"><h4><a href="#" class="expand-button"><i class="fa fa-arrow-circle-o-right"></i></a> Defined by <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></h4><div style="display:none"><div class="field "><a name="dispatchEvent"></a><h3 class="anchor"><code><a href="#dispatchEvent"><span class="identifier">dispatchEvent</span></a>(<span style="white-space:nowrap">event:<a class="type" title="openfl.events.Event - The Event class is used as the base class for the creation of Event objects, which are passed as parameters to event listeners when an event occurs." href="../../openfl/events/Event.html">Event</a></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Dispatches an event into the event flow. The event target is the
+EventDispatcher object upon which the <code>dispatchEvent()</code> method
+is called.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>event</code></th><td><p>The Event object that is dispatched into the event flow. If
+the event is being redispatched, a clone of the event is
+created automatically. After an event is dispatched, its
+<code>target</code> property cannot be changed, so you must
+create a new copy of the event for redispatching to work.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if the event was successfully
+dispatched. A value of <code>false</code> indicates failure or
+that <code>preventDefault()</code> was called on the event.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>The event dispatch recursion limit has been reached.</p></td></tr></table></div></div><div class="field "><a name="hasEventListener"></a><h3 class="anchor"><code><a href="#hasEventListener"><span class="identifier">hasEventListener</span></a>(<span style="white-space:nowrap">type:<span class="type">String</span></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Checks whether the EventDispatcher object has any listeners registered for
+a specific type of event. This allows you to determine where an
+EventDispatcher object has altered handling of an event type in the event
+flow hierarchy. To determine whether a specific event type actually
+triggers an event listener, use <code>willTrigger()</code>.</p>
+<p>The difference between <code>hasEventListener()</code> and
+<code>willTrigger()</code> is that <code>hasEventListener()</code>
+examines only the object to which it belongs, whereas
+<code>willTrigger()</code> examines the entire event flow for the event
+specified by the <code>type</code> parameter.</p>
+<p>When <code>hasEventListener()</code> is called from a LoaderInfo
+object, only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
+is registered; <code>false</code> otherwise.</p></div></div></div><div class="field "><a name="toString"></a><h3 class="anchor"><code><a href="#toString"><span class="identifier">toString</span></a>():<span class="type">String</span></code></h3><div class="doc"><p></p></div></div><div class="field "><a name="willTrigger"></a><h3 class="anchor"><code><a href="#willTrigger"><span class="identifier">willTrigger</span></a>(<span style="white-space:nowrap">type:<span class="type">String</span></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Checks whether an event listener is registered with this EventDispatcher
+object or any of its ancestors for the specified event type. This method
+returns <code>true</code> if an event listener is triggered during any
+phase of the event flow when an event of the specified type is dispatched
+to this EventDispatcher object or any of its descendants.</p>
+<p>The difference between the <code>hasEventListener()</code> and the
+<code>willTrigger()</code> methods is that <code>hasEventListener()</code>
+examines only the object to which it belongs, whereas the
+<code>willTrigger()</code> method examines the entire event flow for the
+event specified by the <code>type</code> parameter.</p>
+<p>When <code>willTrigger()</code> is called from a LoaderInfo object,
+only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

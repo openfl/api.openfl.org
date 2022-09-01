@@ -112,7 +112,28 @@ IExternalizable interface are implemented by a class to allow customization of t
 contents and format of the data stream (but not the classname or type) for an object
 and its supertypes. Each individual class must serialize and reconstruct the state of
 its instances. These methods must be symmetrical with the supertype to save its state.
-These methods supercede the native Action Message Format (AMF) serialization behavior.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/utils/Object.html" title="openfl.utils.Object">Object</a></td><td><p></p></td></tr><tr class="type"><td style="width:200px;"><a href="../../openfl/utils/ObjectPool.html" title="openfl.utils.ObjectPool">ObjectPool</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/utils/Timer.html" title="openfl.utils.Timer">Timer</a></td><td><p>The Timer class is the interface to timers, which let you run code on a
+These methods supercede the native Action Message Format (AMF) serialization behavior.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/utils/Namespace.html" title="openfl.utils.Namespace">Namespace</a></td><td><p>The Namespace class contains methods and properties for defining and working
+with namespaces. There are three scenarios for using namespaces:
+- Namespaces of XML objects Namespaces associate a namespace prefix with a
+Uniform Resource Identifier (URI) that identifies the namespace. The prefix
+is a string used to reference the namespace within an XML object. If the
+prefix is undefined, when the XML is converted to a string, a prefix is
+automatically generated.
+- Namespace to differentiate methods Namespaces can differentiate methods
+with the same name to perform different tasks. If two methods have the same
+name but separate namespaces, they can perform different tasks.
+- Namespaces for access control Namespaces can be used to control access to
+a group of properties and methods in a class. If you place the properties
+and methods into a private namespace, they are inaccessible to any code that
+does not have access to that namespace. You can grant access to the group of
+properties and methods by passing the namespace to other classes, methods or
+functions.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/utils/Object.html" title="openfl.utils.Object">Object</a></td><td><p></p></td></tr><tr class="type"><td style="width:200px;"><a href="../../openfl/utils/ObjectPool.html" title="openfl.utils.ObjectPool">ObjectPool</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/utils/QName.html" title="openfl.utils.QName">QName</a></td><td><p>QName objects represent qualified names of XML elements and attributes. Each
+QName object has a local name and a namespace Uniform Resource Identifier
+(URI). When the value of the namespace URI is <code>null</code>, the QName object
+matches any namespace. Use the QName constructor to create a new QName
+object that is either a copy of another QName object or a new QName object
+with a <code>uri</code> from a <code><a href="../../openfl/utils/Namespace.html#Namespace">Namespace</a></code> object and a <code>localName</code> from a QName
+object.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/utils/Timer.html" title="openfl.utils.Timer">Timer</a></td><td><p>The Timer class is the interface to timers, which let you run code on a
 specified time sequence. Use the <code>start()</code> method to start a
 timer. Add an event listener for the <code>timer</code> event to set up
 code to be run on the timer interval.</p></td></tr></tbody></table></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
