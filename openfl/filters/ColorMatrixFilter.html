@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.filters.ColorMatrixFilter - API Reference</title><meta name="description" content="The ColorMatrixFilter class lets you apply a 4 x 5 matrix transformation
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.filters.ColorMatrixFilter - API Reference</title><meta name="description" content="The ColorMatrixFilter class lets you apply a 4 x 5 matrix transformation
 on the RGBA color and alpha values of every pixel in the input image to
 produce a result with a new set of RGBA color and alpha values. It allows
 saturation changes, hue rotation, luminance to alpha, and various other
@@ -10,36 +10,23 @@ that inherit from the DisplayObject class), such as MovieClip,
 SimpleButton, TextField, and Video objects, as well as to BitmapData
 objects.
 &lt;strong&gt;Note:&lt;/strong&gt; For RGBA values, the most significant byte represents the red
-channel value, followed by green, blue, and then alpha."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
-a,
-code a,
-code .type,
-.dark-theme a,
-.dark-theme code a,
-.dark-theme code .type {
+channel value, followed by green, blue, and then alpha."/></head><body><style>
+a, code .type {
 	color: #24afc4;
 }
 table {
 	margin-bottom: 20px;
 }
 .navbar .brand {
-	display: inline-flex;
-	align-items: center;
+	display: inline-block;
 	float: none;
 	text-shadow: 0 0 0 transparent;
-	min-height: 70px;
 }
-.nav-list>.active>a.treeLink,
-.nav-list>.active>a.treeLink:hover,
-.nav-list>.active>a.treeLink:focus,
-.dark-theme .nav-list>.active>a.treeLink,
-.dark-theme .nav-list>.active>a.treeLink:hover,
-.dark-theme .nav-list>.active>a.treeLink:focus {
+.nav-list>.active>a.treeLink, .nav-list>.active>a.treeLink:hover, .nav-list>.active>a.treeLink:focus {
 	background: #24afc4;
 	color: #ffffff;
 	text-shadow: 0 0 0 transparent;
 }
-
 .navbar .container {
 	width: 940px ;
 }
@@ -61,7 +48,7 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/filters/ColorMatrixFilter.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>final class</small> ColorMatrixFilter</h1><h4><small>package <a href="../../openfl/filters/index.html">openfl.filters</a></small></h4><h4><small>extends <a class="type" title="openfl.filters.BitmapFilter - The BitmapFilter class is the base class for all image filter effects." href="../../openfl/filters/BitmapFilter.html">BitmapFilter</a></small></h4>    <span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-final" title="Prevents a class or interface from being extended or a method from being overridden. Deprecated by the keyword `final`.">@:final</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The ColorMatrixFilter class lets you apply a 4 x 5 matrix transformation
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" href="http://www.openfl.org"><img alt="" src="/images/logo.png"/></a><a class="brand" style="color:#777777" href="../../">API Reference</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/filters/ColorMatrixFilter.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> ColorMatrixFilter</h1><h4><small>package <a href="../../openfl/filters/index.html">openfl.filters</a></small></h4><h4><small>extends <a class="type" title="The BitmapFilter class is the base class for all image filter effects." href="../../openfl/filters/BitmapFilter.html">BitmapFilter</a></small></h4>    <span class="label label-meta label-meta-fileXml" title="@:fileXml metadata">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="@:noDebug metadata">@:noDebug</span><span class="label label-meta label-meta-final" title="@:final metadata">@:final</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The ColorMatrixFilter class lets you apply a 4 x 5 matrix transformation
 on the RGBA color and alpha values of every pixel in the input image to
 produce a result with a new set of RGBA color and alpha values. It allows
 saturation changes, hue rotation, luminance to alpha, and various other
@@ -91,8 +78,8 @@ high.) In Flash Player 9 and earlier and AIR 1.1 and earlier, the
 limitation is 2,880 pixels in height and 2,880 pixels in width. For
 example, if you zoom in on a large movie clip with a filter applied, the
 filter is turned off if the resulting image reaches the maximum
-dimensions.</p></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ matrix : null })</span><a href="#new"><span class="identifier">new</span></a>(<span style="white-space:nowrap">?matrix:<span class="type">Array</span>&lt;<span class="type">Float</span>&gt;</span>)</code></h3><div class="doc"><p>Initializes a new ColorMatrixFilter instance with the specified
-parameters.</p></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="matrix"></a><h3 class="anchor"><code><a href="#matrix"><span class="identifier">matrix</span></a>:<span class="type">Array</span>&lt;<span class="type">Float</span>&gt;</code></h3><div class="doc"><p>An array of 20 items for 4 x 5 color transform. The <code>matrix</code> property
+dimensions.</p></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="@:value metadata">@:value({ matrix : null })</span><a href="#new"><span class="identifier">new</span></a>(<span style="white-space:nowrap">?matrix:<span class="type">Array</span>&lt;<span class="type">Float</span>&gt;</span>)</code></h3><div class="doc"><p>Initializes a new ColorMatrixFilter instance with the specified
+parameters.</p></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="matrix"></a><h3 class="anchor"><code><a href="../../openfl/filters/ColorMatrixFilter.html#matrix"><span class="identifier">matrix</span></a>:<span class="type">Array</span>&lt;<span class="type">Float</span>&gt;</code></h3><div class="doc"><p>An array of 20 items for 4 x 5 color transform. The <code>matrix</code> property
 cannot be changed by directly modifying its value (for example,
 <code>myFilter.matrix[2] = 1;</code>). Instead, you must get a reference to the
 array, make the change to the reference, and reset the value.
@@ -126,8 +113,8 @@ performance:</p>
 0 0 1 0 0
 0 0 0 N 0  (where N is between 0.0 and 1.0)</code></pre>
 <p><strong>Faster version</strong>. Available only with SSE/AltiVec
-accelerator-enabled processors, such as Intel<sup>®</sup>
-Pentium<sup>®</sup> 3 and later and Apple<sup>®</sup> G4 and later.
+accelerator-enabled processors, such as Intel<sup>�</sup>
+Pentium<sup>�</sup> 3 and later and Apple<sup>�</sup> G4 and later.
 The accelerator is used when the multiplier terms are in the range
 -15.99 to 15.99 and the adder terms a[4], a[9], a[14], and a[19] are
-in the range -8000 to 8000.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>TypeError</code></th><td><p>The Array is <code>null</code> when being set</p></td></tr></table></div></div></div><h3 class="section">Methods</h3><div class="fields"></div>  <div class="inherited-fields well"><h3 class="section">Inherited Variables</h3><div class="fields"><div style="display:none"></div></div><h3 class="section">Inherited Methods</h3><div class="fields"><div style="display:none"></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+in the range -8000 to 8000.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>TypeError</code></th><td><p>The Array is <code>null</code> when being set</p></td></tr></table></div></div></div><h3 class="section">Methods</h3><div class="fields"></div>  <div class="inherited-fields well"><h3 class="section">Inherited Variables</h3><div class="fields"><div style="display:none"></div></div><h3 class="section">Inherited Methods</h3><div class="fields"><div style="display:none"></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

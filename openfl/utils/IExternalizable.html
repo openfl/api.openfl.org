@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.utils.IExternalizable - API Reference</title><meta name="description" content="The IExternalizable interface provides control over serialization of a class as it is
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.utils.IExternalizable - API Reference</title><meta name="description" content="The IExternalizable interface provides control over serialization of a class as it is
 encoded into a data stream. The &lt;code&gt;writeExternal()&lt;/code&gt; and &lt;code&gt;readExternal()&lt;/code&gt; methods of the
 IExternalizable interface are implemented by a class to allow customization of the
 contents and format of the data stream (but not the classname or type) for an object
 and its supertypes. Each individual class must serialize and reconstruct the state of
 its instances. These methods must be symmetrical with the supertype to save its state.
-These methods supercede the native Action Message Format (AMF) serialization behavior."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
-a,
-code a,
-code .type,
-.dark-theme a,
-.dark-theme code a,
-.dark-theme code .type {
+These methods supercede the native Action Message Format (AMF) serialization behavior."/></head><body><style>
+a, code .type {
 	color: #24afc4;
 }
 table {
 	margin-bottom: 20px;
 }
 .navbar .brand {
-	display: inline-flex;
-	align-items: center;
+	display: inline-block;
 	float: none;
 	text-shadow: 0 0 0 transparent;
-	min-height: 70px;
 }
-.nav-list>.active>a.treeLink,
-.nav-list>.active>a.treeLink:hover,
-.nav-list>.active>a.treeLink:focus,
-.dark-theme .nav-list>.active>a.treeLink,
-.dark-theme .nav-list>.active>a.treeLink:hover,
-.dark-theme .nav-list>.active>a.treeLink:focus {
+.nav-list>.active>a.treeLink, .nav-list>.active>a.treeLink:hover, .nav-list>.active>a.treeLink:focus {
 	background: #24afc4;
 	color: #ffffff;
 	text-shadow: 0 0 0 transparent;
 }
-
 .navbar .container {
 	width: 940px ;
 }
@@ -58,7 +45,7 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/utils/IExternalizable.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>interface</small> IExternalizable</h1><h4><small>package <a href="../../openfl/utils/index.html">openfl.utils</a></small></h4>    <hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The IExternalizable interface provides control over serialization of a class as it is
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" href="http://www.openfl.org"><img alt="" src="/images/logo.png"/></a><a class="brand" style="color:#777777" href="../../">API Reference</a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/utils/IExternalizable.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>interface</small> IExternalizable</h1><h4><small>package <a href="../../openfl/utils/index.html">openfl.utils</a></small></h4>    <hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The IExternalizable interface provides control over serialization of a class as it is
 encoded into a data stream. The <code>writeExternal()</code> and <code>readExternal()</code> methods of the
 IExternalizable interface are implemented by a class to allow customization of the
 contents and format of the data stream (but not the classname or type) for an object
@@ -175,7 +162,7 @@ data stream. For example:</p>
 		seven = (flag &amp; 64) != 0;
 		eight = (flag &amp; 128) != 0;
 	}
-}</code></pre></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="readExternal"></a><h3 class="anchor"><code><a href="#readExternal"><span class="identifier">readExternal</span></a>(<span style="white-space:nowrap">input:<a class="type" title="openfl.utils.IDataInput - The IDataInput interface provides a set of methods for reading binary data." href="../../openfl/utils/IDataInput.html">IDataInput</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>A class implements this method to decode itself from a data stream by calling the
+}</code></pre></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="readExternal"></a><h3 class="anchor"><code><a href="#readExternal"><span class="identifier">readExternal</span></a>(<span style="white-space:nowrap">input:<a class="type" title="The IDataInput interface provides a set of methods for reading binary data." href="../../openfl/utils/IDataInput.html">IDataInput</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>A class implements this method to decode itself from a data stream by calling the
 methods of the IDataInput interface. This method must read the values in the same
-sequence and with the same types as were written by the <code>writeExternal()</code> method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>input</code></th><td><p>The name of the class that implements the IDataInput interface.</p></td></tr></table></div></div><div class="field "><a name="writeExternal"></a><h3 class="anchor"><code><a href="#writeExternal"><span class="identifier">writeExternal</span></a>(<span style="white-space:nowrap">output:<a class="type" title="openfl.utils.IDataOutput - The IDataOutput interface provides a set of methods for writing binary data." href="../../openfl/utils/IDataOutput.html">IDataOutput</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>A class implements this method to encode itself for a data stream by calling the
-methods of the IDataOutput interface.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>output</code></th><td><p>The name of the class that implements the IDataOutput interface.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2022 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+sequence and with the same types as were written by the <code>writeExternal()</code> method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>input</code></th><td><p>The name of the class that implements the IDataInput interface.</p></td></tr></table></div></div><div class="field "><a name="writeExternal"></a><h3 class="anchor"><code><a href="#writeExternal"><span class="identifier">writeExternal</span></a>(<span style="white-space:nowrap">output:<a class="type" title="The IDataOutput interface provides a set of methods for writing binary data." href="../../openfl/utils/IDataOutput.html">IDataOutput</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>A class implements this method to encode itself for a data stream by calling the
+methods of the IDataOutput interface.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>output</code></th><td><p>The name of the class that implements the IDataOutput interface.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
