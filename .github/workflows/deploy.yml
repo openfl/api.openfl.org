@@ -33,7 +33,7 @@ jobs:
 
       - name: Install Haxe dependencies
         run: |
-          haxelib install dox 1.4.0
+          haxelib install dox 1.6.0
           haxelib dev lime lime
           haxelib dev openfl openfl
 
