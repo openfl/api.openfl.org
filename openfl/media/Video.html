@@ -151,15 +151,18 @@ the Camera object that is capturing the video stream. For recorded
 video files, this value is the width of the video.
 You may want to use this property, for example, to ensure that the
 user is seeing the video at the same size at which it was captured,
-regardless of the actual size of the Video object on the Stage.</p></div></div></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="attachNetStream"></a><h3 class="anchor"><code><a href="#attachNetStream"><span class="identifier">attachNetStream</span></a>(<span style="white-space:nowrap">netStream:<a class="type" title="openfl.net.NetStream - The NetStream class opens a one-way streaming channel over a NetConnection." href="../../openfl/net/NetStream.html">NetStream</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Specifies a video stream from a camera to be displayed within the
-boundaries of the Video object in the application.
-Use this method to attach live video captured by the user to the Video
-object. You can play the live video locally on the same computer or
-device on which it is being captured, or you can send it to Flash
-Media Server and use the server to stream it to other users.</p>
-<p><strong>Note:</strong> In an iOS AIR application, camera video cannot be displayed
-when the application uses GPU rendering mode.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>camera</code></th><td><p>A Camera object that is capturing video data. To drop
-the connection to the Video object, pass <code>null</code>.</p></td></tr></table></div></div><div class="field "><a name="clear"></a><h3 class="anchor"><code><a href="#clear"><span class="identifier">clear</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Clears the image currently displayed in the Video object (not the
+regardless of the actual size of the Video object on the Stage.</p></div></div></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="attachNetStream"></a><h3 class="anchor"><code><a href="#attachNetStream"><span class="identifier">attachNetStream</span></a>(<span style="white-space:nowrap">netStream:<a class="type" title="openfl.net.NetStream - The NetStream class opens a one-way streaming channel over a NetConnection." href="../../openfl/net/NetStream.html">NetStream</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Specifies a video stream to be displayed within the boundaries of the
+Video object in the application. The video stream is either a video
+file played with <code><a href="../../openfl/net/NetStream.html#play">NetStream.play</a>()</code>, a Camera object, or <code>null</code>. If
+you use a video file, it can be stored on the local file system or on
+Flash Media Server. If the value of the <code>netStream</code> argument is
+<code>null</code>, the video is no longer played in the Video object.
+You do not need to use this method if a video file contains only
+audio; the audio portion of video files is played automatically when
+you call <code><a href="../../openfl/net/NetStream.html#play">NetStream.play</a>()</code>. To control the audio associated with a
+video file, use the <code>soundTransform</code> property of the NetStream object
+that plays the video file.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>netStream</code></th><td><p>A NetStream object. To drop the connection to the
+Video object, pass <code>null</code>.</p></td></tr></table></div></div><div class="field "><a name="clear"></a><h3 class="anchor"><code><a href="#clear"><span class="identifier">clear</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Clears the image currently displayed in the Video object (not the
 video stream). This method is useful for handling the current image.
 For example, you can clear the last image or display standby
 information without hiding the Video object.</p></div></div></div>  <div class="inherited-fields well"><h3 class="section">Inherited Variables</h3><div class="fields"><h4><a href="#" class="expand-button"><i class="fa fa-arrow-circle-o-right"></i></a> Defined by <a class="type" title="openfl.display.DisplayObject - The DisplayObject class is the base class for all objects that can be placed on the display list." href="../../openfl/display/DisplayObject.html">DisplayObject</a></h4><div style="display:none"><div class="field "><a name="alpha"></a><h3 class="anchor"><code><span class="label label-meta label-meta-keep" title="Causes a field or type to be kept by DCE.">@:keep</span><a href="#alpha"><span class="identifier">alpha</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Indicates the alpha transparency value of the object specified. Valid
