@@ -15,17 +15,17 @@ jobs:
         with:
           repository: openfl/openfl
           path: openfl
-          ref: 9.2.1
+          ref: 9.2.2
       
       - uses: actions/checkout@v3
         with:
           repository: openfl/lime
           path: lime
-          ref: 8.0.1
+          ref: 8.0.2
       
       - uses: krdlab/setup-haxe@v1
         with:
-          haxe-version: 4.1.5
+          haxe-version: 4.2.5
 
       - name: Set HAXEPATH
         run: |
