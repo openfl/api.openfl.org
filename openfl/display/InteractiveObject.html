@@ -1136,10 +1136,11 @@ performance increases when the movie clip is translated(when its <em>x</em>
 and <em>y</em> position is changed).</p></div></div><div class="field "><a name="cacheAsBitmapMatrix"></a><h3 class="anchor"><code><a href="#cacheAsBitmapMatrix"><span class="identifier">cacheAsBitmapMatrix</span></a>:<a class="type" title="openfl.geom.Matrix - The Matrix class represents a transformation matrix that determines how to map points from one coordinate space to another." href="../../openfl/geom/Matrix.html">Matrix</a></code></h3><div class="doc"><p>If non-null, this Matrix object defines how a display object is rendered when <code>cacheAsBitmap</code> is set to
 <code>true</code>. The application uses this matrix as a transformation matrix that is applied when rendering the
 bitmap version of the display object.</p>
-<p><em>AIR profile support:</em> This feature is supported on mobile devices, but it is not supported on desktop
+<p><em>Adobe AIR profile support:</em> This feature is supported on mobile devices, but it is not supported on desktop
 operating systems. It also has limited support on AIR for TV devices. Specifically, on AIR for TV devices,
-supported transformations include scaling and translation, but not rotation and skewing. See AIR Profile
-Support for more information regarding API support across multiple profiles.</p>
+supported transformations include scaling and translation, but not rotation and skewing. See
+<a href="http://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html">AIR Profile Support</a>
+for more information regarding API support across multiple profiles.</p>
 <p>With <code>cacheAsBitmapMatrix</code> set, the application retains a cached bitmap image across various 2D
 transformations, including translation, rotation, and scaling. If the application uses hardware acceleration,
 the object will be stored in video memory as a texture. This allows the GPU to apply the supported

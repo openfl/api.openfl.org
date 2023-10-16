@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><!-- use theme color or fallback -->
+<!--use textcolor from settings, otherwise create a contrasting color to theme color-->
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.sensors.Geolocation - API Reference</title><meta name="description" content="The Geolocation class dispatches events in response to the device&#039;s location
+sensor."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+a,
+code a,
+code .type,
+.dark-theme a,
+.dark-theme code a,
+.dark-theme code .type {
+	color: #24afc4;
+}
+table {
+	margin-bottom: 20px;
+}
+.navbar .brand {
+	display: inline-flex;
+	align-items: center;
+	float: none;
+	text-shadow: 0 0 0 transparent;
+	min-height: 70px;
+}
+.nav-list>.active>a.treeLink,
+.nav-list>.active>a.treeLink:hover,
+.nav-list>.active>a.treeLink:focus,
+.dark-theme .nav-list>.active>a.treeLink,
+.dark-theme .nav-list>.active>a.treeLink:hover,
+.dark-theme .nav-list>.active>a.treeLink:focus {
+	background: #24afc4;
+	color: #ffffff;
+	text-shadow: 0 0 0 transparent;
+}
+
+.navbar .container {
+	width: 940px ;
+}
+@media (max-width: 767px) {
+	.navbar .container {
+		width: auto;
+	}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	.navbar .container {
+		width: 724px;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar .container {
+		width: 1170px;
+	}
+}
+.navbar .container img {
+	margin: 5px 0 0 4px;
+}
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/sensors/Geolocation.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> Geolocation</h1><h4><small>package <a href="../../openfl/sensors/index.html">openfl.sensors</a></small></h4>    <hr/><p class="availability"><em>Available on  AIR, Android, Flash, Linux, Neko, Windows, iOS, macOS</em></p></div><div class="body"><div class="doc doc-main"><p>The Geolocation class dispatches events in response to the device's location
+sensor.</p>
+<p>If a device supports geolocation, you can use this class to obtain the
+current geographical location of the device. The geographical location is
+displayed on the device in the form of latitudinal and longitudinal
+coordinates (in WGS-84 standard format). When the location of the device
+hanges, you can receive updates about the changes. If the device supports
+this feature, you will be able to obtain information about the altitude,
+accuracy, heading, speed, and timestamp of the latest change in the
+location.</p>
+<p>You can test for support at run time using the <code><a href="../../openfl/sensors/Geolocation.html#isSupported">Geolocation.isSupported</a></code>
+property.</p>
+<p><em>OpenFL target support:</em> Not currently supported, except when targeting AIR.</p>
+<p><em>Adobe AIR profile support:</em> This feature is supported only on mobile
+devices. It is not supported on desktop or AIR for TV devices. See
+<a href="https://help.adobe.com/en_US/air/build/WS144092a96ffef7cc16ddeea2126bb46b82f-8000.html">AIR Profile Support</a>
+for more information regarding API support across multiple profiles.</p>
+<p>Note: To enable Geolocation in iOS, ensure that you add a key-value pair to
+the <code>infoAdditions</code> element in the application xml file. See
+<a href="http://help.adobe.com/en_US/air/build/WSfffb011ac560372f7e64a7f12cd2dd1867-8000.html">iOS Settings</a>
+for more information on the <code>infoAdditions</code> element.</p></div><h3 class="section">Static variables</h3><div class="fields"><div class="field "><a name="LOCATION_ACCURACY_BEST"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;locationAccuracyBest&quot;)</span><span class="label label-static">static</span><span class="label label-final">final</span><span class="label">read only</span><a href="#LOCATION_ACCURACY_BEST"><span class="identifier">LOCATION_ACCURACY_BEST</span></a>:<span class="type">String</span><span> = &quot;locationAccuracyBest&quot;</span></code></h3><div class="doc"><p>The best level of accuracy available.</p></div></div><div class="field "><a name="LOCATION_ACCURACY_BEST_FOR_NAVIGATION"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;locationAccuracyBestForNavigation&quot;)</span><span class="label label-static">static</span><span class="label label-final">final</span><span class="label">read only</span><a href="#LOCATION_ACCURACY_BEST_FOR_NAVIGATION"><span class="identifier">LOCATION_ACCURACY_BEST_FOR_NAVIGATION</span></a>:<span class="type">String</span><span> = &quot;locationAccuracyBestForNavigation&quot;</span></code></h3><div class="doc"><p>The highest possible accuracy that uses additional sensor data to
+facilitate navigation apps.</p></div></div><div class="field "><a name="LOCATION_ACCURACY_HUNDRED_METERS"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;locationAccuracyHundredMeters&quot;)</span><span class="label label-static">static</span><span class="label label-final">final</span><span class="label">read only</span><a href="#LOCATION_ACCURACY_HUNDRED_METERS"><span class="identifier">LOCATION_ACCURACY_HUNDRED_METERS</span></a>:<span class="type">String</span><span> = &quot;locationAccuracyHundredMeters&quot;</span></code></h3><div class="doc"><p>Accurate to within one hundred meters.</p></div></div><div class="field "><a name="LOCATION_ACCURACY_KILOMETER"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;locationAccuracyKilometer&quot;)</span><span class="label label-static">static</span><span class="label label-final">final</span><span class="label">read only</span><a href="#LOCATION_ACCURACY_KILOMETER"><span class="identifier">LOCATION_ACCURACY_KILOMETER</span></a>:<span class="type">String</span><span> = &quot;locationAccuracyKilometer&quot;</span></code></h3><div class="doc"><p>Accurate to the nearest kilometer.</p></div></div><div class="field "><a name="LOCATION_ACCURACY_NEAREST_TEN_METERS"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;locationAccuracyNearestTenMeters&quot;)</span><span class="label label-static">static</span><span class="label label-final">final</span><span class="label">read only</span><a href="#LOCATION_ACCURACY_NEAREST_TEN_METERS"><span class="identifier">LOCATION_ACCURACY_NEAREST_TEN_METERS</span></a>:<span class="type">String</span><span> = &quot;locationAccuracyNearestTenMeters&quot;</span></code></h3><div class="doc"><p>Accurate to within ten meters of the desired target.</p></div></div><div class="field "><a name="LOCATION_ACCURACY_THREE_KILOMETERS"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;locationAccuracyThreeKilometers&quot;)</span><span class="label label-static">static</span><span class="label label-final">final</span><span class="label">read only</span><a href="#LOCATION_ACCURACY_THREE_KILOMETERS"><span class="identifier">LOCATION_ACCURACY_THREE_KILOMETERS</span></a>:<span class="type">String</span><span> = &quot;locationAccuracyThreeKilometers&quot;</span></code></h3><div class="doc"><p>Accurate to the nearest three kilometers.</p></div></div><div class="field "><a name="isSupported"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#isSupported"><span class="identifier">isSupported</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Whether a location sensor is available on the device (<code>true</code>);
+otherwise <code>false</code>.</p></div></div></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><a href="#new"><span class="identifier">new</span></a>()</code></h3><div class="doc"><p>Creates a new Geolocation instance.</p></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="desiredAccuracy"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(LOCATION_ACCURACY_BEST)</span><a href="#desiredAccuracy"><span class="identifier">desiredAccuracy</span></a>:<span class="type">String</span><span> = LOCATION_ACCURACY_BEST</span></code></h3><div class="doc"><p>This property determines the accuracy of the geolocation data on iOS.
+Setting <code>pausesLocationUpdatesAutomatically</code> to <code>false</code> can cause
+battery drain as it keeps fetching geolocation data. Accuracy can be set
+to <code>LOCATION_ACCURACY_BEST_FOR_NAVIGATION</code>, <code>LOCATION_ACCURACY_BEST</code>,
+<code>LOCATION_ACCURACY_NEAREST_TEN_METERS</code>,
+<code>LOCATION_ACCURACY_HUNDRED_METERS</code>, <code>LOCATION_ACCURACY_KILOMETER</code> or
+<code>LOCATION_ACCURACY_THREE_KILOMETERS</code> based on the app's usage scenario.
+Set the property after calling <code>requestPermission()</code> and enabling
+location services in background. The default value of the property is
+<code>LOCATION_ACCURACY_BEST</code> which is the best level of accuracy available.</p></div></div><div class="field "><a name="locationAlwaysUsePermission"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><a href="#locationAlwaysUsePermission"><span class="identifier">locationAlwaysUsePermission</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>This property determines the access permission type usage of
+geolocation. The permission type can be Always or When In Use. If the
+property is set to <code>false</code>, it requests When In Use permission else it
+requests Always use permission. Set the property before calling
+<code>requestPermission()</code>. The default value of the property is <code>false</code>.</p></div></div><div class="field "><a name="muted"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><span class="label">read only</span><a href="#muted"><span class="identifier">muted</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>Specifies whether the user has denied access to the geolocation (<code>true</code>)
+or allowed access (<code>false</code>). When this value changes, a <code>status</code> event
+is dispatched.</p></div></div><div class="field "><a name="pausesLocationUpdatesAutomatically"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(true)</span><a href="#pausesLocationUpdatesAutomatically"><span class="identifier">pausesLocationUpdatesAutomatically</span></a>:<span class="type">Bool</span><span> = true</span></code></h3><div class="doc"><p>This property determines whether the geolocation services should pause
+due to app inactivity when application goes into background (on iOS).
+The value can be <code>true</code> or <code>false</code>. If the property is set to <code>false</code>,
+it ensures continous updates of geolocation services. Set the property
+after calling <code>requestPermission()</code> and enabling location services in
+background. The default value of the property is true.</p></div></div><div class="field "><a name="permissionStatus"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(UNKNOWN)</span><span class="label">read only</span><a href="#permissionStatus"><span class="identifier">permissionStatus</span></a>:<a class="type" title="openfl.permissions.PermissionStatus - The PermissionStatus class is an enumeration of constant values that specify the authorization status of a permission." href="../../openfl/permissions/PermissionStatus.html">PermissionStatus</a><span> = UNKNOWN</span></code></h3><div class="doc"><p>Determine whether the application has been granted the permission to
+access Geolocation.</p></div></div></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="requestPermission"></a><h3 class="anchor"><code><a href="#requestPermission"><span class="identifier">requestPermission</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Requests permission to access Geolocation.</p></div></div><div class="field "><a name="setRequestedUpdateInterval"></a><h3 class="anchor"><code><a href="#setRequestedUpdateInterval"><span class="identifier">setRequestedUpdateInterval</span></a>(<span style="white-space:nowrap">interval:<span class="type">Float</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Used to set the time interval for updates, in milliseconds. The update
+interval is only used as a hint to conserve the battery power. The
+actual time between location updates may be greater or lesser than this
+value. Any change in the update interval using this method affects all
+registered update event listeners. The Geolocation class can be used
+without calling the <code>setRequestedUpdateInterval()</code> method. In this case,
+the platform will return updates based on its default interval.</p>
+<p>Note: First-generation iPhones, which do not include a GPS unit,
+dispatch <code>update</code> events only occasionally. On these devices, a
+Geolocation object initially dispatches one or two <code>update</code> events. It
+then dispatches <code>update</code> events when information changes noticeably.</p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

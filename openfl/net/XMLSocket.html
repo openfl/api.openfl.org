@@ -267,7 +267,11 @@ the function will be garbage-collected and no
 longer persistent. If you create references to the
 inner function(save it in another variable) then
 it is not garbage-collected and stays
-persistent.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The <code>listener</code> specified is not a
+persistent.</p>
+<p>Weak references are supported on some OpenFL
+targets only, including html5, cpp, and
+flash/air. On other targets, this parameter is
+ignored, and the reference will be strong instead.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The <code>listener</code> specified is not a
 function.</p></td></tr></table></div></div><div class="field "><a name="dispatchEvent"></a><h3 class="anchor"><code><a href="#dispatchEvent"><span class="identifier">dispatchEvent</span></a>(<span style="white-space:nowrap">event:<a class="type" title="openfl.events.Event - The Event class is used as the base class for the creation of Event objects, which are passed as parameters to event listeners when an event occurs." href="../../openfl/events/Event.html">Event</a></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Dispatches an event into the event flow. The event target is the
 EventDispatcher object upon which the <code>dispatchEvent()</code> method
 is called.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>event</code></th><td><p>The Event object that is dispatched into the event flow. If

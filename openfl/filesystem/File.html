@@ -54,7 +54,7 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/filesystem/File.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> File</h1><h4><small>package <a href="../../openfl/filesystem/index.html">openfl.filesystem</a></small></h4><h4><small>extends <a class="type" title="openfl.net.FileReference - The FileReference class provides a means to upload and download files between a user&#039;s computer and a server." href="../../openfl/net/FileReference.html">FileReference</a> &rsaquo; <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><hr/><p class="availability"><em>Available on  AIR, Android, Flash, Linux, Neko, Windows, iOS, macOS</em></p></div><div class="body"><div class="doc doc-main"><p>A File object represents a path to a file or directory. This can be an existing file
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/filesystem/File.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> File</h1><h4><small>package <a href="../../openfl/filesystem/index.html">openfl.filesystem</a></small></h4><h4><small>extends <a class="type" title="openfl.net.FileReference - The FileReference class provides a means to upload and download files between a user&#039;s computer and a server." href="../../openfl/net/FileReference.html">FileReference</a> &rsaquo; <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><hr/><p class="availability"><em>Available on  AIR, Android, Flash, Linux, Neko, Windows, iOS, macOS</em></p></div><div class="body"><div class="doc doc-main"><p>A File object represents a path to a file or directory. This can be an existing file
 or directory, or it can be one that does not yet exist; for instance, it can represent
 the path to a file or directory that you plan to create.</p>
 <p>The File class has a number of properties and methods for getting information about the
@@ -152,7 +152,17 @@ var directory:File = File.documentsDirectory;
 directory = directory.resolvePath("OpenFL Test");
 
 File.createDirectory(directory);
-trace(directory.exists); // true</code></pre></div></div><div class="field "><a name="userDirectory"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#userDirectory"><span class="identifier">userDirectory</span></a>:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>The user's directory.</p>
+trace(directory.exists); // true</code></pre></div></div><div class="field "><a name="lineEnding"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#lineEnding"><span class="identifier">lineEnding</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>The line-ending character sequence used by the host operating system.</p>
+<p>On Mac OS and Linux, this is the line-feed character (character code
+<code>0x0A</code> hexadecimal). On Windows, this is the carriage return character
+(character code <code>0x0D</code> hexadecimal) followed by the line-feed character
+(character code <code>0x0A</code> hexadecimal).</p></div></div><div class="field "><a name="separator"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#separator"><span class="identifier">separator</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>The host operating system's path component separator character.</p>
+<p>On Mac OS and Linux, this is the forward slash (<code>/</code>) character. On
+Windows, it is the backslash (<code>\</code>) character.</p>
+<p>Note: When using the backslash character in a String literal, remember
+to type the character twice (as in <code>"directory\\file.ext"</code>). Each pair
+of backslashes in a String literal represent a single backslash in the
+String.</p></div></div><div class="field "><a name="userDirectory"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#userDirectory"><span class="identifier">userDirectory</span></a>:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>The user's directory.</p>
 <p>On Windows, this is the parent of the My Documents directory (for example, C:\Documents and Settings\userName).
 On Mac OS, it is /Users/userName. On Linux, it is /home/userName.</p>
 <p>The userDirectory property provides a way to reference the user directory that works across platforms. If you
@@ -231,7 +241,10 @@ for the existence of the file.</p>
 var temp:File = File.createTempFile();
 trace(temp.exists); // true
 temp.deleteFile();
-trace(temp.exists); // false</code></pre></div></div><div class="field "><a name="isDirectory"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#isDirectory"><span class="identifier">isDirectory</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether the reference is to a directory.  The value is true if the File object points to a directory; false otherwise.</p>
+trace(temp.exists); // false</code></pre></div></div><div class="field "><a name="icon"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(null)</span><span class="label">read only</span><a href="#icon"><span class="identifier">icon</span></a>:<a class="type" title="openfl.desktop.Icon - The Icon class represents an operating system icon." href="../../openfl/desktop/Icon.html">Icon</a><span> = null</span></code></h3><div class="doc"><p>An Icon object containing the icons defined for the file. An Icon object
+is an array of BitmapData objects corresponding to the various icon
+states. On Linux, the Icon object contains no icons. On Android, the
+<code>icon</code> property is <code>null</code>.</p></div></div><div class="field "><a name="isDirectory"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#isDirectory"><span class="identifier">isDirectory</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether the reference is to a directory.  The value is true if the File object points to a directory; false otherwise.</p>
 <p>The following code creates an array of File objects pointing to files and directories in the user directory and then uses the
 isDirectory property to list only those File objects that point to directories (not to files).</p>
 <pre><code class="prettyprint hx">import openfl.filesystem.*;
@@ -692,12 +705,12 @@ not called successfully, an exception is
 thrown with a message indicating that
 functions were called in the incorrect
 sequence or an earlier call was
-unsuccessful.</p></td></tr></table></div></div><div class="field "><a name="size"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#size"><span class="identifier">size</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The size of the file on the local disk in bytes. If <code>size</code> is 0, an
-exception is thrown.
-<em>Note:</em> In the initial version of ActionScript 3.0, the <code>size</code>
-property was defined as a uint object, which supported files with
-sizes up to about 4 GB. It is now implemented as a Number object to
-support larger files.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>If the file cannot be opened or read, or
+unsuccessful.</p></td></tr></table></div></div><div class="field "><a name="size"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#size"><span class="identifier">size</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>The size of the file on the local disk in bytes. If <code>size</code> is 0, an
+exception is thrown.</p>
+<p><em>Note:</em> In the initial version of ActionScript 3.0, the <code>size</code>
+property was defined as a <code>uint</code> object, which supported files with
+sizes up to about 4 GB. It was later implemented as a <code>Number</code> object to
+support larger files. In OpenFL, it is <code>Float</code> to match <code>Number</code>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>If the file cannot be opened or read, or
 if a similar error is encountered in
 accessing the file, an exception is
 thrown with a message indicating a file
@@ -1259,7 +1272,11 @@ the function will be garbage-collected and no
 longer persistent. If you create references to the
 inner function(save it in another variable) then
 it is not garbage-collected and stays
-persistent.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The <code>listener</code> specified is not a
+persistent.</p>
+<p>Weak references are supported on some OpenFL
+targets only, including html5, cpp, and
+flash/air. On other targets, this parameter is
+ignored, and the reference will be strong instead.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The <code>listener</code> specified is not a
 function.</p></td></tr></table></div></div><div class="field "><a name="dispatchEvent"></a><h3 class="anchor"><code><a href="#dispatchEvent"><span class="identifier">dispatchEvent</span></a>(<span style="white-space:nowrap">event:<a class="type" title="openfl.events.Event - The Event class is used as the base class for the creation of Event objects, which are passed as parameters to event listeners when an event occurs." href="../../openfl/events/Event.html">Event</a></span>):<span class="type">Bool</span></code></h3><div class="doc"><p>Dispatches an event into the event flow. The event target is the
 EventDispatcher object upon which the <code>dispatchEvent()</code> method
 is called.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>event</code></th><td><p>The Event object that is dispatched into the event flow. If
