@@ -153,11 +153,11 @@ and its size increases to the left and right by the <code>dx</code> value, and t
 the top and the bottom by the <code>dy</code> value.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>dx</code></th><td><p>The value to be added to the left and the right of the
 Rectangle object. The following equation is used to
 calculate the new width and position of the rectangle:</p>
-<pre><code class="prettyprint as3">x -= dx;
+<pre><code class="prettyprint haxe">x -= dx;
 width += 2 * dx;</code></pre></td></tr><tr><th style="width:25%;"><code>dy</code></th><td><p>The value to be added to the top and the bottom of the
 Rectangle. The following equation is used to calculate the
 new height and position of the rectangle:</p>
-<pre><code>y -= dy;
+<pre><code class="prettyprint haxe">y -= dy;
 height += 2 * dy;</code></pre></td></tr></table></div></div><div class="field "><a name="inflatePoint"></a><h3 class="anchor"><code><a href="#inflatePoint"><span class="identifier">inflatePoint</span></a>(<span style="white-space:nowrap">point:<a class="type" title="openfl.geom.Point - The Point object represents a location in a two-dimensional coordinate system, where x represents the horizontal axis and y represents the vertical axis." href="../../openfl/geom/Point.html">Point</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Increases the size of the Rectangle object. This method is similar to
 the <code><a href="../../openfl/geom/Rectangle.html#inflate">Rectangle.inflate</a>()</code> method except it takes a Point object as a
 parameter.
@@ -197,4 +197,4 @@ rectangles.</p>
 <p><img src="/images/rectangle_union.jpg" alt="The resulting union rectangle." /></p>
 <p><strong>Note:</strong> The <code>union()</code> method ignores rectangles with <code>0</code> as the
 height or width value, such as: <code>var rect2:<a href="../../openfl/geom/Rectangle.html#Rectangle">Rectangle</a> = new <a href="../../openfl/geom/Rectangle.html#Rectangle">Rectangle</a>(300,300,50,0);</code></p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>toUnion</code></th><td><p>A Rectangle object to add to this Rectangle object.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A new Rectangle object that is the union of the two
-rectangles.</p></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+rectangles.</p></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

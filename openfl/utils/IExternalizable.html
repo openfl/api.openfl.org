@@ -72,28 +72,28 @@ members of a class will not be available.</p>
 <p>To serialize private members, a class must use the IExternalizable interface. For
 example, the following class will not serialize any of its members because they are
 private:</p>
-<pre><code class="prettyprint as3">class Example {
+<pre><code class="prettyprint haxe">class Example {
 
-	private var one:int;
-	private var two:int;
+	private var one:Int;
+	private var two:Int;
 }</code></pre>
 <p>However, if you implement the IExternalizable interface, you can write to, and read
 from, the data stream the private members of the class as follows:</p>
-<pre><code class="prettyprint as3">class Example implement IExternalizable {
+<pre><code class="prettyprint haxe">class Example implement IExternalizable {
 
-	private var one:int;
-	private var two:int;
+	private var one:Int;
+	private var two:Int;
 
-	public function writeExternal(output:IDataOutput) {
+	public function writeExternal(output:IDataOutput):Void {
 
-			output.writeInt(one);
-			output.writeInt(two);
+		output.writeInt(one);
+		output.writeInt(two);
 	}
 
-	public function readExternal(input:IDataInput) {
+	public function readExternal(input:IDataInput):Void {
 
-			one = input.readInt();
-			two = input.readInt();
+		one = input.readInt();
+		two = input.readInt();
 	}
 }</code></pre>
 <p><strong>Note:</strong> If a class implements IExternalizable the default serialization no longer
@@ -101,33 +101,33 @@ applies to instances of that class. If that class inherits public members from a
 class, you must carefully manage those members as well.</p>
 <p>When a subclass of a class implementing IExternalizable has private members of its own,
 the subclass must override the methods of IExternalizable, as follows:</p>
-<pre><code class="prettyprint as3">public class Base implements IExternalizable {
+<pre><code class="prettyprint haxe">class Base implements IExternalizable {
 
 	private var one:Boolean;
 
-	public function writeExternal(output:IDataOutput):void {
+	public function writeExternal(output:IDataOutput):Void {
 
 		output.writeBoolean(one);
 	}
 
-	public function readExternal(input:IDataInput):void {
+	public function readExternal(input:IDataInput):Void {
 
 		one = input.readBoolean();
 	}
 }
 
-public class Example extends Base {
+class Example extends Base {
 
 	private var one:String;
 
 
-	public override function writeExternal(output:IDataOutput):void {
+	public override function writeExternal(output:IDataOutput):Void {
 
 		super.writeExternal(output);
 		output.writeUTF(one);
 	}
 
-	public override function readExternal(input:IDataInput):void {
+	public override function readExternal(input:IDataInput):Void {
 
 		super.readExternal(input);
 		one = input.readUTF();
@@ -135,20 +135,20 @@ public class Example extends Base {
 }</code></pre>
 <p>The IExternalizable interface can also be used to compress data before writing it to a
 data stream. For example:</p>
-<pre><code class="prettyprint as3">class Example implements IExternalizable {
+<pre><code class="prettyprint haxe">class Example implements IExternalizable {
 
-	public var one:Boolean;
-	public var two:Boolean;
-	public var three:Boolean;
-	public var four:Boolean;
-	public var five:Boolean;
-	public var six:Boolean;
-	public var seven:Boolean;
-	public var eight:Boolean;
+	public var one:Bool;
+	public var two:Bool;
+	public var three:Bool;
+	public var four:Bool;
+	public var five:Bool;
+	public var six:Bool;
+	public var seven:Bool;
+	public var eight:Bool;
 
-	public function writeExternal(output:IDataOutput) {
+	public function writeExternal(output:IDataOutput):Void {
 
-		var flag:int = 0;
+		var flag:Int = 0;
 
 		if (one) flag |= 1;
 		if (two) flag |= 2;
@@ -162,9 +162,9 @@ data stream. For example:</p>
 		output.writeByte(flag);
 	}
 
-	public function readExternal(input:IDataInput) {
+	public function readExternal(input:IDataInput):Void {
 
-		var flag:int = input.readByte();
+		var flag:Int = input.readByte();
 
 		one = (flag &amp; 1) != 0;
 		two = (flag &amp; 2) != 0;
@@ -178,4 +178,4 @@ data stream. For example:</p>
 }</code></pre></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="readExternal"></a><h3 class="anchor"><code><a href="#readExternal"><span class="identifier">readExternal</span></a>(<span style="white-space:nowrap">input:<a class="type" title="openfl.utils.IDataInput - The IDataInput interface provides a set of methods for reading binary data." href="../../openfl/utils/IDataInput.html">IDataInput</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>A class implements this method to decode itself from a data stream by calling the
 methods of the IDataInput interface. This method must read the values in the same
 sequence and with the same types as were written by the <code>writeExternal()</code> method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>input</code></th><td><p>The name of the class that implements the IDataInput interface.</p></td></tr></table></div></div><div class="field "><a name="writeExternal"></a><h3 class="anchor"><code><a href="#writeExternal"><span class="identifier">writeExternal</span></a>(<span style="white-space:nowrap">output:<a class="type" title="openfl.utils.IDataOutput - The IDataOutput interface provides a set of methods for writing binary data." href="../../openfl/utils/IDataOutput.html">IDataOutput</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>A class implements this method to encode itself for a data stream by calling the
-methods of the IDataOutput interface.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>output</code></th><td><p>The name of the class that implements the IDataOutput interface.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+methods of the IDataOutput interface.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>output</code></th><td><p>The name of the class that implements the IDataOutput interface.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

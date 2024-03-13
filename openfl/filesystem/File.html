@@ -73,13 +73,13 @@ on each of these platforms. To write applications that work well across platform
 properties as the basis for referencing other files used by the application. Then use the
 resolvePath() method to refine the path. For example, this code points to the preferences.xml
 file in the application storage directory:</p>
-<pre><code class="prettyprint hx">	var prefsFile:File = File.applicationStorageDirectory;
-	prefsFile = prefsFile.resolvePath("preferences.xml");</code></pre>
+<pre><code class="prettyprint haxe">var prefsFile:File = File.applicationStorageDirectory;
+prefsFile = prefsFile.resolvePath("preferences.xml");</code></pre>
 <p>If you use a literal native path in referencing a file, it will only work on one platform.
 For example, the following File object would only work on Windows:</p>
-<pre><code class="prettyprint hx">	new File("C:\Documents and Settings\joe\My Documents\test.txt")</code></pre>
+<pre><code class="prettyprint haxe">new File("C:\Documents and Settings\joe\My Documents\test.txt")</code></pre>
 <p>The application storage directory is particularly useful. It gives an application-specific
-storage directory for the AIR application. It is defined by the File.applicationStorageDirectory
+storage directory for the OpenFL application. It is defined by the File.applicationStorageDirectory
 property.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>cancel</code></th><td><p>Dispatched when a pending asynchronous operation is canceled.</p></td></tr><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched when an asynchronous operation is complete.</p></td></tr><tr class="indent"><th style="width:25%;"><code>directoryListing</code></th><td><p>Dispatched when a directory list is available as a result of a
 call to the getDirectoryListingAsync() method.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>Dispatched when an error occurs during an asynchronous file operation.</p></td></tr><tr class="indent"><th style="width:25%;"><code>securityError</code></th><td><p>Dispatched when an operation violates a security constraint.</p></td></tr><tr class="indent"><th style="width:25%;"><code>select</code></th><td><p>Dispatched when the user selects a file or directory from a file-
 or directory-browsing dialog box.</p></td></tr><tr class="indent"><th style="width:25%;"><code>selectMultiple</code></th><td><p>Dispatched when the user selects files from the dialog box opened
@@ -118,7 +118,7 @@ storage directory that works across platforms. If you set a File object to refer
 application storage directory using the nativePath or url property, it will only work on
 the platform for which that path is valid.</p>
 <p>The following code creates a File object pointing to the "images" subdirectory of the application storage directory.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 
 var tempFiles:File = File.applicationStorageDirectory;
 tempFiles = tempFiles.resolvePath("images/");
@@ -128,12 +128,12 @@ set a File object to reference the desktop directory using the nativePath or url
 platform for which that path is valid.</p>
 <p>If an operating system does not support a desktop directory, a suitable directory in the file system is used instead.</p>
 <p>The following code outputs a list of files and directories contained in the user's desktop directory.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 var desktop:File = File.desktopDirectory;
 
 var files:Array = desktop.getDirectoryListing();
 
-for (var i:uint = 0; i &lt; files.length; i++) {
+for (i in 0...files.length) {
 	trace(files[i].nativePath);
 }</code></pre></div></div><div class="field "><a name="documentsDirectory"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#documentsDirectory"><span class="identifier">documentsDirectory</span></a>:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>The user's documents directory.</p>
 <p>On Windows, this is the My Documents directory (for example, C:\Documents and Settings\userName\My
@@ -146,7 +146,7 @@ property, it will only work on the platform for which that path is valid.</p>
 is used instead.</p>
 <p>The following code uses the File.documentsDirectory property and the File.createDirectory() method to
 ensure that a directory named "OpenFL Test" exists in the user's documents directory.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 
 var directory:File = File.documentsDirectory;
 directory = directory.resolvePath("OpenFL Test");
@@ -171,10 +171,10 @@ path is valid.</p>
 <p>If an operating system does not support a user directory, a suitable directory in the file system is used
 instead.</p>
 <p>The following code outputs a list of files and directories contained in the root level of the user directory:</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 
 var files:Array = File.userDirectory.listDirectory();
-for (var i:uint = 0; i &lt; files.length; i++) {
+for (i in 0...files.length) {
 	trace(files[i].nativePath);
 }</code></pre></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="createTempDirectory"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#createTempDirectory"><span class="identifier">createTempDirectory</span></a>():<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>Returns a reference to a new temporary directory. This is a new directory in the system's
 temporary directory path.</p>
@@ -184,7 +184,7 @@ see that the directory is new and unique.</p>
 devices it is not deleted automatically.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>File A File object referencing the new temporary directory.
 The following code uses the createTempFile() method to obtain a reference to a new temporary
 directory.</p>
-<pre><code class="prettyprint hx">import openfl.File;
+<pre><code class="prettyprint haxe">import openfl.File;
 var temp:File = File.createTempDirectory();
 trace(temp.nativePath);</code></pre>
 <p>Each time you run this code, a new (unique) file is created.</p></div></div></div><div class="field "><a name="createTempFile"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#createTempFile"><span class="identifier">createTempFile</span></a>():<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>Returns a reference to a new temporary file. This is a new file in the system's temporary
@@ -194,7 +194,7 @@ the file is new and unique.</p>
 <p>You may want to delete the temporary file before closing the application, since it is not deleted
 automatically.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>File A File object referencing the new temporary file;
 The following code uses the createTempFile() method to obtain a reference to a new temporary file.</p>
-<pre><code class="prettyprint hx">import openfl.File;
+<pre><code class="prettyprint haxe">import openfl.File;
 var temp:File = File.createTempFile();
 trace(temp.nativePath);</code></pre></div></div></div><div class="field "><a name="getRootDirectories"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#getRootDirectories"><span class="identifier">getRootDirectories</span></a>():<span class="type">Array</span>&lt;<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a>&gt;</code></h3><div class="doc"><p>Returns an array of File objects, listing the file system root directories.</p>
 <p>For example, on Windows this is a list of volumes such as the C: drive and the D: drive. An empty
@@ -208,11 +208,11 @@ OS and Linux, this method always returns the unique root directory for the machi
 
 	The following code outputs a list of root directories:
 
-	```hx
+	```haxe
 	import flash.filesystem.File;
 	var rootDirs:Array = File.getRootDirectories();
 
-	for (var i:uint = 0; i &lt; rootDirs.length; i++) {
+	for (i in 0...rootDirs.length) {
 		trace(rootDirs[i].nativePath);
 	}
 	```
@@ -231,12 +231,12 @@ static properties, which represent commonly used directories, and which are vali
 </code></pre>
 <p>You can then use the resolvePath() method to get a path relative to these directories. For example, the following code
 sets up a File object to point to the settings.xml file in the application storage directory:</p>
-<pre><code class="prettyprint hx">var file:File = File.applicationStorageDirectory.resolvePath("settings.xml");</code></pre><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>path</code></th><td><p>The path to the file. You can specify the path by using either a URL or native path (platform-specific)
+<pre><code class="prettyprint haxe">var file:File = File.applicationStorageDirectory.resolvePath("settings.xml");</code></pre><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>path</code></th><td><p>The path to the file. You can specify the path by using either a URL or native path (platform-specific)
 notation.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The syntax of the path parameter is invalid.</p></td></tr></table></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="exists"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#exists"><span class="identifier">exists</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether the referenced file or directory exists.  The value is true if the File object points
 to an existing file or directory, false otherwise.</p>
 <p>The following code creates a temporary file, then deletes it and uses the File.exists property to check
 for the existence of the file.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 
 var temp:File = File.createTempFile();
 trace(temp.exists); // true
@@ -247,10 +247,10 @@ states. On Linux, the Icon object contains no icons. On Android, the
 <code>icon</code> property is <code>null</code>.</p></div></div><div class="field "><a name="isDirectory"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#isDirectory"><span class="identifier">isDirectory</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether the reference is to a directory.  The value is true if the File object points to a directory; false otherwise.</p>
 <p>The following code creates an array of File objects pointing to files and directories in the user directory and then uses the
 isDirectory property to list only those File objects that point to directories (not to files).</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 
 var userDirFiles:Array = File.userDirectory.getDirectoryListing();
-for (var i:uint = 0; i &lt; userDirFiles.length; i++) {
+for (i in 0...userDirFiles.length) {
 	if (userDirFiles[i].isDirectory) {
 		trace(userDirFiles[i].nativePath);
 	}
@@ -258,10 +258,10 @@ for (var i:uint = 0; i &lt; userDirFiles.length; i++) {
 referenced file or directory is hidden, false otherwise.</p>
 <p>The following code creates an array of File objects pointing to files and directories in
 the user directory and then uses the isHidden property to list hidden files and directories.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 
 var userDirFiles:Array = File.userDirectory.getDirectoryListing();
-for (var i:uint = 0; i &lt; userDirFiles.length; i++) {
+for (i in 0...userDirFiles.length) {
 	if (userDirFiles[i].isHidden) {
 		trace(userDirFiles[i].nativePath);
 	}
@@ -282,7 +282,7 @@ commonly used directories, and which are valid on all platforms:</p>
 <p>You can use the resolvePath() method to get a path relative to these directories.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The syntax of the path is invalid.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The caller is not in the application security sandbox.
 The following code shows the difference between the nativePath property and the url property of a File object.
 The comments show results on an example Windows computer.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 var docs:File = File.documentsDirectory;
 trace(docs.nativePath); // C:\Documents and Settings\turing\My Documents
 trace(docs.url); // file:///C:/Documents%20and%20Settings/turing/My%20Documents</code></pre></td></tr></table></div></div><div class="field "><a name="parent"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#parent"><span class="identifier">parent</span></a>:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>The directory that contains the file or directory referenced by this File object.</p>
@@ -291,7 +291,7 @@ containing directory, even if that directory does not exist.</p>
 <p>This property is identical to the return value for resolvePath("..") except that the parent of a root directory
 is null.</p>
 <p>The following code uses the parent property to show the directory that contains a temporary file.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 
 var tempFile:File = File.createTempDirectory();
 trace(tempFile.parent.nativePath);
@@ -304,7 +304,7 @@ this method.</p><p class="javadoc">Parameters:</p><table class="table table-bord
 browseForDirectory()) is currently running.
 The following code uses the File.browseForDirectory() method to let the user select a directory. When the directory
 is selected, the code lists the contents of the selected directory in the trace() output.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 import openfl.events.Event;
 var directory:File = File.documentsDirectory;
 try
@@ -316,11 +316,11 @@ catch (error:Error)
 {
 	trace("Failed:", error.message);
 }
-function directorySelected(event:Event):void
+function directorySelected(event:Event):Void
 {
 	directory = event.target as File;
 	var files:Array = directory.getDirectoryListing();
-	for(var i:uint = 0; i &lt; files.length; i++)
+	for(i in 0...files.length)
 	{
 		trace(files[i].name);
 	}
@@ -333,7 +333,7 @@ If you omit this parameter, all files are displayed. For more information, see t
 browseForDirectory()) is currently running.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions.
 The following code uses the File.browseForOpen() method to let the user choose a text file. When the file is
 selected, the code reads the file data into a string.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 import openfl.events.Event;
 import openfl.net.FileFilter;
 var fileToOpen:File = new File();
@@ -347,7 +347,7 @@ catch (error:Error)
 {
 	trace("Failed:", error.message);
 }
-function fileSelected(event:Event):void
+function fileSelected(event:Event):Void
 {
 	var stream:FileStream = new FileStream();
 	stream.open(event.target, FileMode.READ);
@@ -364,7 +364,7 @@ If you omit this parameter, all files are displayed. For more information, see t
 browseForDirectory()) is currently running.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions.
 The following code uses the File.browseForOpenMultiple() method to let the user choose multiple files. When the
 files are selected, the code outputs the paths for the selected files.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 import openfl.events.FileListEvent;
 var docsDir:File = File.documentsDirectory;
 try
@@ -376,9 +376,9 @@ catch (error:Error)
 {
 	trace("Failed:", error.message);
 }
-function filesSelected(event:FileListEvent):void
+function filesSelected(event:FileListEvent):Void
 {
-	for (var i:uint = 0; i &lt; event.files.length; i++)
+	for (i in 0...event.files.length)
 	{
 		trace(event.files[i].nativePath);
 	}
@@ -392,7 +392,7 @@ If you omit this parameter, all files are displayed. For more information, see t
 browseForDirectory()) is currently running.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions.
 The following code uses the File.browseForSave() method to let the user select a path for saving a file. When
 the files are selected, the code saves data to the selected file path.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 import openfl.events.Event;
 var docsDir:File = File.documentsDirectory;
 try
@@ -404,7 +404,7 @@ catch (error:Error)
 {
 	trace("Failed:", error.message);
 }
-function saveData(event:Event):void
+function saveData(event:Event):Void
 {
 	var newFile:File = event.target as File;
 	var str:String = "Hello.";
@@ -423,13 +423,13 @@ regardless of whether the file or directory that is pointed to exists. On case s
 as Linux), when multiple files exist with names differing only in case, the canonicalize() method adjusts
 the path to match the first file found (in an order determined by the file system).</p>
 <p>The following code shows how to use the canonicalize() method to find the correct capitalization of a
-directory name. Before running this example, create a directory named AIR Test on the desktop of your computer.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+directory name. Before running this example, create a directory named <em>OpenFL Test</em> on the desktop of your computer.</p>
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 
-var path:File = File.desktopDirectory.resolvePath("air test");
+var path:File = File.desktopDirectory.resolvePath("openfl test");
 trace(path.nativePath);
 path.canonicalize();
-trace(path.nativePath); // ...\AIR Test</code></pre></div></div><div class="field "><a name="clone"></a><h3 class="anchor"><code><a href="#clone"><span class="identifier">clone</span></a>():<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>Returns a copy of this File object. Event registrations are not copied.</p>
+trace(path.nativePath); // ...\OpenFL Test</code></pre></div></div><div class="field "><a name="clone"></a><h3 class="anchor"><code><a href="#clone"><span class="identifier">clone</span></a>():<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a></code></h3><div class="doc"><p>Returns a copy of this File object. Event registrations are not copied.</p>
 <p>Note: This method does not copy the file itself. It simply makes a copy of the instance of the Haxe
 File object. To copy a file, use the copyTo() method.</p></div></div><div class="field "><a name="copyTo"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ overwrite : false })</span><a href="#copyTo"><span class="identifier">copyTo</span></a>(<span style="white-space:nowrap">newLocation:<a class="type" title="openfl.net.FileReference - The FileReference class provides a means to upload and download files between a user&#039;s computer and a server." href="../../openfl/net/FileReference.html">FileReference</a>,</span> <span style="white-space:nowrap">overwrite:<span class="type">Bool</span> = false</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Copies the file or directory at the location specified by this File object to the location
 specified by the newLocation parameter. The copy process creates any required parent directories
@@ -454,7 +454,7 @@ if (sourceFile.copyTo(destination, true)) {
 <p>The following code shows how to use the copyTo() method to copy a file. Before running this code,
 create a test1.txt file in the OpenFL Test subdirectory of the home directory on your computer. The
 resulting copied file is named test2.txt. The try and catch statements show how to respond to errors.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 var sourceFile:File = File.documentsDirectory;
 sourceFile = sourceFile.resolvePath("OpenFL Test/test1.txt");
 var destination:File = File.documentsDirectory;
@@ -474,9 +474,9 @@ resulting (copied) file or directory, not the path to the containing directory.<
 exists. If true, the operation overwrites existing file or directory of the same name.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to write to the destination.
 The following code shows how to use the copyToAsync() method to copy a file. Before running this code,
 be sure to create a test1.txt file in the OpenFL Test subdirectory of the documents directory on your computer.
-The resulting copied file is named test2.txt, and it is also in the AIR Test subdirectory. When you set the
+The resulting copied file is named test2.txt, and it is also in the <em>OpenFL Test</em> subdirectory. When you set the
 overwrite parameter to true, the operation overwrites any existing test2.txt file.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 import openfl.events.Event;
 var sourceFile:File = File.documentsDirectory;
 sourceFile = sourceFile.resolvePath("OpenFL Test/test1.txt");
@@ -484,7 +484,7 @@ var destination:File = File.documentsDirectory;
 destination = destination.resolvePath("OpenFL Test/test2.txt");
 sourceFile.copyToAsync(destination, true);
 sourceFile.addEventListener(Event.COMPLETE, fileCopiedHandler);
-function fileCopiedHandler(event:Event):void {
+function fileCopiedHandler(event:Event):Void {
 	trace("Done.");
 }</code></pre></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched when the file or directory has been successfully copied.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>The source does not exist; or the source could not be copied to the target; or the source
 and destination refer to the same file or folder and overwrite is set to true. On Windows, you cannot
@@ -492,9 +492,9 @@ copy a file that is open or a directory that contains a
 file that is open.</p></td></tr></table></div></div><div class="field "><a name="createDirectory"></a><h3 class="anchor"><code><a href="#createDirectory"><span class="identifier">createDirectory</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Creates the specified directory and any necessary parent directories. If the directory already exists,
 no action is taken.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The directory did not exist and could not be created.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions.
 The following code moves a file named test.txt on the desktop to the OpenFL Test subdirectory of the
-documents directory. The call to the createDirectory() method ensures that the OpenFL Test directory
+documents directory. The call to the createDirectory() method ensures that the <em>OpenFL Test</em> directory
 exists before the file is moved.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 var source:File = File.desktopDirectory.resolvePath("test.txt");
 var target:File = File.documentsDirectory.resolvePath("OpenFL Test/test.txt");
 var targetParent:File = target.parent;
@@ -504,56 +504,48 @@ subdirectories. When false, if the directory contains files or directories, a ca
 an exception.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The directory does not exist, or the directory could not be deleted. On Windows, you
 cannot delete a directory that contains a file that is open.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to delete the directory.
 The following code creates an empty directory and then uses the deleteDirectory() method to delete the directory.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 var directory:File = File.documentsDirectory.resolvePath("Empty Junk Directory/");
 File.createDirectory(directory);
 trace(directory.exists); // true
 directory.deleteDirectory();
-trace(directory.exists); // false</code></pre></td></tr></table></div></div><div class="field "><a name="deleteDirectoryAsync"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ deleteDirectoryContents : false })</span><a href="#deleteDirectoryAsync"><span class="identifier">deleteDirectoryAsync</span></a>(<span style="white-space:nowrap">deleteDirectoryContents:<span class="type">Bool</span> = false</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Deletes the directory asynchronously.</p>
-<p>@events complete Dispatched when the directory has been deleted successfully.
-@events ioError The directory does not exist or could not be deleted. On Windows, you cannot delete a
-directory that contains a file that is open.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>deleteDirectoryContents</code></th><td><p>Specifies whether or not to delete a directory that contains files or
+trace(directory.exists); // false</code></pre></td></tr></table></div></div><div class="field "><a name="deleteDirectoryAsync"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ deleteDirectoryContents : false })</span><a href="#deleteDirectoryAsync"><span class="identifier">deleteDirectoryAsync</span></a>(<span style="white-space:nowrap">deleteDirectoryContents:<span class="type">Bool</span> = false</span>):<span class="type">Void</span></code></h3><div class="doc"><p>Deletes the directory asynchronously.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>deleteDirectoryContents</code></th><td><p>Specifies whether or not to delete a directory that contains files or
 subdirectories. When false, if the directory contains files or directories, a call to this method throws
-an exception.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to delete the directory.</p></td></tr></table></div></div><div class="field "><a name="deleteFile"></a><h3 class="anchor"><code><a href="#deleteFile"><span class="identifier">deleteFile</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Deletes the file.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The directory does not exist, or the directory could not be deleted. On Windows, you
+an exception.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to delete the directory.</p></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched when the directory has been deleted successfully.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>The directory does not exist or could not be deleted. On Windows, you cannot delete a
+directory that contains a file that is open.</p></td></tr></table></div></div><div class="field "><a name="deleteFile"></a><h3 class="anchor"><code><a href="#deleteFile"><span class="identifier">deleteFile</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Deletes the file.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The directory does not exist, or the directory could not be deleted. On Windows, you
 cannot delete a directory that contains a file that is open.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to delete the directory.
 The following code creates a temporary file and then calls the deleteFile() method to delete it.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.*;
+<pre><code class="prettyprint haxe">import openfl.filesystem.*;
 var file:File = File.createTempFile();
 trace(file.exists); // true
 file.deleteFile();
-trace(file.exists); // false</code></pre></td></tr></table></div></div><div class="field "><a name="deleteFileAsync"></a><h3 class="anchor"><code><a href="#deleteFileAsync"><span class="identifier">deleteFileAsync</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Deletes the file asynchronously.</p>
-<p>@events complete Dispatched when the directory has been deleted successfully.
-@events ioError The directory does not exist or could not be deleted. On Windows, you cannot delete a
-directory that contains a file that is open.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to delete the directory.</p></td></tr></table></div></div><div class="field "><a name="getDirectoryListing"></a><h3 class="anchor"><code><a href="#getDirectoryListing"><span class="identifier">getDirectoryListing</span></a>():<span class="type">Array</span>&lt;<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a>&gt;</code></h3><div class="doc"><p>Returns an array of File objects corresponding to files and directories in the directory
+trace(file.exists); // false</code></pre></td></tr></table></div></div><div class="field "><a name="deleteFileAsync"></a><h3 class="anchor"><code><a href="#deleteFileAsync"><span class="identifier">deleteFileAsync</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Deletes the file asynchronously.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to delete the directory.</p></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched when the directory has been deleted successfully.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>The directory does not exist or could not be deleted. On Windows, you cannot delete a
+directory that contains a file that is open.</p></td></tr></table></div></div><div class="field "><a name="getDirectoryListing"></a><h3 class="anchor"><code><a href="#getDirectoryListing"><span class="identifier">getDirectoryListing</span></a>():<span class="type">Array</span>&lt;<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a>&gt;</code></h3><div class="doc"><p>Returns an array of File objects corresponding to files and directories in the directory
 represented by this File object. This method does not explore the contents of subdirectories.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Array An array of File objects.
 The following code shows how to use the getDirectoryListing() method to enumerate the contents of the
 user directory.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 var directory:File = File.userDirectory;
 var list:Array = directory.getDirectoryListing();
-for (var i:uint = 0; i &lt; list.length; i++) {
+for (i in 0...list.length) {
 	trace(list[i].nativePath);
 }</code></pre></div></div></div><div class="field "><a name="getDirectoryListingAsync"></a><h3 class="anchor"><code><a href="#getDirectoryListingAsync"><span class="identifier">getDirectoryListingAsync</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Asynchronously retrieves an array of File objects corresponding to the contents of the
-directory represented by this File object.</p>
-<p>@events ioError You do not have adequate permissions to read this directory, or the directory does
-not exist.
-@events directoryListing The directory contents have been enumerated successfully. The contents
-event includes a files property, which is the resulting array of File objects.</p>
-<p>The following code shows how to use the getDirectoryListingAsync() method to enumerate the contents
+directory represented by this File object.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>You do not have adequate permissions to read this directory, or the directory does
+not exist.</p></td></tr><tr class="indent"><th style="width:25%;"><code>directoryListing</code></th><td><p>The directory contents have been enumerated successfully. The contents
+event includes a files property, which is the resulting array of File objects.
+The following code shows how to use the getDirectoryListingAsync() method to enumerate the contents
 of the user directory.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 import openfl.events.FileListEvent;
-
 var directory:File = File.userDirectory;
 directory.getDirectoryListingAsync();
 directory.addEventListener(FileListEvent.DIRECTORY_LISTING, directoryListingHandler);
-
-function directoryListingHandler(event:FileListEvent):void {
+function directoryListingHandler(event:FileListEvent):Void {
 	var list:Array = event.files;
-	for (var i:uint = 0; i &lt; list.length; i++) {
+	for (i in 0...list.length) {
 		trace(list[i].nativePath);
 	}
-}</code></pre></div></div><div class="field "><a name="getRelativePath"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ useDotDot : false })</span><a href="#getRelativePath"><span class="identifier">getRelativePath</span></a>(<span style="white-space:nowrap">ref:<a class="type" title="openfl.net.FileReference - The FileReference class provides a means to upload and download files between a user&#039;s computer and a server." href="../../openfl/net/FileReference.html">FileReference</a>,</span> <span style="white-space:nowrap">useDotDot:<span class="type">Bool</span> = false</span>):<span class="type">String</span></code></h3><div class="doc"><p>Finds the relative path between two File paths.</p>
+}</code></pre></td></tr></table></div></div><div class="field "><a name="getRelativePath"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ useDotDot : false })</span><a href="#getRelativePath"><span class="identifier">getRelativePath</span></a>(<span style="white-space:nowrap">ref:<a class="type" title="openfl.net.FileReference - The FileReference class provides a means to upload and download files between a user&#039;s computer and a server." href="../../openfl/net/FileReference.html">FileReference</a>,</span> <span style="white-space:nowrap">useDotDot:<span class="type">Bool</span> = false</span>):<span class="type">String</span></code></h3><div class="doc"><p>Finds the relative path between two File paths.</p>
 <p>The relative path is the list of components that can be appended to (resolved against) this reference
 in order to locate the second (parameter) reference. The relative path is returned using the "/"
 separator character.</p>
@@ -575,7 +567,7 @@ the moveTo() method renames the file, rather than moving it to a new directory. 
 code, create a test1.txt file in the OpenFL Test subdirectory of the documents directory on your
 computer. When you set the overwrite parameter to true, the operation overwrites any existing test2.txt
 file.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 import openfl.events.Event;
 var sourceFile:File = File.documentsDirectory;
 sourceFile = sourceFile.resolvePath("OpenFL Test/test1.txt");
@@ -597,19 +589,19 @@ resulting (moved) file or directory, not the path to the containing directory.</
 operation overwrites any existing file or directory of the same name.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The application does not have the necessary permissions to move the file.
 The following code shows how to use the moveToAsync() method to rename a file. The original filename
 is test1.txt and the resulting name is test2.txt. Since both the source and destination File object
-point to the same directory (the Apollo Test subdirectory of the user's documents directory), the
+point to the same directory (the <em>OpenFL Test</em> subdirectory of the user's documents directory), the
 moveToAsync() method renames the file, rather than moving it to a new directory. Before running this
-code, create a test1.txt file in the Apollo Test subdirectory of the documents directory on your
+code, create a test1.txt file in the <em>OpenFL Test</em> subdirectory of the documents directory on your
 computer. When you set overwrite parameter to true, the operation overwrites any existing test2.txt file.</p>
-<pre><code class="prettyprint hx">import openfl.filesystem.File;
+<pre><code class="prettyprint haxe">import openfl.filesystem.File;
 import openfl.events.Event;
 var sourceFile:File = File.documentsDirectory;
-sourceFile = sourceFile.resolvePath("Apollo Test/test1.txt");
+sourceFile = sourceFile.resolvePath("OpenFL Test/test1.txt");
 var destination:File = File.documentsDirectory;
-destination = destination.resolvePath("Apollo Test/test2.txt");
+destination = destination.resolvePath("OpenFL Test/test2.txt");
 sourceFile.moveToAsync(destination, true);
 sourceFile.addEventListener(Event.COMPLETE, fileMoveCompleteHandler);
-function fileMoveCompleteHandler(event:Event):void
+function fileMoveCompleteHandler(event:Event):Void
 {
 	trace("Done.")
 }
@@ -1318,4 +1310,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

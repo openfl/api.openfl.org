@@ -177,8 +177,8 @@ property returns the user interface (UI) language, which refers to the
 language used for all menus, dialog boxes, error messages, and help
 files. The following table lists the possible values:</p><table><thead><th>Language</th><th>Value</th></thead><tbody><tr><td>Czech</td><td><code>cs</code></td></tr><tr><td>Danish</td><td><code>da</code></td></tr><tr><td>Dutch</td><td><code>nl</code></td></tr><tr><td>English</td><td><code>en</code></td></tr><tr><td>Finnish</td><td><code>fi</code></td></tr><tr><td>French</td><td><code>fr</code></td></tr><tr><td>German</td><td><code>de</code></td></tr><tr><td>Hungarian</td><td><code>hu</code></td></tr><tr><td>Italian</td><td><code>it</code></td></tr><tr><td>Japanese</td><td><code>ja</code></td></tr><tr><td>Korean</td><td><code>ko</code></td></tr><tr><td>Norwegian</td><td><code>no</code></td></tr><tr><td>Other/unknown</td><td><code>xu</code></td></tr><tr><td>Polish</td><td><code>pl</code></td></tr><tr><td>Portuguese</td><td><code>pt</code></td></tr><tr><td>Russian</td><td><code>ru</code></td></tr><tr><td>Simplified Chinese</td><td><code>zh-CN</code></td></tr><tr><td>Spanish</td><td><code>es</code></td></tr><tr><td>Swedish</td><td><code>sv</code></td></tr><tr><td>Traditional Chinese</td><td><code>zh-TW</code></td></tr><tr><td>Turkish</td><td><code>tr</code></td></tr></tbody></table>
 <p><em>Note:</em> The value of <code><a href="../../openfl/system/Capabilities.html#language">Capabilities.language</a></code> property is limited to
-the possible values on this list. Because of this limitation, Adobe
-AIR applications should use the first element in the
+the possible values on this list. Because of this limitation, OpenFL
+applications should use the first element in the
 <code><a href="../../openfl/system/Capabilities.html#languages">Capabilities.languages</a></code> array to determine the primary user interface
 language for the system.</p>
 <p>The server string is <code>L</code>.</p></div></div><div class="field "><a name="localFileReadDisable"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><span class="label label-static">static</span><span class="label">read only</span><a href="#localFileReadDisable"><span class="identifier">localFileReadDisable</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>Specifies whether read access to the user's hard disk has been
@@ -196,12 +196,12 @@ user's hard disk using load methods will fail if this property is set to
 <p>Reading runtime shared libraries is also blocked if this property is
 set to <code>true</code>, but reading local shared objects is allowed
 without regard to the value of this property.</p>
-<p>The server string is <code>LFD</code>.</p></div></div><div class="field "><a name="manufacturer"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#manufacturer"><span class="identifier">manufacturer</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Specifies the manufacturer of the running version of Flash Player or the
-AIR runtime, in the format <code>"Adobe</code>
-<code>_OSName_"</code>. The value for <code>_OSName_</code>
-could be <code>"Windows"</code>, <code>"Macintosh"</code>,
-<code>"Linux"</code>, or another operating system name. The server string
-is <code>M</code>.</p>
+<p>The server string is <code>LFD</code>.</p></div></div><div class="field "><a name="manufacturer"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#manufacturer"><span class="identifier">manufacturer</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Specifies the manufacturer of the running version of OpenFL, in the
+format "<em>ManufacturerName</em> <em>OSName</em>". The value for <code>_ManufacturerName_</code>
+is typically "OpenFL". When targeting Adobe Flash Player or AIR, the
+value for <code>_ManufacturerName_</code> is "Adobe". The value for <code>_OSName_</code>
+could be <code>"Windows"</code>, <code>"Macintosh"</code>, <code>"Linux"</code>, or another operating
+system name. The server string is <code>M</code>.</p>
 <p>Do <em>not</em> use <code><a href="../../openfl/system/Capabilities.html#manufacturer">Capabilities.manufacturer</a></code> to determine a
 capability based on the operating system if a more specific capability
 property exists. Basing a capability on the operating system is a bad
@@ -225,25 +225,24 @@ capability for which you are testing. For more information, see the
 Capabilities class description.</p></div></div><div class="field "><a name="pixelAspectRatio"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#pixelAspectRatio"><span class="identifier">pixelAspectRatio</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Specifies the pixel aspect ratio of the screen. The server string is
 <code>AR</code>.</p></div></div><div class="field "><a name="playerType"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;StandAlone&quot;)</span><span class="label label-static">static</span><span class="label">read only</span><a href="#playerType"><span class="identifier">playerType</span></a>:<span class="type">String</span><span> = &quot;StandAlone&quot;</span></code></h3><div class="doc"><p>Specifies the type of runtime environment. This property can have one of
 the following values:</p><ul><li><code>"ActiveX"</code> for the Flash Player ActiveX control used by
-Microsoft Internet Explorer</li><li><code>"Desktop"</code> for the Adobe AIR runtime(except for SWF
+Microsoft Internet Explorer</li><li><code>"Desktop"</code> for the Adobe AIR runtime (except for SWF
 content loaded by an HTML page, which has
 <code><a href="../../openfl/system/Capabilities.html#playerType">Capabilities.playerType</a></code> set to <code>"PlugIn"</code>)</li><li><code>"External"</code> for the external Flash Player&lt;ph
-outputclass="flashonly"> or in test mode</li><li><code>"PlugIn"</code> for the Flash Player browser plug-in(and for
+outputclass="flashonly"> or in test mode</li><li><code>"PlugIn"</code> for the Flash Player browser plug-in (and for
 SWF content loaded by an HTML page in an AIR application)</li><li><code>"StandAlone"</code> for the stand-alone Flash Player</li></ul>
 <p>The server string is <code>PT</code>.</p></div></div><div class="field "><a name="screenColor"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;color&quot;)</span><span class="label label-static">static</span><span class="label">read only</span><a href="#screenColor"><span class="identifier">screenColor</span></a>:<span class="type">String</span><span> = &quot;color&quot;</span></code></h3><div class="doc"><p>Specifies the screen color. This property can have the value
 <code>"color"</code>, <code>"gray"</code>(for grayscale), or
 <code>"bw"</code>(for black and white). The server string is
 <code>COL</code>.</p></div></div><div class="field "><a name="screenDPI"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#screenDPI"><span class="identifier">screenDPI</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Specifies the dots-per-inch(dpi) resolution of the screen, in pixels. The
 server string is <code>DP</code>.</p></div></div><div class="field "><a name="screenResolutionX"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#screenResolutionX"><span class="identifier">screenResolutionX</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Specifies the maximum horizontal resolution of the screen. The server
-string is <code>R</code>(which returns both the width and height of the
-screen). This property does not update with a user's screen resolution and
-instead only indicates the resolution at the time Flash Player or an Adobe
-AIR application started. Also, the value only specifies the primary
-screen.</p></div></div><div class="field "><a name="screenResolutionY"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#screenResolutionY"><span class="identifier">screenResolutionY</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Specifies the maximum vertical resolution of the screen. The server string
-is <code>R</code>(which returns both the width and height of the screen).
-This property does not update with a user's screen resolution and instead
-only indicates the resolution at the time Flash Player or an Adobe AIR
-application started. Also, the value only specifies the primary screen.</p></div></div><div class="field "><a name="serverString"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;&quot;)</span><span class="label label-static">static</span><span class="label">read only</span><a href="#serverString"><span class="identifier">serverString</span></a>:<span class="type">String</span><span> = &quot;&quot;</span></code></h3><div class="doc"><p>A URL-encoded string that specifies values for each Capabilities property.</p>
+string is <code>R</code> (which returns both the width and height of the screen).
+This property does not update with a user's screen resolution and
+instead only indicates the resolution at the time the OpenFL application
+started. Also, the value only specifies the primary screen.</p></div></div><div class="field "><a name="screenResolutionY"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#screenResolutionY"><span class="identifier">screenResolutionY</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Specifies the maximum vertical resolution of the screen. The server
+string is <code>R</code> (which returns both the width and height of the screen).
+This property does not update with a user's screen resolution and
+instead only indicates the resolution at the time the OpenFL application
+started. Also, the value only specifies the primary screen.</p></div></div><div class="field "><a name="serverString"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(&quot;&quot;)</span><span class="label label-static">static</span><span class="label">read only</span><a href="#serverString"><span class="identifier">serverString</span></a>:<span class="type">String</span><span> = &quot;&quot;</span></code></h3><div class="doc"><p>A URL-encoded string that specifies values for each Capabilities property.</p>
 <p>The following example shows a URL-encoded string:
 <code>A=t&amp;SA=t&amp;SV=t&amp;EV=t&amp;MP3=t&amp;AE=t&amp;VE=t&amp;ACC=f&amp;PR=t&amp;SP=t&amp;
 SB=f&amp;DEB=t&amp;V=WIN%208%2C5%2C0%2C208&amp;M=Adobe%20Windows&amp;
@@ -285,4 +284,4 @@ provide a user interface so that the user can indicate if no sound is playing.
 Then, your application can revert to a different codec.</p>
 <p>The following table shows the server string for each multichannel audio type:</p><table><thead><th>Multichannel audio type</th><th>Server string</th></thead><tbody><tr><td>AudioDecoder.DOLBY_DIGITAL</td><td>DD</td></tr><tr><td>AudioDecoder.DOLBY_DIGITAL_PLUS</td><td>DDP</td></tr><tr><td>AudioDecoder.DTS</td><td>DTS</td></tr><tr><td>AudioDecoder.DTS_EXPRESS</td><td>DTE</td></tr><tr><td>AudioDecoder.DTS_HD_HIGH_RESOLUTION_AUDIO</td><td>DTH</td></tr><tr><td>AudioDecoder.DTS_HD_MASTER_AUDIO</td><td>DTM</td></tr></tbody></table><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>A String value representing a multichannel audio type. The valid
 values are the constants defined in flash.media.AudioDecoder.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>The Boolean value <code>true</code> if the system supports the multichannel audio
-type passed in the <code>type</code> parameter. Otherwise, the return value is <code>false</code>.</p></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+type passed in the <code>type</code> parameter. Otherwise, the return value is <code>false</code>.</p></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

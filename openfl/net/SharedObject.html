@@ -303,7 +303,7 @@ already exist, this method creates one.
 To create a remote shared object, call <code>getRemote()</code> the call
 <code>connect()</code> to connect the remote shared object to the server, as in
 the following:</p>
-<pre><code class="prettyprint as3">var nc:NetConnection = new NetConnection();
+<pre><code class="prettyprint haxe">var nc:NetConnection = new NetConnection();
 nc.connect("rtmp://somedomain.com/applicationName");
 var myRemoteSO:SharedObject = SharedObject.getRemote("mo", nc.uri, false);
 myRemoteSO.connect(nc);</code></pre>
@@ -424,7 +424,7 @@ object. Any changes made locally — before the <code>sync</code> event is
 dispatched — might be lost.</p>
 <p>Call the <code>connect()</code> method to connect to a remote shared object, for
 example:</p>
-<pre><code class="prettyprint as3">var myRemoteSO:SharedObject = SharedObject.getRemote("mo", myNC.uri, false);
+<pre><code class="prettyprint haxe">var myRemoteSO:SharedObject = SharedObject.getRemote("mo", myNC.uri, false);
 myRemoteSO.connect(myNC);</code></pre><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>myConnection</code></th><td><p>A NetConnection object that uses the Real-Time
 Messaging Protocol (RTMP), such as a NetConnection
 object used to communicate with Flash Media
@@ -627,4 +627,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

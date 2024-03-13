@@ -62,6 +62,9 @@ protocols.</p>
 <p>To use the methods of the Socket class, first use the constructor, <code>new
 <a href="../../openfl/net/Socket.html#Socket">Socket</a></code>, to create a Socket object.</p>
 <p>A socket transmits and receives data asynchronously.</p>
+<p><em>OpenFL target support:</em> This feature is supported on all desktop operating
+systems, on iOS, and on Android. On the html5 target, it uses web sockets
+instead of raw unix-style sockets.</p>
 <p>On some operating systems, flush() is called automatically between
 execution frames, but on other operating systems, such as Windows, the
 data is never sent unless you call <code>flush()</code> explicitly. To ensure your
@@ -429,4 +432,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

@@ -63,8 +63,8 @@ Security class.</p>
 <p>This class contains only static methods and properties. You cannot
 create new instances of the System class.</p></div><h3 class="section">Static variables</h3><div class="fields"><div class="field "><a name="totalMemory"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#totalMemory"><span class="identifier">totalMemory</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The amount of memory(in bytes) currently in use that has been directly
 allocated by Flash Player or AIR.</p>
-<p>This property does not return <em>all</em> memory used by an Adobe AIR
-application or by the application(such as a browser) containing Flash
+<p>This property does not return <em>all</em> memory used by an OpenFL
+application or by the application (such as a browser) containing Flash
 Player content. The browser or operating system may consume other memory.
 The <code><a href="../../openfl/system/System.html#privateMemory">System.privateMemory</a></code> property reflects <em>all</em> memory
 used by an application.</p>
@@ -73,12 +73,12 @@ a uint object(<code>uint.MAX_VALUE</code>, or 4,294,967,295), then this
 property is set to 0. The <code><a href="../../openfl/system/System.html#totalMemoryNumber">System.totalMemoryNumber</a></code> property
 allows larger values.</p></div></div><div class="field "><a name="useCodePage"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><span class="label label-static">static</span><a href="#useCodePage"><span class="identifier">useCodePage</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>A Boolean value that determines which code page to use to interpret
 external text files. When the property is set to <code>false</code>,
-external text files are interpretted as Unicode.(These files must be
+external text files are interpretted as Unicode. (These files must be
 encoded as Unicode when you save them.) When the property is set to
 <code>true</code>, external text files are interpretted using the
 traditional code page of the operating system running the application. The
 default value of <code>useCodePage</code> is <code>false</code>.</p>
-<p>Text that you load as an external file(using
+<p>Text that you load as an external file (using
 <code><a href="../../openfl/display/Loader.html#load">Loader.load</a>()</code>, the URLLoader class or URLStream) must have
 been saved as Unicode in order for the application to recognize it as
 Unicode. To encode external files as Unicode, save the files in an
@@ -109,12 +109,17 @@ and leave <code>useCodePage</code> set to <code>false</code>. This way,
 the application(Flash Player 6 and later, or AIR) interprets the text as
 Unicode.</p></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="exit"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#exit"><span class="identifier">exit</span></a>(<span style="white-space:nowrap">code:<span class="type">Int</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Closes Flash Player.</p>
 <p><em>For the standalone Flash Player debugger version only.</em></p>
-<p>AIR applications should call the <code><a href="../../openfl/desktop/NativeApplication.html#exit">NativeApplication.exit</a>()</code>
-method to exit the application.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>code</code></th><td><p>A value to pass to the operating system. Typically, if the
+<p>OpenFL applications on desktop operating systems should call the
+<code><a href="../../openfl/desktop/NativeApplication.html#exit">NativeApplication.exit</a>()</code> method to exit the application. It is not
+recommended to manually exit an application on mobile operating systems.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>code</code></th><td><p>A value to pass to the operating system. Typically, if the
 process exits normally, the value is 0.</p></td></tr></table></div></div><div class="field "><a name="gc"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#gc"><span class="identifier">gc</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Forces the garbage collection process.</p>
-<p><em>For the Flash Player debugger version and AIR applications only.</em>
-In an AIR application, the <code><a href="../../openfl/system/System.html#gc">System.gc</a>()</code> method is only enabled
-in content running in the AIR Debug Launcher(ADL) or, in an installed
+<p><em>OpenFL target support:</em> This feature is supported on all desktop
+operating systems, on iOS, and on Android. This feature is not supported
+on the html5 target.</p>
+<p>For Adobe Flash Player, the <code><a href="../../openfl/system/System.html#gc">System.gc</a>()</code> method is only enabled in
+the debugger version of the runtime.</p>
+<p>In an AIR application, the <code><a href="../../openfl/system/System.html#gc">System.gc</a>()</code> method is only enabled
+in content running in the AIR Debug Launcher (ADL) or, in an installed
 application, in content in the application security sandbox.</p></div></div><div class="field "><a name="pause"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#pause"><span class="identifier">pause</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Pauses Flash Player or the AIR Debug Launcher(ADL). After calling this
 method, nothing in the application continues except the delivery of Socket
 events.</p>
@@ -126,7 +131,7 @@ method works from any security context when called as a result of a user
 event(such as a keyboard or input device event handler).</p>
 <p>This method is provided for SWF content running in Flash Player 9. It
 allows only adding String content to the Clipboard.</p>
-<p>Flash Player 10 content and content in the application security sandbox
-in an AIR application can call the <code><a href="../../openfl/desktop/Clipboard.html#setData">Clipboard.setData</a>()</code>
-method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>string</code></th><td><p>A plain-text string of characters to put on the system
-Clipboard, replacing its current contents(if any).</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+<p>Flash Player 10 content, content in the application security sandbox
+in an AIR application, and Haxe "sys" targets can call the
+<code><a href="../../openfl/desktop/Clipboard.html#setData">Clipboard.setData</a>()</code> method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>string</code></th><td><p>A plain-text string of characters to put on the system
+Clipboard, replacing its current contents(if any).</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

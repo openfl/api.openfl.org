@@ -95,9 +95,9 @@ persistent shared objects from it, and you now need to retrieve those
 persistent shared objects from that SWF file after porting it to
 version 7 or later, or from a different SWF file of version 7 or
 later, set <code><a href="../../openfl/system/Security.html#exactSettings">Security.exactSettings</a></code> to <code>false</code> before calling
-<code><a href="../../openfl/net/SharedObject.html#getLocal">SharedObject.getLocal</a>()</code>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>A Flash Player or AIR application already used
-the value of <code>exactSettings</code> at least once in a
-decision about player settings.</p></td></tr></table></div></div><div class="field "><a name="sandboxType"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#sandboxType"><span class="identifier">sandboxType</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Indicates the type of security sandbox in which the calling file is
+<code><a href="../../openfl/net/SharedObject.html#getLocal">SharedObject.getLocal</a>()</code>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>An OpenFL application already used the value of
+<code>exactSettings</code> at least once in a decision about
+player settings.</p></td></tr></table></div></div><div class="field "><a name="sandboxType"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#sandboxType"><span class="identifier">sandboxType</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Indicates the type of security sandbox in which the calling file is
 operating.
 <code><a href="../../openfl/system/Security.html#sandboxType">Security.sandboxType</a></code> has one of the following values:</p><ul><li><code>remote</code> (<code><a href="../../openfl/system/Security.html#REMOTE">Security.REMOTE</a></code>)הhis file is from an Internet URL and
 operates under domain-based sandbox rules.</li><li><code>localWithFile</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_FILE">Security.LOCAL_WITH_FILE</a></code>)הhis file is a local
@@ -120,8 +120,8 @@ content and data from any domain.</li></ul>
 Developer Center Topic: &lt;a
 href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
 scope="external">Security</a>.</p></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="allowDomain"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ p5 : null, p4 : null, p3 : null, p2 : null, p1 : null })</span><span class="label label-static">static</span><a href="#allowDomain"><span class="identifier">allowDomain</span></a>(<span style="white-space:nowrap">?p1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p2:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p3:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p4:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p5:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Lets SWF files in the identified domains access objects and variables
-in the SWF file that contains the <code>allowDomain()</code> call.
-<em>Note:</em> Calling this method from code in the AIR application sandbox
+in the SWF file that contains the <code>allowDomain()</code> call.</p>
+<p><em>Note:</em> Calling this method from code in the AIR application sandbox
 throws a SecurityError exception. Content outside of the application
 security domain cannot directly cross-script content in the
 application sandbox. However, content outside of the application
@@ -234,7 +234,7 @@ use load-balancing redirects or third-party servers.</p>
 object that you pass to <code><a href="../../openfl/display/Loader.html#load">Loader.load</a>()</code>. For example, if you load a
 child SWF file into a parent SWF, you can access the
 <code>contentLoaderInfo</code> property of the Loader object for the parent SWF:</p>
-<pre><code class="prettyprint as3">Security.allowDomain(loader.contentLoaderInfo.url)</code></pre>
+<pre><code class="prettyprint haxe">Security.allowDomain(loader.contentLoaderInfo.url)</code></pre>
 <p>Make sure that you wait until the child SWF file begins loading to get
 the correct value of the <code>url</code> property. To determine when the child
 SWF has begun loading, use the <code>progress</code> event.</p>
@@ -399,7 +399,7 @@ loadPolicyFile()</code>, the file isn't actually loaded until a network
 request that requires a policy file is made.
 With <code><a href="../../openfl/system/Security.html#loadPolicyFile">Security.loadPolicyFile</a>()</code>, Flash Player or AIR can load policy
 files from arbitrary locations, as shown in the following example:</p>
-<pre><code class="prettyprint as3">Security.loadPolicyFile("http://www.example.com/sub/dir/pf.xml");</code></pre>
+<pre><code class="prettyprint haxe">Security.loadPolicyFile("http://www.example.com/sub/dir/pf.xml");</code></pre>
 <p>This causes Flash Player or AIR to attempt to retrieve a policy file
 from the specified URL. Any permissions granted by the policy file at
 that location will apply to all content at the same level or lower in
@@ -457,4 +457,4 @@ HTML page that contains the SWF content.</p>
 <p>For more information related to security, see the Flash Player
 Developer Center Topic: &lt;a
 href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2023 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+scope="external">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="http://www.openfl.org">http://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
