@@ -7,17 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
       
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: openfl/openfl
           path: openfl
           ref: 9.3.4
       
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: openfl/lime
           path: lime
