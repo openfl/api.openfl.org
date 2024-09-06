@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net.URLStream - API Reference</title><meta name="description" content="The URLStream class provides low-level access to downloading URLs. Data is
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","HashLink","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net.URLStream - OpenFL API Reference</title><meta name="description" content="The URLStream class provides low-level access to downloading URLs. Data is
 made available to application code immediately as it is downloaded,
 instead of waiting until the entire file is complete as with URLLoader.
 The URLStream class also lets you close a stream before it finishes
@@ -61,7 +61,7 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/net/URLStream.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> URLStream</h1><h4><small>package <a href="../../openfl/net/index.html">openfl.net</a></small></h4><h4><small>extends <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <h4><small>implements <a class="type" title="openfl.utils.IDataInput - The IDataInput interface provides a set of methods for reading binary data." href="../../openfl/utils/IDataInput.html">IDataInput</a></small></h4><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The URLStream class provides low-level access to downloading URLs. Data is
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>HashLink</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/net/URLStream.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> URLStream</h1><h4><small>package <a href="../../openfl/net/index.html">openfl.net</a></small></h4><h4><small>extends <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <h4><small>implements <a class="type" title="openfl.utils.IDataInput - The IDataInput interface provides a set of methods for reading binary data." href="../../openfl/utils/IDataInput.html">IDataInput</a></small></h4><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The URLStream class provides low-level access to downloading URLs. Data is
 made available to application code immediately as it is downloaded,
 instead of waiting until the entire file is complete as with URLLoader.
 The URLStream class also lets you close a stream before it finishes
@@ -98,7 +98,7 @@ operation progresses. Data that has been
 received can be read immediately using the
 methods of the URLStream class.</p></td></tr><tr class="indent"><th style="width:25%;"><code>securityError</code></th><td><p>Dispatched if a call to <code><a href="../../openfl/net/URLStream.html#load">URLStream.load</a>()</code>
 attempts to load data from a server outside the
-security sandbox.</p></td></tr></table></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><a href="#new"><span class="identifier">new</span></a>()</code></h3><div class="doc"><p></p></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="bytesAvailable"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bytesAvailable"><span class="identifier">bytesAvailable</span></a>:<span class="type">UInt</span></code></h3><div class="doc"><p>Returns the number of bytes of data available for reading in the input
+security sandbox.</p></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/http-communications/loading-external-data.html">Loading external data</a></p></div></li><li><div class="inline-content"><p><code><a href="../../openfl/net/URLRequest.html#URLRequest">openfl.net.URLRequest</a></code></p></div></li><li><div class="inline-content"><p><code><a href="../../openfl/net/URLStream.html#URLStream">openfl.net.URLStream</a></code></p></div></li></ul></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><a href="#new"><span class="identifier">new</span></a>()</code></h3><div class="doc"><p></p></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="bytesAvailable"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bytesAvailable"><span class="identifier">bytesAvailable</span></a>:<span class="type">UInt</span></code></h3><div class="doc"><p>Returns the number of bytes of data available for reading in the input
 buffer. Your code must call the <code>bytesAvailable</code> property to ensure
 that sufficient data is available before you try to read it with one
 of the <code>read</code> methods.</p></div></div><div class="field "><a name="connected"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#connected"><span class="identifier">connected</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Indicates whether this URLStream object is currently connected. A call
@@ -124,7 +124,7 @@ data from a different domain, place a URL policy file on the server
 hosting the data.</p>
 <p>In Flash Player, you cannot connect to commonly reserved ports. For a
 complete list of blocked ports, see "Restricting Networking APIs" in
-the <em>ActionScript 3.0 Developer's Guide</em>.</p>
+the <em>OpenFL Developer's Guide</em>.</p>
 <p>In Flash Player, you can prevent a SWF file from using this method by
 setting the <code>allowNetworking</code> parameter of the the <code>object</code> and
 <code>embed</code> tags in the HTML page that contains the SWF content.</p>
@@ -188,7 +188,7 @@ reclassifying this SWF file as
 local-with-networking or trusted.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>You are trying to connect to a commonly reserved
 port. For a complete list of blocked ports, see
 "Restricting Networking APIs" in the
-<em>ActionScript 3.0 Developer's Guide</em>.</p></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched after data has loaded
+<em>OpenFL Developer's Guide</em>.</p></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>complete</code></th><td><p>Dispatched after data has loaded
 successfully. If there is a
 <code>httpResponseStatus</code> event listener, the
 URLRequest object also dispatches a
@@ -203,11 +203,11 @@ you may receive these events in addition to
 any <code>complete</code> or <code>error</code> event.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>The load operation could not be completed.</p></td></tr><tr class="indent"><th style="width:25%;"><code>open</code></th><td><p>Dispatched when a load operation starts.</p></td></tr><tr class="indent"><th style="width:25%;"><code>securityError</code></th><td><p>A load operation attempted to retrieve data
 from a server outside the caller's security
 sandbox. This may be worked around using a
-policy file on the server.</p></td></tr></table></div></div><div class="field "><a name="readBoolean"></a><h3 class="anchor"><code><a href="#readBoolean"><span class="identifier">readBoolean</span></a>():<span class="type">Bool</span></code></h3><div class="doc"><p>Reads a Boolean value from the stream. A single byte is read, and
+policy file on the server.</p></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/http-communications/loading-external-data.html">Loading external data</a></p></div></li></ul></div></div><div class="field "><a name="readBoolean"></a><h3 class="anchor"><code><a href="#readBoolean"><span class="identifier">readBoolean</span></a>():<span class="type">Bool</span></code></h3><div class="doc"><p>Reads a Boolean value from the stream. A single byte is read, and
 <code>true</code> is returned if the byte is nonzero, <code>false</code> otherwise.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p><code>True</code> is returned if the byte is nonzero, <code>false</code> otherwise.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -215,7 +215,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readByte
 The returned value is in the range -128...127.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range -128...127.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -226,7 +226,7 @@ Defaults to 0.</p></td></tr><tr><th style="width:25%;"><code>length</code></th><
 cause all available data to be read.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -235,7 +235,7 @@ stream.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>
 stream.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -244,7 +244,7 @@ stream.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>
 stream.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -252,7 +252,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readInt"
 The returned value is in the range -2147483648...2147483647.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range -2147483648...2147483647.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -274,14 +274,14 @@ machine, the application will use the system's default
 code page.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>UTF-8 encoded string.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr></table></div></div><div class="field "><a name="readObject"></a><h3 class="anchor"><code><a href="#readObject"><span class="identifier">readObject</span></a>():<span class="type">Dynamic</span></code></h3><div class="doc"><p>Reads an object from the socket, encoded in Action Message Format
 (AMF).</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>The deserialized object.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -289,7 +289,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readShor
 The returned value is in the range -32768...32767.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range -32768...32767.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -297,7 +297,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readUTF"
 prefixed with an unsigned short indicating the length in bytes.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A UTF-8 string.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -314,7 +314,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readUnsi
 The returned value is in the range 0...255.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range 0...255.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -322,7 +322,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readUnsi
 The returned value is in the range 0...4294967295.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range 0...4294967295.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -330,7 +330,7 @@ not open.</p></td></tr></table></div></div><div class="field "><a name="readUnsi
 The returned value is in the range 0...65535.</p><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Value in the range 0...65535.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>There is insufficient data available to read. If a
 local SWF file triggers a security warning, Flash
 Player prevents the URLStream data from being
-available to ActionScript. When this happens, the
+available to Haxe code. When this happens, the
 <code>bytesAvailable</code> property returns 0 even if data has
 been received, and any of the read methods throws an
 EOFError exception.</p></td></tr><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>An I/O error occurred on the stream, or the stream is
@@ -407,7 +407,7 @@ subjecting them to garbage collection. If you set
 for a listener that is a nested inner function,
 the function will be garbage-collected and no
 longer persistent. If you create references to the
-inner function(save it in another variable) then
+inner function (save it in another variable) then
 it is not garbage-collected and stays
 persistent.</p>
 <p>Weak references are supported on some OpenFL

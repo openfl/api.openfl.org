@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.display - API Reference</title></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","HashLink","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.display - OpenFL API Reference</title></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
 a,
 code a,
 code .type,
@@ -52,40 +52,7 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><h1>openfl.display </h1><!-- 
-::if full == ""::
-	<h1>Haxe API documentation <small ::cond api.isDefined("version")::>version ::api.getValue('version')::</small></h1>
-	<p>Haxe is an open source toolkit based on a modern, high level, strictly typed programming language, a cross-compiler, a complete cross-platform standard library and ways to access each platform's native capabilities.</p> 
-	<h3>Getting Started With Haxe</h3>
-	<ul>
-		<li>Take a look at our <a href="http://haxe.org/documentation/introduction/">introduction</a></li>
-		<li>Read through the <a href="http://haxe.org/manual/">Haxe Manual</a></li>
-		<li>Look at these <a href="http://haxe.org/use-cases/">use cases for Haxe</a></li>
-		<li>Find and install <a href="http://lib.haxe.org/t/all/">popular Haxe libraries</a></li>
-		<li>Learn by example with the <a href="http://code.haxe.org">Haxe Code Cookbook</a></li>
-	</ul>
-	<hr/>
-	<h3>Top Level</h3>
-::elseif full.split(".").length==1::
-	<h1>Haxe/::full:: API documentation</h1>
-	<p>To get started with the Haxe ::full:: target:</p>
-	<ul>
-		<li>Read through the <a href="http://haxe.org/manual/">Haxe Manual</a></li>
-		<li ::cond full=="js"::>Read the <a href="http://haxe.org/manual/target-javascript.html">Haxe/JavaScript target details</a></li>
-		<li ::cond full=="flash"::>Read the <a href="http://haxe.org/manual/target-flash.html">Haxe/Flash target details</a></li>
-		<li ::cond full=="php"::>Read the <a href="http://haxe.org/manual/target-php.html">Haxe/PHP target details</a></li>
-		<li ::cond full=="cpp"::>Read the <a href="http://haxe.org/manual/target-cpp.html">Haxe/C++ target details</a></li>
-		<li ::cond full=="neko"::>Read the <a href="http://nekovm.org/doc">Neko documentation</a></li>
-		<li>Find and install <a href="http://lib.haxe.org/t/::full::/">popular Haxe/::full:: libraries</a></li>
-		<li>Learn by example with the <a href="http://code.haxe.org">Haxe Code Cookbook</a></li>
-	</ul>
-	<hr/>
-	<h1><small class="directive">package</small> ::full::</h1>
-::else::
-	<h1><small class="directive">package</small> ::full::</h1>
-::end::
--->
-  <table class="table table-condensed"><tbody><tr><th style="width:200px;"><i class="fa fa-folder-o"></i><a href="../../index.html" title="openfl">..</a></th><td></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/AVM1Movie.html" title="openfl.display.AVM1Movie">AVM1Movie</a></td><td><p>AVM1Movie is a simple class that represents AVM1 movie clips, which use
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>HashLink</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><h1>openfl.display </h1><p>Here are some selections from the <a href="https://books.openfl.org/openfl-developers-guide/" target="_blank">OpenFL Developer's Guide</a> to help you get started with the openfl.display package:</p><ul><li><a href="https://books.openfl.org/openfl-developers-guide/display-programming/" target="_blank">Display programming</a></li><li><a href="https://books.openfl.org/openfl-developers-guide/display-programming/basics-of-display-programming.html" target="_blank">Basics of display programming</a></li><li><a href="https://books.openfl.org/openfl-developers-guide/display-programming/core-display-classes.html" target="_blank">Core display classes</a></li><li><a href="https://books.openfl.org/openfl-developers-guide/display-programming/working-with-display-objects/adding-display-objects-to-the-display-list.html" target="_blank">Adding display objects to the display list</a></li></ul>  <table class="table table-condensed"><tbody><tr><th style="width:200px;"><i class="fa fa-folder-o"></i><a href="../../index.html" title="openfl">..</a></th><td></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/AVM1Movie.html" title="openfl.display.AVM1Movie">AVM1Movie</a></td><td><p>AVM1Movie is a simple class that represents AVM1 movie clips, which use
 ActionScript 1.0 or 2.0. (AVM1 is the ActionScript virtual machine used
 to run ActionScript 1.0 and 2.0. AVM2 is the ActionScript virtual machine
 used to run ActionScript 3.0.) When a Flash Player 8, or older, SWF file
@@ -161,7 +128,22 @@ represented by three sets of (x, y) coordinates, each of which is one
 point of the triangle.
 The triangle vertices do not contain z coordinates and do not necessarily
 represent 3D faces. However a triangle path can be used to support the
-rendering of 3D geometry in a 2D space.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IBitmapDrawable.html" title="openfl.display.IBitmapDrawable">IBitmapDrawable</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsData.html" title="openfl.display.IGraphicsData">IGraphicsData</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsFill.html" title="openfl.display.IGraphicsFill">IGraphicsFill</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsPath.html" title="openfl.display.IGraphicsPath">IGraphicsPath</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsStroke.html" title="openfl.display.IGraphicsStroke">IGraphicsStroke</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/ITileContainer.html" title="openfl.display.ITileContainer">ITileContainer</a></td><td><p>ITileContainer is an interface implemented by compatible tile container
+rendering of 3D geometry in a 2D space.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IBitmapDrawable.html" title="openfl.display.IBitmapDrawable">IBitmapDrawable</a></td><td><p>The IBitmapDrawable interface is implemented by objects that can be passed
+as the source parameter of the <code>draw()</code> method of the BitmapData class.
+These objects are of type BitmapData or DisplayObject.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsData.html" title="openfl.display.IGraphicsData">IGraphicsData</a></td><td><p>This interface is used to define objects that can be used as parameters in
+the <code><a href="../../openfl/display/Graphics.html#Graphics">openfl.display.Graphics</a></code> methods, including fills, strokes, and paths.
+Use the implementor classes of this interface to create and manage drawing
+property data, and to reuse the same data for different instances. Then, use
+the methods of the Graphics class to render the drawing objects.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsFill.html" title="openfl.display.IGraphicsFill">IGraphicsFill</a></td><td><p>This interface is used to define objects that can be used as fill parameters
+in the <code><a href="../../openfl/display/Graphics.html#Graphics">openfl.display.Graphics</a></code> methods and drawing classes. Use the
+implementor classes of this interface to create and manage fill property
+data, and to reuse the same data for different instances.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsPath.html" title="openfl.display.IGraphicsPath">IGraphicsPath</a></td><td><p>This interface is used to define objects that can be used as path parameters
+in the <code><a href="../../openfl/display/Graphics.html#Graphics">openfl.display.Graphics</a></code> methods and drawing classes. Use the
+implementor classes of this interface to create and manage path property
+data, and to reuse the same data for different instances.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/IGraphicsStroke.html" title="openfl.display.IGraphicsStroke">IGraphicsStroke</a></td><td><p>This interface is used to define objects that can be used as strok
+parameters in the <code><a href="../../openfl/display/Graphics.html#Graphics">openfl.display.Graphics</a></code> methods and drawing classes. Use
+the implementor classes of this interface to create and manage stroke
+property data, and to reuse the same data for different instances.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/ITileContainer.html" title="openfl.display.ITileContainer">ITileContainer</a></td><td><p>ITileContainer is an interface implemented by compatible tile container
 objects, including the Tilemap and TileContainer classes.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/InteractiveObject.html" title="openfl.display.InteractiveObject">InteractiveObject</a></td><td><p>The InteractiveObject class is the abstract base class for all display
 objects with which the user can interact, using the mouse, keyboard, or
 other user input device.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/display/InterpolationMethod.html" title="openfl.display.InterpolationMethod">InterpolationMethod</a></td><td><p>The InterpolationMethod class provides values for the
@@ -192,8 +174,16 @@ NativeWindowInitOptions object used to create a native window.</p></td></tr><tr 
 <code><a href="../../openfl/display/BitmapData.html#encode">openfl.display.BitmapData.encode</a>()</code> method.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/display/PixelSnapping.html" title="openfl.display.PixelSnapping">PixelSnapping</a></td><td><p>The PixelSnapping class is an enumeration of constant values for setting
 the pixel snapping options by using the <code>pixelSnapping</code> property
 of a Bitmap object.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Preloader.html" title="openfl.display.Preloader">Preloader</a></td><td><p>The Preloader class is a Lime Preloader instance that uses an OpenFL
-display object to display loading progress.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Scene.html" title="openfl.display.Scene">Scene</a></td><td><p></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Screen.html" title="openfl.display.Screen">Screen</a></td><td><p>The Screen class provides information about the display screens available to
-this application.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Shader.html" title="openfl.display.Shader">Shader</a></td><td><p>// TODO: Document GLSL Shaders
+display object to display loading progress.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Scene.html" title="openfl.display.Scene">Scene</a></td><td><p>The Scene class includes properties for identifying the name, labels, and
+number of frames in a scene. A Scene object instance is created in Adobe
+Animate (formerly Adobe Flash Professional), not by writing ActionScript
+code. The MovieClip class includes a <code>currentScene</code> property, which is a
+Scene object that identifies the scene in which the playhead is located in
+the timeline of the MovieClip instance. The <code>scenes</code> property of the
+MovieClip class is an array of Scene objects. Also, the <code>gotoAndPlay()</code> and
+<code>gotoAndStop()</code> methods of the MovieClip class use Scene objects as
+parameters.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Screen.html" title="openfl.display.Screen">Screen</a></td><td><p>The Screen class provides information about the display screens available to
+this application.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/ScreenMode.html" title="openfl.display.ScreenMode">ScreenMode</a></td><td><p>The ScreenMode object provides information about the width, height and refresh rate of a Screen.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Shader.html" title="openfl.display.Shader">Shader</a></td><td><p>// TODO: Document GLSL Shaders
 A Shader instance represents a Pixel Bender shader kernel in ActionScript.
 To use a shader in your application, you create a Shader instance for it.
 You then use that Shader instance in the appropriate way according to the
@@ -247,8 +237,8 @@ the Shader class's <code>precisionHint</code> property. Each constant represents
 of the precision modes for executing shader operations.
 The precision mode selection affects the following shader operations.
 These operations are faster on an Intel processor with the SSE instruction
-set:</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Shape.html" title="openfl.display.Shape">Shape</a></td><td><p>This class is used to create lightweight shapes using the ActionScript
-drawing application program interface(API). The Shape class includes a
+set:</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/Shape.html" title="openfl.display.Shape">Shape</a></td><td><p>This class is used to create lightweight shapes using the OpenFL
+drawing application program interface (API). The Shape class includes a
 <code>graphics</code> property, which lets you access methods from the
 Graphics class.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../openfl/display/SimpleButton.html" title="openfl.display.SimpleButton">SimpleButton</a></td><td><p>The SimpleButton class lets you control all instances of button symbols in
 a SWF file.</p></td></tr><tr class="abstract"><td style="width:200px;"><a href="../../openfl/display/SpreadMethod.html" title="openfl.display.SpreadMethod">SpreadMethod</a></td><td><p>The SpreadMethod class provides values for the <code>spreadMethod</code>

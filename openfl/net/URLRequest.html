@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net.URLRequest - API Reference</title><meta name="description" content="The URLRequest class captures all of the information in a single HTTP
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","HashLink","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.net.URLRequest - OpenFL API Reference</title><meta name="description" content="The URLRequest class captures all of the information in a single HTTP
 request. URLRequest objects are passed to the &lt;code&gt;load()&lt;/code&gt; methods
 of the Loader, URLStream, and URLLoader classes, and to other loading
 operations, to initiate URL downloads. They are also passed to the
@@ -57,7 +57,7 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/net/URLRequest.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>final class</small> URLRequest</h1><h4><small>package <a href="../../openfl/net/index.html">openfl.net</a></small></h4>    <span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-final" title="Prevents a class or interface from being extended or a method from being overridden. Deprecated by the keyword `final`.">@:final</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The URLRequest class captures all of the information in a single HTTP
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>HashLink</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/net/URLRequest.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>final class</small> URLRequest</h1><h4><small>package <a href="../../openfl/net/index.html">openfl.net</a></small></h4>    <span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-final" title="Prevents a class or interface from being extended or a method from being overridden. Deprecated by the keyword `final`.">@:final</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The URLRequest class captures all of the information in a single HTTP
 request. URLRequest objects are passed to the <code>load()</code> methods
 of the Loader, URLStream, and URLLoader classes, and to other loading
 operations, to initiate URL downloads. They are also passed to the
@@ -79,7 +79,7 @@ sandbox observes the same restrictions as content running in the browser
 (in Flash Player), and loading is governed by the content's domain and any
 permissions granted in URL policy files.</p>
 <p>For more information related to security, see the Flash Player Developer
-Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ url : null })</span><a href="#new"><span class="identifier">new</span></a>(<span style="white-space:nowrap">?url:<span class="type">String</span></span>)</code></h3><div class="doc"><p>Creates a URLRequest object. If <code><a href="../../openfl/system/System.html#useCodePage">System.useCodePage</a></code> is
+Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/http-communications/loading-external-data.html">Loading external data</a></p></div></li><li><div class="inline-content"><p><code><a href="../../openfl/net/URLLoader.html#URLLoader">openfl.net.URLLoader</a></code></p></div></li><li><div class="inline-content"><p><code><a href="../../openfl/net/URLStream.html#URLStream">openfl.net.URLStream</a></code></p></div></li><li><div class="inline-content"><p><code><a href="../../openfl/net/FileReference.html#FileReference">openfl.net.FileReference</a></code></p></div></li></ul></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ url : null })</span><a href="#new"><span class="identifier">new</span></a>(<span style="white-space:nowrap">?url:<span class="type">String</span></span>)</code></h3><div class="doc"><p>Creates a URLRequest object. If <code><a href="../../openfl/system/System.html#useCodePage">System.useCodePage</a></code> is
 <code>true</code>, the request is encoded using the system code page,
 rather than Unicode. If <code><a href="../../openfl/system/System.html#useCodePage">System.useCodePage</a></code> is
 <code>false</code>, the request is encoded using Unicode, rather than the
@@ -99,12 +99,12 @@ interpret the value of the <code>data</code> property.</p><ul><li>If the value o
 object, the value of <code>contentType</code> must be
 <code>application/x-www-form-urlencoded</code>.</li><li>If the value of the <code>data</code> property is any other type,
 the value of <code>contentType</code> should indicate the type of the POST
-data that will be sent(which is the binary or string data contained in
+data that will be sent (which is the binary or string data contained in
 the value of the <code>data</code> property).</li><li>For <code><a href="../../openfl/net/FileReference.html#upload">FileReference.upload</a>()</code>, the Content-Type of the
 request is set automatically to <code>multipart/form-data</code>, and the
 value of the <code>contentType</code> property is ignored.</li></ul>
 <p>In Flash Player 10 and later, if you use a multipart Content-Type(for
-example "multipart/form-data") that contains an upload(indicated by a
+example "multipart/form-data") that contains an upload (indicated by a
 "filename" parameter in a "content-disposition" header within the POST
 body), the POST operation is subject to the security rules applied to
 uploads:</p><ul><li>The POST operation must be performed in response to a user-initiated
@@ -154,19 +154,26 @@ server, after the connection is established, before abandoning the request.</p>
 <p><strong>Note:</strong> The <code>HTMLLoader.load()</code> method does not support the
 <code><a href="../../openfl/net/URLRequest.html#idleTimeout">URLRequest.idleTimeout</a></code> property. The HTMLLoader class defines its own
 <code>idleTimeout</code> property.</p>
-<p>The default value is initialized from the <code><a href="../../openfl/net/URLRequestDefaults.html#idleTimeout">URLRequestDefaults.idleTimeout</a></code> property.</p></div></div><div class="field "><a name="manageCookies"></a><h3 class="anchor"><code><a href="#manageCookies"><span class="identifier">manageCookies</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Specifies whether the HTTP protocol stack should manage cookies for this request.
-When <code>true</code>, cookies are added to the request and response cookies are remembered.
-If <code>false</code>, cookies are not added to the request and response cookies are not
-remembered, but users can manage cookies themselves by direct header manipulation.
-<strong>Note:</strong> On Windows, you cannot add cookies to a URL request manually when
-<code>manageCookies</code> is set to <code>true</code>. On other operating systems, adding cookies to a
-request is permitted irrespective of whether <code>manageCookies</code> is set to <code>true</code> or
-<code>false</code>. When permitted, you can add cookies to a request manually by adding a
-URLRequestHeader object containing the cookie data to the <code>requestHeaders</code> array.</p>
+<p>The default value is initialized from the <code><a href="../../openfl/net/URLRequestDefaults.html#idleTimeout">URLRequestDefaults.idleTimeout</a></code> property.</p></div></div><div class="field "><a name="manageCookies"></a><h3 class="anchor"><code><a href="#manageCookies"><span class="identifier">manageCookies</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Specifies whether the HTTP protocol stack should manage cookies for this
+request. When <code>true</code>, cookies are added to the request and response
+cookies are remembered. If <code>false</code>, cookies are not added to the request
+and response cookies are not remembered, but users can manage cookies
+themselves by direct header manipulation.</p>
+<p><strong>Note:</strong> In OpenFL's HTML5 target, the 'Cookie' request header
+cannot be added programatically, due to web browser security
+restrictions. See
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name">MDN: Forbidden Request Headers</a>
+for details.</p>
+<p><strong>Note:</strong> On Windows, you cannot add cookies to a URL request manually
+when <code>manageCookies</code> is set to <code>true</code>. On other operating systems,
+adding cookies to a request is permitted irrespective of whether
+<code>manageCookies</code> is set to <code>true</code> or <code>false</code>. When permitted, you can add
+cookies to a request manually by adding a URLRequestHeader object
+containing the cookie data to the <code>requestHeaders</code> array.</p>
 <p>On Mac OS, cookies are shared with Safari. To clear cookies on Mac OS:</p><ol><li>Open Safari.</li><li>Select Safari > Preferences, and click the Security panel.</li><li>Click the Show Cookies button.</li><li>Click the Reomove All button.</li></ol>
 <p>To clear cookies on Windows:</p><ol><li>Open the Internet Properties control panel, and click the General tab.</li><li>Click the Delete Cookies button.</li></ol>
 <p>The default value is <code>true</code>.</p></div></div><div class="field "><a name="method"></a><h3 class="anchor"><code><a href="#method"><span class="identifier">method</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Controls the HTTP form submission method.</p>
-<p>For SWF content running in Flash Player(in the browser), this property
+<p>For SWF content running in Flash Player (in the browser), this property
 is limited to GET or POST operations, and valid values are
 <code><a href="../../openfl/net/URLRequestMethod.html#GET">URLRequestMethod.GET</a></code> or
 <code><a href="../../openfl/net/URLRequestMethod.html#POST">URLRequestMethod.POST</a></code>.</p>
@@ -176,7 +183,7 @@ running in Flash Player, you are restricted to using GET or POST
 operations.</p>
 <p>For content running in Adobe AIR, when using the
 <code>navigateToURL()</code> function, the runtime treats a URLRequest
-that uses the POST method(one that has its <code>method</code> property
+that uses the POST method (one that has its <code>method</code> property
 set to <code><a href="../../openfl/net/URLRequestMethod.html#POST">URLRequestMethod.POST</a></code>) as using the GET method.</p>
 <p><strong>Note:</strong> If running in Flash Player and the referenced form has no
 body, Flash Player automatically uses a GET operation, even if the method
@@ -203,7 +210,7 @@ requests.</p></div></div><div class="field "><a name="url"></a><h3 class="anchor
 <p>Be sure to encode any characters that are either described as unsafe in
 the Uniform Resource Locator specification(see
 http://www.faqs.org/rfcs/rfc1738.html) or that are reserved in the URL
-scheme of the URLRequest object(when not used for their reserved
+scheme of the URLRequest object (when not used for their reserved
 purpose). For example, use <code>"%25"</code> for the percent(%) symbol
 and <code>"%23"</code> for the number sign(#), as in
 <code>"http://www.example.com/orderForm.cfm?item=%23B-3&amp;discount=50%25"</code>.</p>
@@ -217,7 +224,7 @@ sandbox  -  files installed with the AIR application  -  can access URLs
 using any of the following URL schemes:</p><ul><li><code>http</code> and <code>https</code></li><li><code>file</code></li><li><code>app-storage</code></li><li><code>app</code></li></ul>
 <p><strong>Note:</strong> IPv6(Internet Protocol version 6) is supported in AIR and
 in Flash Player 9.0.115.0 and later. IPv6 is a version of Internet
-Protocol that supports 128-bit addresses(an improvement on the earlier
+Protocol that supports 128-bit addresses (an improvement on the earlier
 IPv4 protocol that supports 32-bit addresses). You might need to activate
 IPv6 on your networking interfaces. For more information, see the Help for
 the operating system hosting the data. If IPv6 is supported on the hosting
@@ -229,4 +236,7 @@ targets, by the web browser or by Flash Player (depending upon the target).</p>
 <p><strong>Note:</strong> This property does not affect the user agent string when the
 URLRequest object is used with the <code>load()</code> method of an HTMLLoader object. To set
 the user agent string for an HTMLLoader object, set the <code>userAgent</code> property of the
-HTMLLoader object or set the static <code><a href="../../openfl/net/URLRequestDefaults.html#userAgent">URLRequestDefaults.userAgent</a></code> property.</p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+HTMLLoader object or set the static <code><a href="../../openfl/net/URLRequestDefaults.html#userAgent">URLRequestDefaults.userAgent</a></code> property.</p></div></div><div class="field "><a name="withCredentials"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><a href="#withCredentials"><span class="identifier">withCredentials</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>Specifies whether cross-site <code>Access-Control</code> requests should be made
+using credentials such as cookies, authentication headers or TLS client
+certificates. Setting <code>withCredentials</code> has no effect on same-origin
+requests, and it has no effect on targets not running in web browsers.</p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
