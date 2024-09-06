@@ -15,7 +15,7 @@ jobs:
         with:
           repository: openfl/openfl
           path: openfl
-          ref: 9.3.4
+          ref: dev
       
       - uses: actions/checkout@v4
         with:
