@@ -123,28 +123,18 @@ event has not been dispatched).
 Output data is still available to written, and output-related events (such as the
 outputProgress event or the ioError event) have registered event listeners.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>close</code></th><td><p>The file, which was opened asynchronously, is closed.</p></td></tr></table></div></div><div class="field "><a name="open"></a><h3 class="anchor"><code><a href="#open"><span class="identifier">open</span></a>(<span style="white-space:nowrap">file:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a>,</span> <span style="white-space:nowrap">fileMode:<a class="type" title="openfl.filesystem.FileMode - The FileMode enum defines string constants used in the fileMode parameter of the open() and openAsync() methods of the FileStream class." href="../../openfl/filesystem/FileMode.html">FileMode</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Opens the FileStream object synchronously, pointing to the file specified by the
 file parameter.</p>
-<pre><code>	If the FileStream object is already open, calling the method closes the file before
-	opening and no further events (including close) are delivered for the previously opened
-	file.
-
-	On systems that support file locking, a file opened in "write" or "update" mode
-	(FileMode.WRITE or FileMode.UPDATE) is not readable until it is closed.
-
-	Once you are done performing operations on the file, call the close() method of the
-	FileStream object. Some operating systems limit the number of concurrently open files.
-	@param 		file The File object specifying the file to open.
-	@param 		 A string from the FileMode class that defines the capabilities of the
-	FileStream, such as the ability to read from or write to the file.
-	@throws 	IOError The file does not exist; you do not have adequate permissions to
-	open the file; you are opening a file for read access, and you do not have read
-	permissions; or you are opening a file for write access, and you do not have write
-	permissions.
-	@throws 	SecurityError The file location is in the application directory, and the
-	fileMode parameter is set to "append", "update", or "write" mode.
-
-	@see [Initializing a FileStream object, and opening and closing files](https://books.openfl.org/openfl-developers-guide/working-with-the-file-system/initializing-a-filestream-object-and-opening-and-closing-files.html)
-	@see [FileStream open modes](https://books.openfl.org/openfl-developers-guide/working-with-the-file-system/filestream-open-modes.html)
-</code></pre></div></div><div class="field "><a name="openAsync"></a><h3 class="anchor"><code><a href="#openAsync"><span class="identifier">openAsync</span></a>(<span style="white-space:nowrap">file:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a>,</span> <span style="white-space:nowrap">fileMode:<a class="type" title="openfl.filesystem.FileMode - The FileMode enum defines string constants used in the fileMode parameter of the open() and openAsync() methods of the FileStream class." href="../../openfl/filesystem/FileMode.html">FileMode</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Opens the FileStream object asynchronously, pointing to the file specified by the file
+<p>If the FileStream object is already open, calling the method closes the file before
+opening and no further events (including close) are delivered for the previously opened
+file.</p>
+<p>On systems that support file locking, a file opened in "write" or "update" mode
+(FileMode.WRITE or FileMode.UPDATE) is not readable until it is closed.</p>
+<p>Once you are done performing operations on the file, call the close() method of the
+FileStream object. Some operating systems limit the number of concurrently open files.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>file</code></th><td><p>The File object specifying the file to open.</p></td></tr><tr><th style="width:25%;"><code>fileMode</code></th><td><p>A string from the FileMode class that defines the capabilities of the
+FileStream, such as the ability to read from or write to the file.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The file does not exist; you do not have adequate permissions to
+open the file; you are opening a file for read access, and you do not have read
+permissions; or you are opening a file for write access, and you do not have write
+permissions.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>The file location is in the application directory, and the
+fileMode parameter is set to "append", "update", or "write" mode.</p></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/working-with-the-file-system/initializing-a-filestream-object-and-opening-and-closing-files.html">https://books.openfl.org/openfl-developers-guide/working-with-the-file-system/initializing-a-filestream-object-and-opening-and-closing-files.html</a></p></div></li><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/working-with-the-file-system/filestream-open-modes.html">https://books.openfl.org/openfl-developers-guide/working-with-the-file-system/filestream-open-modes.html</a></p></div></li></ul></div></div><div class="field "><a name="openAsync"></a><h3 class="anchor"><code><a href="#openAsync"><span class="identifier">openAsync</span></a>(<span style="white-space:nowrap">file:<a class="type" title="openfl.filesystem.File - A File object represents a path to a file or directory." href="../../openfl/filesystem/File.html">File</a>,</span> <span style="white-space:nowrap">fileMode:<a class="type" title="openfl.filesystem.FileMode - The FileMode enum defines string constants used in the fileMode parameter of the open() and openAsync() methods of the FileStream class." href="../../openfl/filesystem/FileMode.html">FileMode</a></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Opens the FileStream object asynchronously, pointing to the file specified by the file
 parameter.</p>
 <p>If the FileStream object is already open, calling the method closes the file before opening
 and no further events (including close) are delivered for the previously opened file.</p>
@@ -204,7 +194,7 @@ the open() method), the file cannot be read (for example, because the file is mi
 (specified by the bytesAvailable property).</p></td></tr></table><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ioError</code></th><td><p>The file cannot be read or the file is not open. This event is dispatched only
 for files opened for asynchronous operations (by using the openAsync() method).</p></td></tr></table></div></div><div class="field "><a name="readUTF"></a><h3 class="anchor"><code><a href="#readUTF"><span class="identifier">readUTF</span></a>():<span class="type">String</span></code></h3><div class="doc"><p>Reads a UTF-8 string from the file stream, byte stream, or byte array. The string is assumed to be
 prefixed with an unsigned short indicating the length in bytes.</p>
-<pre><code>			This method is similar to the readUTF() method in the Java® IDataInput interface.
+<pre><code>	This method is similar to the readUTF() method in the Java® IDataInput interface.
 </code></pre><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A UTF-8 string produced by the byte representation of characters.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>IOError</code></th><td><p>The file has not been opened; the file has been opened, but it was not opened
 with read capabilities; or for a file that has been opened for synchronous operations (by using
 the open() method), the file cannot be read (for example, because the file is missing).</p></td></tr><tr class="indent"><th style="width:25%;"><code>EOFError</code></th><td><p>The position specfied for reading data exceeds the number of bytes available

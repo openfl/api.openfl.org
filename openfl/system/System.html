@@ -71,7 +71,15 @@ used by an application.</p>
 <p>If the amount of memory allocated is greater than the maximum value for
 a uint object(<code>uint.MAX_VALUE</code>, or 4,294,967,295), then this
 property is set to 0. The <code><a href="../../openfl/system/System.html#totalMemoryNumber">System.totalMemoryNumber</a></code> property
-allows larger values.</p></div></div><div class="field "><a name="useCodePage"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><span class="label label-static">static</span><a href="#useCodePage"><span class="identifier">useCodePage</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>A Boolean value that determines which code page to use to interpret
+allows larger values.</p></div></div><div class="field "><a name="totalMemoryNumber"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#totalMemoryNumber"><span class="identifier">totalMemoryNumber</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>The amount of memory (in bytes) currently in use that has been directly
+allocated by Flash Player or AIR.</p>
+<p>This property is expressed as a Float, which allows higher values than the
+<code><a href="../../openfl/system/System.html#totalMemory">System.totalMemory</a></code> property, which is of type Int.</p>
+<p>This property does not return <em>all</em> memory used by an OpenFL
+application or by the application (such as a browser) containing Flash
+Player content. The browser or operating system may consume other memory.
+The <code><a href="../../openfl/system/System.html#privateMemory">System.privateMemory</a></code> property reflects <em>all</em> memory
+used by an application.</p></div></div><div class="field "><a name="useCodePage"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value(false)</span><span class="label label-static">static</span><a href="#useCodePage"><span class="identifier">useCodePage</span></a>:<span class="type">Bool</span><span> = false</span></code></h3><div class="doc"><p>A Boolean value that determines which code page to use to interpret
 external text files. When the property is set to <code>false</code>,
 external text files are interpretted as Unicode. (These files must be
 encoded as Unicode when you save them.) When the property is set to
