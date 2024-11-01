@@ -22,7 +22,7 @@ jobs:
         with:
           repository: openfl/lime
           path: lime
-          ref: 8.2.0
+          ref: 8.2.1
       
       - uses: krdlab/setup-haxe@v1
         with:
