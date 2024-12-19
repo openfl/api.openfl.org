@@ -60,7 +60,7 @@ Use the NetStream class to do the following:</p><ul><li>Call <code><a href="../.
 server, or Flash Media Server.</li><li>Call <code><a href="../../openfl/net/NetStream.html#publish">NetStream.publish</a>()</code> to publish a video, audio, and data stream to
 Flash Media Server.</li><li>Call <code><a href="../../openfl/net/NetStream.html#send">NetStream.send</a>()</code> to send data messages to all subscribed clients.</li><li>Call <code><a href="../../openfl/net/NetStream.html#send">NetStream.send</a>()</code> to add metadata to a live stream.</li><li>Call <code><a href="../../openfl/net/NetStream.html#appendBytes">NetStream.appendBytes</a>()</code> to pass ByteArray data into the
 NetStream.</li></ul>
-<p><strong>Note:</strong>You cannot play and publish a stream over the same NetStream
+<p><strong>Note:</strong> You cannot play and publish a stream over the same NetStream
 object.</p>
 <p>Adobe AIR and Flash Player 9.0.115.0 and later versions support files
 derived from the standard MPEG-4 container format. These files include
@@ -580,9 +580,7 @@ policy files might not be applicable to the file's final URL, which is
 the URL that matters in security decisions.</p>
 <p>For more information on policy files, see "Website controls (policy
 files)" in the <em>OpenFL Developer's Guide</em> and the Flash
-Player Developer Center Topic: &lt;a
-href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p></div></div><div class="field "><a name="client"></a><h3 class="anchor"><code><a href="#client"><span class="identifier">client</span></a>:<span class="type">Dynamic</span></code></h3><div class="doc"><p>Specifies the object on which callback methods are invoked to handle
+Player Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p></div></div><div class="field "><a name="client"></a><h3 class="anchor"><code><a href="#client"><span class="identifier">client</span></a>:<span class="type">Dynamic</span></code></h3><div class="doc"><p>Specifies the object on which callback methods are invoked to handle
 streaming or F4V/FLV file data. The default object is <code>this</code>, the
 NetStream object being created. If you set the <code>client</code> property to
 another object, callback methods are invoked on that other object. The
@@ -727,7 +725,7 @@ To play a live stream, pass the stream name passed to the
 <code><a href="../../openfl/net/NetStream.html#publish">NetStream.publish</a>()</code> method.</p>
 <p>To play a recorded file, pass the file name.
 6. Call <code>addChild()</code> and pass the Video object to display the video.</p>
-<p><strong>Note:</strong>To see sample code, scroll to the example at the bottom of
+<p><strong>Note:</strong> To see sample code, scroll to the example at the bottom of
 this page.</p>
 <p><strong>Enable Data Generation Mode</strong></p>
 <p>Call <code>play(null)</code> to enable "Data Generation Mode". In this mode, call
@@ -751,8 +749,7 @@ prevent a SWF file running in Flash Player from using this method by
 setting the <code>allowNetworking</code> parameter of the the <code>object</code> and
 <code>embed</code> tags in the HTML page that contains the SWF content. For more
 information related to security, see the Flash Player Developer Center
-Topic: &lt;a href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>At least one parameter must be specified.</p></td></tr><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>The NetStream Object is invalid. This may be due
+Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>At least one parameter must be specified.</p></td></tr><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>The NetStream Object is invalid. This may be due
 to a failed NetConnection.</p></td></tr><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Local untrusted SWF files cannot communicate
 with the Internet. You can work around this
 restriction by reclassifying this SWF file as

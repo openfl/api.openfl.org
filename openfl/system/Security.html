@@ -117,9 +117,7 @@ application sandbox may not be permitted to cross-script the AIR
 file). By default, files in the AIR application sandbox can load
 content and data from any domain.</li></ul>
 <p>For more information related to security, see the Flash Player
-Developer Center Topic: &lt;a
-href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="allowDomain"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ p5 : null, p4 : null, p3 : null, p2 : null, p1 : null })</span><span class="label label-static">static</span><a href="#allowDomain"><span class="identifier">allowDomain</span></a>(<span style="white-space:nowrap">?p1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p2:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p3:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p4:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p5:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Lets SWF files in the identified domains access objects and variables
+Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p></div></div></div><h3 class="section">Static methods</h3><div class="fields"><div class="field "><a name="allowDomain"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ p5 : null, p4 : null, p3 : null, p2 : null, p1 : null })</span><span class="label label-static">static</span><a href="#allowDomain"><span class="identifier">allowDomain</span></a>(<span style="white-space:nowrap">?p1:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p2:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p3:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p4:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">?p5:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Lets SWF files in the identified domains access objects and variables
 in the SWF file that contains the <code>allowDomain()</code> call.</p>
 <p><em>Note:</em> Calling this method from code in the AIR application sandbox
 throws a SecurityError exception. Content outside of the application
@@ -252,9 +250,7 @@ this can sometimes be a dangerous shortcut, because it allows the
 calling SWF file to be accessed by any other SWF file from any domain.
 It is usually safer to use the <code>_url</code> property.</p>
 <p>For more information related to security, see the Flash Player
-Developer Center Topic: &lt;a
-href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Calling this method from code in the AIR
+Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Calling this method from code in the AIR
 application security sandbox throws a
 SecurityError exception. Content outside of the
 application security sandbox cannot cross-script
@@ -293,9 +289,7 @@ real-world example of cross-scripting. It does not cover all issues
 with security architecture and should be used for background
 information only. The Flash Player Developer Center contains extensive
 information on Flash Player and security. For more information, see
-the Flash Player Developer Center Topic &lt;a
-href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p>
+the Flash Player Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p>
 <p>Suppose you are building an e-commerce site that consists of two
 components: a catalog, which does not need to be secure, because it
 contains only public information; and a shopping cart/checkout
@@ -384,9 +378,7 @@ reason for this restriction. Flash Player gives you the ability to
 work around this security restriction when you absolutely must, but be
 sure to consider the consequences carefully before doing so.</p>
 <p>For more information related to security, see the Flash Player
-Developer Center Topic: &lt;a
-href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Calling this method from code in the AIR
+Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>SecurityError</code></th><td><p>Calling this method from code in the AIR
 application security sandbox causes a
 SecurityError exception to be thrown. Content
 outside of the application security sandbox
@@ -455,6 +447,4 @@ byte.</p>
 <code>allowNetworking</code> parameter of the <code>object</code> and <code>embed</code> tags in the
 HTML page that contains the SWF content.</p>
 <p>For more information related to security, see the Flash Player
-Developer Center Topic: &lt;a
-href="<a href="http://www.adobe.com/go/devnet_security_en">http://www.adobe.com/go/devnet_security_en</a>"
-scope="external">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2024 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

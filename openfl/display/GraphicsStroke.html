@@ -70,17 +70,14 @@ and straight lines. For example, the following
 illustrations show how Flash Player renders two
 rounded rectangles that are identical, except that the
 <code>pixelHinting</code> parameter used in the
-<code>lineStyle()</code> method is set differently</p>
-<pre><code>			   (the images are scaled by 200%, to emphasize the
-</code></pre>
-<p>difference):</p>
+<code>lineStyle()</code> method is set differently
+(the images are scaled by 200%, to emphasize the
+difference):</p>
 <p>If a value is not supplied, the line does not use
 pixel hinting.</p></td></tr><tr><th style="width:25%;"><code>scaleMode</code></th><td><p>A value from the LineScaleMode class that specifies
-which scale mode to use:</p><ul><li>
-<p><code><a href="../../openfl/display/LineScaleMode.html#NORMAL">LineScaleMode.NORMAL</a></code> - Always
-scale the line thickness when the object is scaled</p>
-<pre><code>		   (the default).
-</code></pre></li><li><code><a href="../../openfl/display/LineScaleMode.html#NONE">LineScaleMode.NONE</a></code> - Never scale
+which scale mode to use:</p><ul><li><code><a href="../../openfl/display/LineScaleMode.html#NORMAL">LineScaleMode.NORMAL</a></code> - Always
+scale the line thickness when the object is scaled
+(the default).</li><li><code><a href="../../openfl/display/LineScaleMode.html#NONE">LineScaleMode.NONE</a></code> - Never scale
 the line thickness.</li><li>
 <p><code><a href="../../openfl/display/LineScaleMode.html#VERTICAL">LineScaleMode.VERTICAL</a></code> - Do not
 scale the line thickness if the object is scaled
@@ -170,27 +167,21 @@ For example, the following illustrations show how Flash Player renders two
 rounded rectangles that are identical, except that the
 <code>pixelHinting</code> parameter used in the <code>lineStyle()</code>
 method is set differently (the images are scaled by 200%, to emphasize the
-difference):</p></div></div><div class="field "><a name="scaleMode"></a><h3 class="anchor"><code><a href="#scaleMode"><span class="identifier">scaleMode</span></a>:<a class="type" title="openfl.display.LineScaleMode - The LineScaleMode class provides values for the scaleMode parameter in the Graphics." href="../../openfl/display/LineScaleMode.html">LineScaleMode</a></code></h3><div class="doc"><p>Specifies the stroke thickness scaling. Valid values are:</p>
-<p><code><a href="../../openfl/display/LineScaleMode.html#NORMAL">LineScaleMode.NORMAL</a></code> - Always scale the line thickness</p>
-<pre><code>	when the object is scaled (the default).
-</code></pre>
-<p><code><a href="../../openfl/display/LineScaleMode.html#NONE">LineScaleMode.NONE</a></code> - Never scale the line thickness.</p>
-<p><code><a href="../../openfl/display/LineScaleMode.html#VERTICAL">LineScaleMode.VERTICAL</a></code> - Do not scale the line</p>
-<pre><code>	thickness if the object is scaled vertically _only_. For example,
-	consider the following circles, drawn with a one-pixel line, and each with
-	the `scaleMode` parameter set to
-	`LineScaleMode.VERTICAL`. The circle on the left is scaled
-	vertically only, and the circle on the right is scaled both vertically and
-	horizontally:
-</code></pre>
-<p><code><a href="../../openfl/display/LineScaleMode.html#HORIZONTAL">LineScaleMode.HORIZONTAL</a></code> - Do not scale the line</p>
-<pre><code>	thickness if the object is scaled horizontally _only_. For example,
-	consider the following circles, drawn with a one-pixel line, and each with
-	the `scaleMode` parameter set to
-	`LineScaleMode.HORIZONTAL`. The circle on the left is scaled
-	horizontally only, and the circle on the right is scaled both vertically
-	and horizontally:
-</code></pre></div></div><div class="field "><a name="thickness"></a><h3 class="anchor"><code><a href="#thickness"><span class="identifier">thickness</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Indicates the thickness of the line in points; valid values are 0-255. If
+difference):</p></div></div><div class="field "><a name="scaleMode"></a><h3 class="anchor"><code><a href="#scaleMode"><span class="identifier">scaleMode</span></a>:<a class="type" title="openfl.display.LineScaleMode - The LineScaleMode class provides values for the scaleMode parameter in the Graphics." href="../../openfl/display/LineScaleMode.html">LineScaleMode</a></code></h3><div class="doc"><p>Specifies the stroke thickness scaling. Valid values are:</p><ul><li><code><a href="../../openfl/display/LineScaleMode.html#NORMAL">LineScaleMode.NORMAL</a></code> - Always scale the line thickness
+when the object is scaled (the default).</li><li>
+<p><code><a href="../../openfl/display/LineScaleMode.html#NONE">LineScaleMode.NONE</a></code> - Never scale the line thickness.</p></li><li>
+<p><code><a href="../../openfl/display/LineScaleMode.html#VERTICAL">LineScaleMode.VERTICAL</a></code> - Do not scale the line
+thickness if the object is scaled vertically <em>only</em>. For example,
+consider the following circles, drawn with a one-pixel line, and each with
+the <code>scaleMode</code> parameter set to
+<code><a href="../../openfl/display/LineScaleMode.html#VERTICAL">LineScaleMode.VERTICAL</a></code>. The circle on the left is scaled
+vertically only, and the circle on the right is scaled both vertically and
+horizontally:</p></li><li><code><a href="../../openfl/display/LineScaleMode.html#HORIZONTAL">LineScaleMode.HORIZONTAL</a></code> - Do not scale the line
+thickness if the object is scaled horizontally <em>only</em>. For example,
+consider the following circles, drawn with a one-pixel line, and each with
+the <code>scaleMode</code> parameter set to <code><a href="../../openfl/display/LineScaleMode.html#HORIZONTAL">LineScaleMode.HORIZONTAL</a></code>. The circle
+on the left is scaled horizontally only, and the circle on the right is
+scaled both vertically and horizontally:</li></ul></div></div><div class="field "><a name="thickness"></a><h3 class="anchor"><code><a href="#thickness"><span class="identifier">thickness</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Indicates the thickness of the line in points; valid values are 0-255. If
 a number is not specified, or if the parameter is undefined, a line is not
 drawn. If a value of less than 0 is passed, the default is 0. The value 0
 indicates hairline thickness; the maximum thickness is 255. If a value

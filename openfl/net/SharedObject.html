@@ -459,17 +459,15 @@ A <code>netStatus</code> event is dispatched with a <code>code</code>
 property of <code><a href="../../openfl/net/SharedObject.html#Success">SharedObject.Flush.Success</a></code> or
 <code><a href="../../openfl/net/SharedObject.html#Failed">SharedObject.Flush.Failed</a></code>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>minDiskSpace</code></th><td><p>The minimum disk space, in bytes, that must be
 allotted for this object.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Either of the following values:
-* <code><a href="../../openfl/net/SharedObjectFlushStatus.html#PENDING">SharedObjectFlushStatus.PENDING</a></code>: The user has</p>
-<pre><code>	permitted local information storage for objects from this domain,
-	but the amount of space allotted is not sufficient to store the
-	object. Flash Player prompts the user to allow more space. To
-	allow space for the shared object to grow when it is saved, thus
-	avoiding a `SharedObjectFlushStatus.PENDING` return
-	value, pass a value for `minDiskSpace`.
-	 * `SharedObjectFlushStatus.FLUSHED`: The shared
-	object has been successfully written to a file on the local
-	disk.
-</code></pre></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>Flash Player cannot write the shared object to disk. This
+<em>  <code><a href="../../openfl/net/SharedObjectFlushStatus.html#PENDING">SharedObjectFlushStatus.PENDING</a></code>: The user has permitted
+local information storage for objects from this domain, but the
+amount of space allotted is not sufficient to store the object.
+Flash Player prompts the user to allow more space. To allow
+space for the shared object to grow when it is saved, thus
+avoiding a <code><a href="../../openfl/net/SharedObjectFlushStatus.html#PENDING">SharedObjectFlushStatus.PENDING</a></code> return
+value, pass a value for <code>minDiskSpace</code>.
+</em>  <code><a href="../../openfl/net/SharedObjectFlushStatus.html#FLUSHED">SharedObjectFlushStatus.FLUSHED</a></code>: The shared object has been
+successfully written to a file on the local disk.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>Error</code></th><td><p>Flash Player cannot write the shared object to disk. This
 error might occur if the user has permanently disallowed
 local information storage for objects from this domain.</p>
 <p><strong>Note:</strong> Local content can always write shared
@@ -493,9 +491,8 @@ value within the object has changed.</p><p class="javadoc">Parameters:</p><table
 the server that the value of the property has changed. The
 <code>setProperty()</code> method explicitly marks properties as changed, or
 dirty.
-For more information about remote shared objects see the &lt;a
-href="<a href="http://www.adobe.com/go/learn_fms_docs_en">http://www.adobe.com/go/learn_fms_docs_en</a>"> Flash Media Server
-documentation</a>.</p>
+For more information about remote shared objects see the
+<a href="http://www.adobe.com/go/learn_fms_docs_en">Flash Media Server documentation</a>.</p>
 <p><strong>Note:</strong> The <code><a href="../../openfl/net/SharedObject.html#setProperty">SharedObject.setProperty</a>()</code> method implements the
 <code>setDirty()</code> method. In most cases, such as when the value of a
 property is a primitive type like String or Number, you would use

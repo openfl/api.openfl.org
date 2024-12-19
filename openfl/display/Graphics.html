@@ -79,10 +79,7 @@ can use to define transformations on the bitmap. For
 example, you can use the following matrix to rotate a bitmap
 by 45 degrees(pi/4 radians):</p>
 <pre><code class="prettyprint haxe">matrix = new openfl.geom.Matrix();
-	 	matrix.rotate(Math.PI / 4);
-	 	```
-
-</code></pre></td></tr><tr><th style="width:25%;"><code>repeat</code></th><td><p>If <code>true</code>, the bitmap image repeats in a tiled
+matrix.rotate(Math.PI / 4);</code></pre></td></tr><tr><th style="width:25%;"><code>repeat</code></th><td><p>If <code>true</code>, the bitmap image repeats in a tiled
 pattern. If <code>false</code>, the bitmap image does not
 repeat, and the edges of the bitmap are used for any fill
 area that extends beyond the bitmap.</p>
@@ -245,7 +242,7 @@ the parent display object.</p></td></tr><tr><th style="width:25%;"><code>anchorY
 anchor point relative to the registration point of the
 parent display object.</p></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/using-the-drawing-api/drawing-lines-and-curves.html">Drawing lines and curves</a></p></div></li></ul></div></div><div class="field "><a name="drawCircle"></a><h3 class="anchor"><code><a href="#drawCircle"><span class="identifier">drawCircle</span></a>(<span style="white-space:nowrap">x:<span class="type">Float</span>,</span> <span style="white-space:nowrap">y:<span class="type">Float</span>,</span> <span style="white-space:nowrap">radius:<span class="type">Float</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/using-the-drawing-api/drawing-shapes-using-built-in-methods.html">Drawing shapes using built-in methods</a></p></div></li></ul></div></div><div class="field "><a name="drawEllipse"></a><h3 class="anchor"><code><a href="#drawEllipse"><span class="identifier">drawEllipse</span></a>(<span style="white-space:nowrap">x:<span class="type">Float</span>,</span> <span style="white-space:nowrap">y:<span class="type">Float</span>,</span> <span style="white-space:nowrap">width:<span class="type">Float</span>,</span> <span style="white-space:nowrap">height:<span class="type">Float</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Draws an ellipse. Set the line style, fill, or both before you call the
 <code>drawEllipse()</code> method, by calling the
-<code>linestyle()</code>, <code>lineGradientStyle()</code>,
+<code>lineStyle()</code>, <code>lineGradientStyle()</code>,
 <code>beginFill()</code>, <code>beginGradientFill()</code>, or
 <code>beginBitmapFill()</code> method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>x</code></th><td><p>The <em>x</em> location of the top-left of the bounding-box of
 the ellipse relative to the registration point of the parent
@@ -309,24 +306,22 @@ four times the size of the draw count will be used as
 matrix [ a, b, c, d, ... ] values. A <code>transforms</code> object
 which is six times the draw count in size will use full
 matrix [ a, b, c, d, tx, ty, ... ] values per draw.</p></td></tr></table></div></div><div class="field "><a name="drawRect"></a><h3 class="anchor"><code><a href="#drawRect"><span class="identifier">drawRect</span></a>(<span style="white-space:nowrap">x:<span class="type">Float</span>,</span> <span style="white-space:nowrap">y:<span class="type">Float</span>,</span> <span style="white-space:nowrap">width:<span class="type">Float</span>,</span> <span style="white-space:nowrap">height:<span class="type">Float</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Draws a rectangle. Set the line style, fill, or both before you call the
-<code>drawRect()</code> method, by calling the <code>linestyle()</code>,
+<code>drawRect()</code> method, by calling the <code>lineStyle()</code>,
 <code>lineGradientStyle()</code>, <code>beginFill()</code>,
 <code>beginGradientFill()</code>, or <code>beginBitmapFill()</code>
 method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>x</code></th><td><p>A number indicating the horizontal position relative to the
 registration point of the parent display object (in pixels).</p></td></tr><tr><th style="width:25%;"><code>y</code></th><td><p>A number indicating the vertical position relative to the
 registration point of the parent display object (in pixels).</p></td></tr><tr><th style="width:25%;"><code>width</code></th><td><p>The width of the rectangle (in pixels).</p></td></tr><tr><th style="width:25%;"><code>height</code></th><td><p>The height of the rectangle (in pixels).</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>If the <code>width</code> or <code>height</code>
-parameters are not a number</p>
-<pre><code>				 (`Number.NaN`).
-</code></pre></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/using-the-drawing-api/drawing-shapes-using-built-in-methods.html">Drawing shapes using built-in methods</a></p></div></li></ul></div></div><div class="field "><a name="drawRoundRect"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ ellipseHeight : null })</span><a href="#drawRoundRect"><span class="identifier">drawRoundRect</span></a>(<span style="white-space:nowrap">x:<span class="type">Float</span>,</span> <span style="white-space:nowrap">y:<span class="type">Float</span>,</span> <span style="white-space:nowrap">width:<span class="type">Float</span>,</span> <span style="white-space:nowrap">height:<span class="type">Float</span>,</span> <span style="white-space:nowrap">ellipseWidth:<span class="type">Float</span>,</span> <span style="white-space:nowrap">?ellipseHeight:<span class="type">Float</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Draws a rounded rectangle. Set the line style, fill, or both before you
+parameters are not a number
+(<code>Number.NaN</code>).</p></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/using-the-drawing-api/drawing-shapes-using-built-in-methods.html">Drawing shapes using built-in methods</a></p></div></li></ul></div></div><div class="field "><a name="drawRoundRect"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ ellipseHeight : null })</span><a href="#drawRoundRect"><span class="identifier">drawRoundRect</span></a>(<span style="white-space:nowrap">x:<span class="type">Float</span>,</span> <span style="white-space:nowrap">y:<span class="type">Float</span>,</span> <span style="white-space:nowrap">width:<span class="type">Float</span>,</span> <span style="white-space:nowrap">height:<span class="type">Float</span>,</span> <span style="white-space:nowrap">ellipseWidth:<span class="type">Float</span>,</span> <span style="white-space:nowrap">?ellipseHeight:<span class="type">Float</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p>Draws a rounded rectangle. Set the line style, fill, or both before you
 call the <code>drawRoundRect()</code> method, by calling the
-<code>linestyle()</code>, <code>lineGradientStyle()</code>,
+<code>lineStyle()</code>, <code>lineGradientStyle()</code>,
 <code>beginFill()</code>, <code>beginGradientFill()</code>, or
 <code>beginBitmapFill()</code> method.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>x</code></th><td><p>A number indicating the horizontal position relative
 to the registration point of the parent display
 object(in pixels).</p></td></tr><tr><th style="width:25%;"><code>y</code></th><td><p>A number indicating the vertical position relative to
-the registration point of the parent display object</p>
-<pre><code>				(in pixels).
-</code></pre></td></tr><tr><th style="width:25%;"><code>width</code></th><td><p>The width of the round rectangle (in pixels).</p></td></tr><tr><th style="width:25%;"><code>height</code></th><td><p>The height of the round rectangle (in pixels).</p></td></tr><tr><th style="width:25%;"><code>ellipseWidth</code></th><td><p>The width of the ellipse used to draw the rounded
+the registration point of the parent display object
+(in pixels).</p></td></tr><tr><th style="width:25%;"><code>width</code></th><td><p>The width of the round rectangle (in pixels).</p></td></tr><tr><th style="width:25%;"><code>height</code></th><td><p>The height of the round rectangle (in pixels).</p></td></tr><tr><th style="width:25%;"><code>ellipseWidth</code></th><td><p>The width of the ellipse used to draw the rounded
 corners(in pixels).</p></td></tr><tr><th style="width:25%;"><code>ellipseHeight</code></th><td><p>The height of the ellipse used to draw the rounded
 corners(in pixels). Optional; if no value is
 specified, the default value matches that provided
@@ -431,9 +426,8 @@ default is 0. The value 0 indicates hairline
 thickness; the maximum thickness is 255. If a value
 greater than 255 is passed, the default is 255.</p></td></tr><tr><th style="width:25%;"><code>color</code></th><td><p>A hexadecimal color value of the line; for example,
 red is 0xFF0000, blue is 0x0000FF, and so on. If a
-value is not indicated, the default is 0x000000</p>
-<pre><code>			   (black). Optional.
-</code></pre></td></tr><tr><th style="width:25%;"><code>alpha</code></th><td><p>A number that indicates the alpha value of the color
+value is not indicated, the default is 0x000000
+(black). Optional.</p></td></tr><tr><th style="width:25%;"><code>alpha</code></th><td><p>A number that indicates the alpha value of the color
 of the line; valid values are 0 to 1. If a value is
 not indicated, the default is 1 (solid). If the value
 is less than 0, the default is 0. If the value is
@@ -449,19 +443,16 @@ For example, the following illustrations show how
 Flash Player or Adobe AIR renders two rounded
 rectangles that are identical, except that the
 <code>pixelHinting</code> parameter used in the
-<code>lineStyle()</code> method is set differently</p>
-<pre><code>			   (the images are scaled by 200%, to emphasize the
-</code></pre>
-<p>difference):</p>
+<code>lineStyle()</code> method is set differently
+(the images are scaled by 200%, to emphasize the
+difference):</p>
 <p><img src="/images/lineStyle_pixelHinting.jpg" alt="pixelHinting false and pixelHinting true" /></p>
 <p>If a value is not supplied, the line does not use
 pixel hinting.</p></td></tr><tr><th style="width:25%;"><code>scaleMode</code></th><td><p>(Not supported in Flash Lite 4) A value from the
 LineScaleMode class that specifies which scale mode to
-use:</p><ul><li>
-<p><code><a href="../../openfl/display/LineScaleMode.html#NORMAL">LineScaleMode.NORMAL</a></code> - Always
-scale the line thickness when the object is scaled</p>
-<pre><code>		   (the default).
-</code></pre></li><li><code><a href="../../openfl/display/LineScaleMode.html#NONE">LineScaleMode.NONE</a></code> - Never scale
+use:</p><ul><li><code><a href="../../openfl/display/LineScaleMode.html#NORMAL">LineScaleMode.NORMAL</a></code> - Always
+scale the line thickness when the object is scaled
+(the default).</li><li><code><a href="../../openfl/display/LineScaleMode.html#NONE">LineScaleMode.NONE</a></code> - Never scale
 the line thickness.</li><li><code><a href="../../openfl/display/LineScaleMode.html#VERTICAL">LineScaleMode.VERTICAL</a></code> - Do not
 scale the line thickness if the object is scaled
 vertically <em>only</em>. For example, consider the
