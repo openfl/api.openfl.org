@@ -16,13 +16,13 @@ jobs:
         with:
           repository: openfl/openfl
           path: openfl
-          ref: 9.4.1
+          ref: 9.4.2
       
       - uses: actions/checkout@v4
         with:
           repository: openfl/lime
           path: lime
-          ref: 8.2.2
+          ref: 8.2.3
       
       - uses: krdlab/setup-haxe@v1
         with:
