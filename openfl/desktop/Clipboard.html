@@ -89,6 +89,8 @@ application to the file system, the operating system calls the data
 handler function as soon as the drag gesture leaves the AIR
 application - typically resulting in an undesireable pause as the file
 data is downloaded or created.</p>
+<p><em>OpenFL target support:</em> Only <code><a href="../../openfl/desktop/ClipboardFormats.html#TEXT_FORMAT">ClipboardFormats.TEXT_FORMAT</a></code> is currently
+supported, except when targeting AIR.</p>
 <p><strong>Note for AIR applications:</strong> The clipboard object referenced by the
 event objects dispatched for HTML drag-and-drop and copy-and-paste events
 are not the same type as the AIR Clipboard object. The JavaScript
