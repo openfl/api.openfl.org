@@ -92,14 +92,14 @@ instance executes asynchronously when the <code>start()</code> method
 is called with a <code>false</code> value for the <code>waitForCompletion</code>
 parameter.</p></td></tr></table></div><h3 class="section">Constructor</h3><div class="fields"><div class="field "><a name="new"></a><h3 class="anchor"><code><span class="label label-meta label-meta-value" title="Used to store default values for fields and function arguments.">@:value({ height : 0, width : 0, target : null, shader : null })</span><span class="label label-meta label-meta-uppressWarnings" title="">@SuppressWarnings(&quot;checkstyle:Dynamic&quot;)</span><a href="#new"><span class="identifier">new</span></a>(<span style="white-space:nowrap">?shader:<a class="type" title="openfl.display.Shader - // TODO: Document GLSL Shaders A Shader instance represents a Pixel Bender shader kernel in ActionScript." href="../../openfl/display/Shader.html">Shader</a>,</span> <span style="white-space:nowrap">?target:<span class="type">Dynamic</span>,</span> <span style="white-space:nowrap">width:<span class="type">Int</span> = 0,</span> <span style="white-space:nowrap">height:<span class="type">Int</span> = 0</span>)</code></h3><div class="doc"><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>shader</code></th><td><p>The shader to use for the operation.</p></td></tr><tr><th style="width:25%;"><code>target</code></th><td><p>The object into which the result of the shader operation
 is written. This argument must be a BitmapData,
-ByteArray, or Vector.<Number> instance.</p></td></tr><tr><th style="width:25%;"><code>width</code></th><td><p>The width of the result data in the <code>target</code> if it is a
-ByteArray or Vector.<Number> instance. The size of the
-ByteArray or Vector.<Number> instance is enlarged if
+ByteArray, or Vector<Float> instance.</p></td></tr><tr><th style="width:25%;"><code>width</code></th><td><p>The width of the result data in the <code>target</code> if it is a
+ByteArray or Vector<Float> instance. The size of the
+ByteArray or Vector<Float> instance is enlarged if
 necessary and existing data is overwritten.</p></td></tr><tr><th style="width:25%;"><code>height</code></th><td><p>The height of the result data in the <code>target</code> if it is a
-ByteArray or Vector.<Number> instance. The size of the
-ByteArray or Vector.<Number> instance is enlarged if
+ByteArray or Vector<Float> instance. The size of the
+ByteArray or Vector<Float> instance is enlarged if
 necessary and existing data is overwritten.</p></td></tr></table></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="height"></a><h3 class="anchor"><code><a href="#height"><span class="identifier">height</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The height of the result data in the <code>target</code> if it is a ByteArray or
-Vector.<Number> instance. The size of the ByteArray or Vector.<Number>
+Vector<Float> instance. The size of the ByteArray or Vector<Float>
 instance is enlarged if necessary and existing data is overwritten.</p></div></div><div class="field "><a name="progress"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#progress"><span class="identifier">progress</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>The progress of a running shader. This property is a value from 0
 through 1. Zero is the initial value (0% complete). One indicates that
 the shader has completed its operation.
@@ -115,9 +115,9 @@ to image data) set the corresponding ShaderInput instance's <code>height</code>
 to 1 and <code>width</code> to the number of 32-bit floating-point values in the
 ByteArray. In that case, the input in the shader must be defined with
 the <code>image1</code> data type.</p></div></div><div class="field "><a name="target"></a><h3 class="anchor"><code><span class="label label-meta label-meta-uppressWarnings" title="">@SuppressWarnings(&quot;checkstyle:Dynamic&quot;)</span><a href="#target"><span class="identifier">target</span></a>:<span class="type">Dynamic</span></code></h3><div class="doc"><p>The object into which the result of the shader operation is written.
-This object must be a BitmapData, ByteArray, or Vector.<Number>
+This object must be a BitmapData, ByteArray, or Vector<Float>
 instance.</p></div></div><div class="field "><a name="width"></a><h3 class="anchor"><code><a href="#width"><span class="identifier">width</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The width of the result data in the <code>target</code> if it is a ByteArray or
-Vector.<Number> instance. The size of the ByteArray or Vector.<Number>
+Vector<Float> instance. The size of the ByteArray or Vector<Float>
 instance is enlarged if necessary and existing data is overwritten.</p></div></div></div><h3 class="section">Methods</h3><div class="fields"><div class="field "><a name="cancel"></a><h3 class="anchor"><code><a href="#cancel"><span class="identifier">cancel</span></a>():<span class="type">Void</span></code></h3><div class="doc"><p>Cancels the currently running shader operation. Any result data that
 is already computed is discarded. The <code>complete</code> event is not
 dispatched.
@@ -158,9 +158,9 @@ mode. However, the result data is not written to the BitmapData object
 because it is in a disposed state.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>waitForCompletion</code></th><td><p>Specifies whether to execute the shader in
 the background (<code>false</code>, the default) or in
 the main program execution (<code>true</code>).</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>When the <code>target</code> property is <code>null</code> or is not a
-BitmapData, ByteArray, or Vector.<Number>
+BitmapData, ByteArray, or Vector<Float>
 instance.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>When the shader specifies an image input that
-isn't provided.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>When a ByteArray or Vector.<Number> instance is
+isn't provided.</p></td></tr><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>When a ByteArray or Vector<Float> instance is
 used as an input and the <code>width</code> and <code>height</code>
 properties aren't specified for the ShaderInput,
 or the specified values don't match the amount
