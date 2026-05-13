@@ -102,7 +102,7 @@ object replication, direct routing, or posting APIs.</p>
 <p><strong>Note:</strong> To send data through an audio file, like an mp3 file, use the
 Sound class to associate the audio file with a Sound object. Then, use the
 <code><a href="../../openfl/media/Sound.html#id3">Sound.id3</a></code> property to read metadata from the sound file.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>asyncError</code></th><td><p>Dispatched when an exception is thrown
-asynchronously נthat is, from native
+asynchronously — that is, from native
 asynchronous code. This event is dispatched when a
 server calls a method on the client that is not
 defined.</p></td></tr><tr class="indent"><th style="width:25%;"><code>drmAuthenticate</code></th><td><p>Dispatched when a NetStream object tries to play a
@@ -473,7 +473,7 @@ and an exception is raised.</p>
 statement but pass a value of <code>null</code>, the value is
 set to <code>"connectToFMS"</code>.</p></td></tr></table><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>ArgumentError</code></th><td><p>The NetConnection instance is not connected.</p></td></tr></table></div></div></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="bufferLength"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bufferLength"><span class="identifier">bufferLength</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>The number of seconds of data currently in the buffer. You can use
 this property with the <code>bufferTime</code> property to estimate how close the
-buffer is to being full נfor example, to display feedback to a user
+buffer is to being full — for example, to display feedback to a user
 who is waiting for data to be loaded into the buffer.</p></div></div><div class="field "><a name="bufferTime"></a><h3 class="anchor"><code><a href="#bufferTime"><span class="identifier">bufferTime</span></a>:<span class="type">Float</span></code></h3><div class="doc"><p>Specifies how long to buffer messages before starting to display the
 stream.
 The default value is 0.1 (one-tenth of a second). To determine the
@@ -531,7 +531,7 @@ to a small value (approximately 10 milliseconds). If live streams are
 later played (for example, from a playlist), this buffer time
 persists. That is, <code>bufferTime</code> remains nonzero for the stream.</p></div></div><div class="field "><a name="bytesLoaded"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bytesLoaded"><span class="identifier">bytesLoaded</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The number of bytes of data that have been loaded into the
 application. You can use this property with the <code>bytesTotal</code> property
-to estimate how close the buffer is to being full נfor example, to
+to estimate how close the buffer is to being full — for example, to
 display feedback to a user who is waiting for data to be loaded into
 the buffer.</p></div></div><div class="field "><a name="bytesTotal"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#bytesTotal"><span class="identifier">bytesTotal</span></a>:<span class="type">Int</span></code></h3><div class="doc"><p>The total size in bytes of the file being loaded into the application.</p></div></div><div class="field "><a name="checkPolicyFile"></a><h3 class="anchor"><code><a href="#checkPolicyFile"><span class="identifier">checkPolicyFile</span></a>:<span class="type">Bool</span></code></h3><div class="doc"><p>Specifies whether the application tries to download a cross-domain
 policy file from the loaded video file's server before beginning to
@@ -939,4 +939,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

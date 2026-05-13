@@ -88,7 +88,7 @@ would use the separate player settings for store.example.com.</p>
 uses exact domains for player settings. The default value for
 <code>exactSettings</code> is <code>true</code>. If you change <code>exactSettings</code> from its
 default value, do so before any events occur that require Flash Player
-or AIR to choose player settings נfor example, using a camera or
+or AIR to choose player settings — for example, using a camera or
 microphone, or retrieving a persistent shared object.</p>
 <p>If you previously published a version 6 SWF file and created
 persistent shared objects from it, and you now need to retrieve those
@@ -99,17 +99,17 @@ later, set <code><a href="../../openfl/system/Security.html#exactSettings">Secur
 <code>exactSettings</code> at least once in a decision about
 player settings.</p></td></tr></table></div></div><div class="field "><a name="sandboxType"></a><h3 class="anchor"><code><span class="label label-static">static</span><span class="label">read only</span><a href="#sandboxType"><span class="identifier">sandboxType</span></a>:<span class="type">String</span></code></h3><div class="doc"><p>Indicates the type of security sandbox in which the calling file is
 operating.
-<code><a href="../../openfl/system/Security.html#sandboxType">Security.sandboxType</a></code> has one of the following values:</p><ul><li><code>remote</code> (<code><a href="../../openfl/system/Security.html#REMOTE">Security.REMOTE</a></code>)הhis file is from an Internet URL and
-operates under domain-based sandbox rules.</li><li><code>localWithFile</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_FILE">Security.LOCAL_WITH_FILE</a></code>)הhis file is a local
+<code><a href="../../openfl/system/Security.html#sandboxType">Security.sandboxType</a></code> has one of the following values:</p><ul><li><code>remote</code> (<code><a href="../../openfl/system/Security.html#REMOTE">Security.REMOTE</a></code>) This file is from an Internet URL and
+operates under domain-based sandbox rules.</li><li><code>localWithFile</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_FILE">Security.LOCAL_WITH_FILE</a></code>) This file is a local
 file, has not been trusted by the user, and it is not a SWF file that
 was published with a networking designation. The file may read from
-local data sources but may not communicate with the Internet.</li><li><code>localWithNetwork</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_NETWORK">Security.LOCAL_WITH_NETWORK</a></code>)הhis SWF file
+local data sources but may not communicate with the Internet.</li><li><code>localWithNetwork</code> (<code><a href="../../openfl/system/Security.html#LOCAL_WITH_NETWORK">Security.LOCAL_WITH_NETWORK</a></code>) This SWF file
 is a local file, has not been trusted by the user, and was published
 with a networking designation. The SWF file can communicate with the
-Internet but cannot read from local data sources.</li><li><code>localTrusted</code> (<code><a href="../../openfl/system/Security.html#LOCAL_TRUSTED">Security.LOCAL_TRUSTED</a></code>)הhis file is a local
+Internet but cannot read from local data sources.</li><li><code>localTrusted</code> (<code><a href="../../openfl/system/Security.html#LOCAL_TRUSTED">Security.LOCAL_TRUSTED</a></code>) This file is a local
 file and has been trusted by the user, using either the Flash Player
 Settings Manager or a FlashPlayerTrust configuration file. The file
-can read from local data sources and communicate with the Internet.</li><li><code>application</code> (<code><a href="../../openfl/system/Security.html#APPLICATION">Security.APPLICATION</a></code>)הhis file is running in an
+can read from local data sources and communicate with the Internet.</li><li><code>application</code> (<code><a href="../../openfl/system/Security.html#APPLICATION">Security.APPLICATION</a></code>) This file is running in an
 AIR application, and it was installed with the package (AIR file) for
 that application. By default, files in the AIR application sandbox can
 cross-script any file from any domain (although files outside the AIR
@@ -125,13 +125,13 @@ security domain cannot directly cross-script content in the
 application sandbox. However, content outside of the application
 sandbox can communicate with content in the application security
 sandbox using a sandbox bridge.</p>
-<p>If two SWF files are served from the same domain נfor example,
-http://mysite.com/swfA.swf and http://mysite.com/swfB.swf נthen
+<p>If two SWF files are served from the same domain — for example,
+http://mysite.com/swfA.swf and http://mysite.com/swfB.swf — then
 swfA.swf can examine and modify variables, objects, properties,
 methods, and so on in swfB.swf, and swfB.swf can do the same for
 swfA.swf. This is called <em>cross-movie scripting</em> or <em>cross-scripting</em>.</p>
-<p>If two SWF files are served from different domains נfor example,
-http://siteA.com/swfA.swf and http://siteB.com/siteB.swf נthen, by
+<p>If two SWF files are served from different domains — for example,
+http://siteA.com/swfA.swf and http://siteB.com/siteB.swf — then, by
 default, Flash Player does not allow swfA.swf to script swfB.swf, nor
 swfB.swf to script swfA.swf. A SWF file gives permission to SWF files
 from other domains by calling <code><a href="../../openfl/system/Security.html#allowDomain">Security.allowDomain</a>()</code>. This is called
@@ -304,7 +304,7 @@ architecture.</p>
 and your users, attempting to steal the credit card numbers that your
 users enter into your shopping cart application. A middle party might,
 for example, be an unscrupulous ISP used by some of your users, or a
-malicious administrator at a user's workplace נanyone who has the
+malicious administrator at a user's workplace — anyone who has the
 ability to view or alter network packets transmitted over the public
 Internet between your users and your servers. This situation is not
 uncommon.</p>
@@ -447,4 +447,4 @@ byte.</p>
 <code>allowNetworking</code> parameter of the <code>object</code> and <code>embed</code> tags in the
 HTML page that contains the SWF content.</p>
 <p>For more information related to security, see the Flash Player
-Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+Developer Center Topic: <a href="http://www.adobe.com/go/devnet_security_en">Security</a>.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>url</code></th><td><p>The URL location of the policy file to be loaded.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

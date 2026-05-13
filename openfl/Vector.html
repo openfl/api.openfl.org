@@ -76,7 +76,7 @@ class name, then a right angle bracket (<code>&gt;</code>), as shown in this exa
 can only hold String instances and from which only String instances can be
 retrieved. The second line constructs an instance of the same Vector type (that is,
 a Vector whose elements are all String objects) and assigns it to <code>v</code>.</p>
-<pre><code class="prettyprint as3">var v:Vector&lt;String&gt;;
+<pre><code class="prettyprint haxe">var v:Vector&lt;String&gt;;
 v = new Vector&lt;String&gt;();</code></pre>
 <p>A variable declared with the Vector<T> data type can only store a Vector instance
 that is constructed with the same base type T. For example, a Vector that's
@@ -208,7 +208,7 @@ function that compares two values, or a set of sorting options.</p>
 <p>The method takes one parameter. The parameter is one of the following:</p><ul><li>
 <p>a function that takes two arguments of the base type (T) of the Vector and
 returns a Number:</p>
-<pre><code class="prettyprint as3">function compare(x:T, y:T):Number {}</code></pre>
+<pre><code class="prettyprint haxe">function compare(x:T, y:T):Int {}</code></pre>
 <p>The logic of the function is that, given two elements <code>x</code> and <code>y</code>, the function
 returns one of the following three values:</p><ul><li>a negative number, if <code>x</code> should appear before <code>y</code> in the sorted sequence</li><li>0, if <code>x</code> equals <code>y</code></li><li>a positive number, if <code>x</code> should appear after <code>y</code> in the sorted sequence</li></ul></li><li>
 <p>a number which is a bitwise OR of the following values:
@@ -239,4 +239,4 @@ arguments is not checked at compile time even in strict mode. However, if an
 argument is passed that is not an instance of the base type, an exception occurs
 at run time.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>value</code></th><td><p>An instance of the base type of the Vector to be inserted at the
 beginning of the Vector.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>An integer representing the new length of the Vector.</p></div><p class="javadoc">Throws:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>TypeError</code></th><td><p>If any argument is not an instance of the base type T of the
-Vector.</p></td></tr><tr class="indent"><th style="width:25%;"><code>RangeError</code></th><td><p>If this method is called while fixed is true.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>
+Vector.</p></td></tr><tr class="indent"><th style="width:25%;"><code>RangeError</code></th><td><p>If this method is called while fixed is true.</p></td></tr></table></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>

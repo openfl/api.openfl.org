@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","HashLink","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.display.Stage3D - OpenFL API Reference</title><meta name="description" content="The Stage class represents the main drawing area.
-For SWF content running in the browser (in Flash&lt;sup&gt;®&lt;/sup&gt; Player), the
-Stage represents the entire area where Flash content is shown. For content
-running in AIR on desktop operating systems, each NativeWindow object has
-a corresponding Stage object."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","HashLink","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.display.Stage3D - OpenFL API Reference</title><meta name="description" content="The Stage3D class provides a display area and a programmable rendering
+context for drawing 2D and 3D graphics."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
 a,
 code a,
 code .type,
@@ -56,72 +53,27 @@ table {
 .navbar .container img {
 	margin: 5px 0 0 4px;
 }
-</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>HashLink</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/display/Stage3D.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> Stage3D</h1><h4><small>package <a href="../../openfl/display/index.html">openfl.display</a></small></h4><h4><small>extends <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(lime.graphics.opengl.GL)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display3D.Context3D)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display3D.Program3D)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.Bitmap)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.BitmapData)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.Stage)</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The Stage class represents the main drawing area.
-For SWF content running in the browser (in Flash<sup>®</sup> Player), the
-Stage represents the entire area where Flash content is shown. For content
-running in AIR on desktop operating systems, each NativeWindow object has
-a corresponding Stage object.</p>
-<p>The Stage object is not globally accessible. You need to access it through
-the <code>stage</code> property of a DisplayObject instance.</p>
-<p>The Stage class has several ancestor classes נDisplayObjectContainer,
-InteractiveObject, DisplayObject, and EventDispatcher נfrom which it
-inherits properties and methods. Many of these properties and methods are
-either inapplicable to Stage objects, or require security checks when
-called on a Stage object. The properties and methods that require security
-checks are documented as part of the Stage class.</p>
-<p>In addition, the following inherited properties are inapplicable to Stage
-objects. If you try to set them, an IllegalOperationError is thrown. These
-properties may always be read, but since they cannot be set, they will
-always contain default values.</p><ul><li><code>accessibilityProperties</code></li><li><code>alpha</code></li><li><code>blendMode</code></li><li><code>cacheAsBitmap</code></li><li><code>contextMenu</code></li><li><code>filters</code></li><li><code>focusRect</code></li><li><code>loaderInfo</code></li><li><code>mask</code></li><li><code>mouseEnabled</code></li><li><code>name</code></li><li><code>opaqueBackground</code></li><li><code>rotation</code></li><li><code>scale9Grid</code></li><li><code>scaleX</code></li><li><code>scaleY</code></li><li><code>scrollRect</code></li><li><code>tabEnabled</code></li><li><code>tabIndex</code></li><li><code>transform</code></li><li><code>visible</code></li><li><code>x</code></li><li><code>y</code></li></ul>
-<p>Some events that you might expect to be a part of the Stage class, such as
-<code>enterFrame</code>, <code>exitFrame</code>, <code>frameConstructed</code>, and <code>render</code>, cannot be
-Stage events because a reference to the Stage object cannot be guaranteed
-to exist in every situation where these events are used. Because these
-events cannot be dispatched by the Stage object, they are instead
-dispatched by every DisplayObject instance, which means that you can add
-an event listener to any DisplayObject instance to listen for these
-events. These events, which are part of the DisplayObject class, are
-called broadcast events to differentiate them from events that target a
-specific DisplayObject instance. Two other broadcast events, <code>activate</code>
-and <code>deactivate</code>, belong to DisplayObject's superclass, EventDispatcher.
-The <code>activate</code> and <code>deactivate</code> events behave similarly to the
-DisplayObject broadcast events, except that these two events are
-dispatched not only by all DisplayObject instances, but also by all
-EventDispatcher instances and instances of other EventDispatcher
-subclasses. For more information on broadcast events, see the
-DisplayObject class.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>fullScreen</code></th><td><p>Dispatched when the Stage object enters, or
-leaves, full-screen mode. A change in
-full-screen mode can be initiated through
-Haxe code, or the user invoking a
-keyboard shortcut, or if the current focus
-leaves the full-screen window.</p></td></tr><tr class="indent"><th style="width:25%;"><code>mouseLeave</code></th><td><p>Dispatched by the Stage object when the
-pointer moves out of the stage area. If the
-mouse button is pressed, the event is not
-dispatched.</p></td></tr><tr class="indent"><th style="width:25%;"><code>orientationChange</code></th><td><p>Dispatched by the Stage object when the
-stage orientation changes.
-Orientation changes can occur when the user
-rotates the device, opens a slide-out
-keyboard, or when the <code>setAspectRatio()</code> is
-called.</p>
-<p><strong>Note:</strong> If the <code>autoOrients</code> property is
-<code>false</code>, then the stage orientation does not
-change when a device is rotated. Thus,
-StageOrientationEvents are only dispatched
-for device rotation when <code>autoOrients</code> is
-<code>true</code>.</p></td></tr><tr class="indent"><th style="width:25%;"><code>orientationChanging</code></th><td><p>Dispatched by the Stage object when the
-stage orientation begins changing.
-<strong>Important:</strong> orientationChanging events
-are not dispatched on Android devices.</p>
-<p><strong>Note:</strong> If the <code>autoOrients</code> property is
-<code>false</code>, then the stage orientation does not
-change when a device is rotated. Thus,
-StageOrientationEvents are only dispatched
-for device rotation when <code>autoOrients</code> is
-<code>true</code>.</p></td></tr><tr class="indent"><th style="width:25%;"><code>resize</code></th><td><p>Dispatched when the <code>scaleMode</code> property of
-the Stage object is set to
-<code><a href="../../openfl/display/StageScaleMode.html#NO_SCALE">StageScaleMode.NO_SCALE</a></code> and the SWF file
-is resized.</p></td></tr><tr class="indent"><th style="width:25%;"><code>stageVideoAvailability</code></th><td><p>Dispatched by the Stage object when the
-state of the stageVideos property changes.</p></td></tr></table></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="context3D"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#context3D"><span class="identifier">context3D</span></a>:<a class="type" title="openfl.display3D.Context3D - The Context3D class provides a context for rendering geometrically defined graphics." href="../../openfl/display3D/Context3D.html">Context3D</a></code></h3><div class="doc"><p>The Context3D object associated with this Stage3D instance.</p>
+</style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>HashLink</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/display/Stage3D.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> Stage3D</h1><h4><small>package <a href="../../openfl/display/index.html">openfl.display</a></small></h4><h4><small>extends <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(lime.graphics.opengl.GL)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display3D.Context3D)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display3D.Program3D)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.Bitmap)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.BitmapData)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.Stage)</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The Stage3D class provides a display area and a programmable rendering
+context for drawing 2D and 3D graphics.</p>
+<p>Stage3D provides a high-performance rendering surface for content rendered
+using the <code><a href="../../openfl/display3D/Context3D.html#Context3D">Context3D</a></code> class. This surface uses the graphics processing unit
+(GPU) when possible. The runtime stage provides a fixed number of <code><a href="../../openfl/display/Stage3D.html#Stage3D">Stage3D</a></code>
+objects. The number of instances varies by the type of device. Desktop
+computers typically provide four Stage3D instances.</p>
+<p>Content drawn to the <code><a href="../../openfl/display/Stage3D.html#Stage3D">Stage3D</a></code> viewport is composited with other visible
+graphics objects in a predefined order. The most distant are all
+<code>StageVideo</code> surfaces. <code><a href="../../openfl/display/Stage3D.html#Stage3D">Stage3D</a></code> comes next, with traditional Flash display
+object content being rendered last, on top of all others. StageVideo and
+Stage3D layers are rendered with no transparency; thus a viewport completely
+obscures any other Stage3D or StageVideo viewports positioned underneath it.
+Display list content is rendered with transparency.</p>
+<p><strong>Note:</strong> You can use the <code>visible</code> property of a Stage3D object to remove
+it from the display temporarily, such as when playing a video using the
+StageVideo class.</p>
+<p>A <code><a href="../../openfl/display/Stage3D.html#Stage3D">Stage3D</a></code> object is retrieved from the Player stage using its <code>stage3Ds</code>
+member. Use the Stage3D instance to request an associated rendering context
+and to position the display on the runtime stage.</p><p class="javadoc">Events:</p><table class="table table-bordered params"><tr class="indent"><th style="width:25%;"><code>context3DCreate</code></th><td><p>Dispatched when a rendering context is created.</p></td></tr><tr class="indent"><th style="width:25%;"><code>error</code></th><td><p>Dispatched when a request for a rendering
+context fails.</p></td></tr></table><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><code><a href="../../openfl/display/Stage.html#Stage">openfl.display.Stage</a></code></p></div></li><li><div class="inline-content"><p><code><a href="../../openfl/display3D/Context3D.html#Context3D">openfl.display3D.Context3D</a></code></p></div></li></ul></div><h3 class="section">Variables</h3><div class="fields"><div class="field "><a name="context3D"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#context3D"><span class="identifier">context3D</span></a>:<a class="type" title="openfl.display3D.Context3D - The Context3D class provides a context for rendering geometrically defined graphics." href="../../openfl/display3D/Context3D.html">Context3D</a></code></h3><div class="doc"><p>The Context3D object associated with this Stage3D instance.</p>
 <p>This property is initially <code>null</code>. To create the Context3D instance for this
 Stage3D object, add an event listener for the <code>context3DCreate</code> event and then call
 the <code>requestContext3D</code> method. The listener is called once the Context3D object has
@@ -333,4 +285,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

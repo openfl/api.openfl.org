@@ -59,8 +59,8 @@ content running in AIR on desktop operating systems, each NativeWindow
 object has a corresponding Stage object.</p>
 <p>The Stage object is not globally accessible. You need to access it
 through the <code>stage</code> property of a DisplayObject instance.</p>
-<p>The Stage class has several ancestor classes  -  DisplayObjectContainer,
-InteractiveObject, DisplayObject, and EventDispatcher  -  from which it
+<p>The Stage class has several ancestor classes — DisplayObjectContainer,
+InteractiveObject, DisplayObject, and EventDispatcher — from which it
 inherits properties and methods. Many of these properties and methods are
 either inapplicable to Stage objects, or require security checks when
 called on a Stage object. The properties and methods that require security
@@ -397,7 +397,7 @@ dispatches an additional softKeyboardActivate event.</p>
 when the operating system does not provide the information necessary
 to determine the exact area. This problem occurs in fullscreen mode
 and also when the keyboard opens in response to an InteractiveObject
-receiving focus or invoking the <code>requestSoftKeyboard()</code> method.</p></div></div><div class="field "><a name="stage3Ds"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#stage3Ds"><span class="identifier">stage3Ds</span></a>:<a class="type" title="openfl.Vector - The Vector class lets you access and manipulate a vector — an array whose elements all have the same data type." href="../../openfl/Vector.html">Vector</a>&lt;<a class="type" title="openfl.display.Stage3D - The Stage class represents the main drawing area." href="../../openfl/display/Stage3D.html">Stage3D</a>&gt;</code></h3><div class="doc"><p>A list of Stage3D objects available for displaying 3-dimensional content.</p>
+receiving focus or invoking the <code>requestSoftKeyboard()</code> method.</p></div></div><div class="field "><a name="stage3Ds"></a><h3 class="anchor"><code><span class="label">read only</span><a href="#stage3Ds"><span class="identifier">stage3Ds</span></a>:<a class="type" title="openfl.Vector - The Vector class lets you access and manipulate a vector — an array whose elements all have the same data type." href="../../openfl/Vector.html">Vector</a>&lt;<a class="type" title="openfl.display.Stage3D - The Stage3D class provides a display area and a programmable rendering context for drawing 2D and 3D graphics." href="../../openfl/display/Stage3D.html">Stage3D</a>&gt;</code></h3><div class="doc"><p>A list of Stage3D objects available for displaying 3-dimensional content.</p>
 <p>You can use only a limited number of Stage3D objects at a time. The number of
 available Stage3D objects depends on the platform and on the available hardware.</p>
 <p>A Stage3D object draws in front of a StageVideo object and behind the OpenFL
@@ -944,10 +944,10 @@ display object refers to the same Stage object (even if the display object
 belongs to a loaded SWF file).</p>
 <p>If a display object is not added to the display list, its
 <code>stage</code> property is set to <code>null</code>.</p><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/display-programming/working-with-display-objects/traversing-the-display-list.html">Traversing the display list</a></p></div></li></ul></div></div><div class="field "><a name="transform"></a><h3 class="anchor"><code><span class="label label-meta label-meta-keep" title="Causes a field or type to be kept by DCE.">@:keep</span><a href="#transform"><span class="identifier">transform</span></a>:<a class="type" title="openfl.geom.Transform - The Transform class provides access to color adjustment properties and two- or three-dimensional transformation objects that can be applied to a display object." href="../../openfl/geom/Transform.html">Transform</a></code></h3><div class="doc"><p>An object with properties pertaining to a display object's matrix, color
-transform, and pixel bounds. The specific properties  -  matrix,
+transform, and pixel bounds. The specific properties — matrix,
 colorTransform, and three read-only properties
 (<code>concatenatedMatrix</code>, <code>concatenatedColorTransform</code>,
-and <code>pixelBounds</code>)  -  are described in the entry for the
+and <code>pixelBounds</code>) — are described in the entry for the
 Transform class.</p>
 <p>Each of the transform object's properties is itself an object. This
 concept is important because the only way to set new values for the matrix
@@ -1218,4 +1218,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

@@ -2,14 +2,7 @@
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
 <head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><link href="../../dark-mode.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["AIR","Android","Flash","HTML5","HashLink","Linux","Neko","Windows","iOS","macOS"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>openfl.text.TextField - OpenFL API Reference</title><meta name="description" content="The TextField class is used to create display objects for text display and
-input. &lt;ph outputclass=&quot;flexonly&quot;&gt;You can use the TextField class to
-perform low-level text rendering. However, in Flex, you typically use the
-Label, Text, TextArea, and TextInput controls to process text. &amp;lt;ph
-outputclass=&quot;flashonly&quot;&gt;You can give a text field an instance name in the
-Property inspector and use the methods and properties of the TextField
-class to manipulate it with Haxe code. TextField instance names are
-displayed in the Movie Explorer and in the Insert Target Path dialog box in
-the Actions panel."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
+input."/></head><body><script>/* Here to prevent flash of unstyled content */let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;if ((!localStorage.theme && systemDarkMode) || localStorage.theme == "dark") {document.body.style.backgroundColor = "#111";document.body.style.opacity = "0";document.addEventListener("DOMContentLoaded", function(event) {toggleTheme();document.body.style.backgroundColor = "";document.body.style.opacity = "";});}</script><style>
 a,
 code a,
 code .type,
@@ -61,14 +54,7 @@ table {
 	margin: 5px 0 0 4px;
 }
 </style><nav class="nav"><div class="navbar"><div class="navbar-inner" style="background:#FAFAFA; border-bottom:1px solid rgba(0,0,0,.09)"><div class="container"><a class="brand" style="color:#777777" href="../../">API Reference</a><a href="#" id="theme-toggle" style="color:#777777" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a></div></div></div></nav><div class="container main-content"><div class="row-fluid"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="fa fa-search"></i></span><input id="search" type="text" placeholder="Filter (Ctrl+P)" autocomplete="off"/></div></form><div class="dropdown"><select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%"><option value="all" selected="selected">All Platforms</option><option>AIR</option><option>Android</option><option>Flash</option><option>HTML5</option><option>HashLink</option><option>Linux</option><option>Neko</option><option>Windows</option><option>iOS</option><option>macOS</option></select></div></div><div class="well sidebar-nav" id="explorer"><div id="nav"></div></div></div><div class="span9"><div class="page-header"><span class="viewsource"><a href="https://github.com/openfl/openfl/tree/develop/src/openfl/text/TextField.hx" class="btn btn-medium"><i class="fa fa-eye"></i> View source</a></span><h1><small>class</small> TextField</h1><h4><small>package <a href="../../openfl/text/index.html">openfl.text</a></small></h4><h4><small>extends <a class="type" title="openfl.display.InteractiveObject - The InteractiveObject class is the abstract base class for all display objects with which the user can interact, using the mouse, keyboard, or other user input device." href="../../openfl/display/InteractiveObject.html">InteractiveObject</a> &rsaquo; <a class="type" title="openfl.display.DisplayObject - The DisplayObject class is the base class for all objects that can be placed on the display list." href="../../openfl/display/DisplayObject.html">DisplayObject</a> &rsaquo; <a class="type" title="openfl.events.EventDispatcher - The EventDispatcher class is the base class for all classes that dispatch events." href="../../openfl/events/EventDispatcher.html">EventDispatcher</a></small></h4>    <h4><small><span class="muted">extended by </span><a class="type" title="openfl.display.FPS" href="../../openfl/display/FPS.html">FPS</a></small></h4><span class="label label-meta label-meta-directlyUsed" title="Marks types that are directly referenced by non-extern code.">@:directlyUsed</span><span class="label label-meta label-meta-fileXml" title="Include a given XML attribute snippet in the `Build.xml` entry for the file.">@:fileXml(&quot;tags=\&quot;haxe,release\&quot;&quot;)</span><span class="label label-meta label-meta-noDebug" title="Does not generate debug information even if `--debug` is set.">@:noDebug</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.display.Graphics)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.errors.Error)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.geom.ColorTransform)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.geom.Matrix)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.geom.Rectangle)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.text._internal.TextEngine)</span><span class="label label-meta label-meta-access" title="Forces private access to package, type or field.">@:access(openfl.text.TextFormat)</span><hr/><p class="availability"><em>Available on  all platforms</em></p></div><div class="body"><div class="doc doc-main"><p>The TextField class is used to create display objects for text display and
-input. <ph outputclass="flexonly">You can use the TextField class to
-perform low-level text rendering. However, in Flex, you typically use the
-Label, Text, TextArea, and TextInput controls to process text. &lt;ph
-outputclass="flashonly">You can give a text field an instance name in the
-Property inspector and use the methods and properties of the TextField
-class to manipulate it with Haxe code. TextField instance names are
-displayed in the Movie Explorer and in the Insert Target Path dialog box in
-the Actions panel.</p>
+input.</p>
 <p>To create a text field dynamically, use the <code><a href="../../openfl/text/TextField.html#TextField">TextField</a>()</code>
 constructor.</p>
 <p>The methods of the TextField class let you set, select, and manipulate
@@ -267,8 +253,7 @@ of the <code>restrict</code> property is a string of characters, you can
 enter only characters in the string into the text field. The string is
 scanned from left to right. You can specify a range by using the hyphen
 (-) character. Only user interaction is restricted; a script can put any
-text into the text field. <ph outputclass="flashonly">This property does
-not synchronize with the Embed font options in the Property inspector.</p>
+text into the text field.</p>
 <p>If the string begins with a caret(^) character, all characters are
 initially accepted and succeeding characters in the string are excluded
 from the set of accepted characters. If the string does not begin with a
@@ -854,10 +839,10 @@ display object refers to the same Stage object (even if the display object
 belongs to a loaded SWF file).</p>
 <p>If a display object is not added to the display list, its
 <code>stage</code> property is set to <code>null</code>.</p><p class="javadoc">See also:</p><ul><li><div class="inline-content"><p><a href="https://books.openfl.org/openfl-developers-guide/display-programming/working-with-display-objects/traversing-the-display-list.html">Traversing the display list</a></p></div></li></ul></div></div><div class="field "><a name="transform"></a><h3 class="anchor"><code><span class="label label-meta label-meta-keep" title="Causes a field or type to be kept by DCE.">@:keep</span><a href="#transform"><span class="identifier">transform</span></a>:<a class="type" title="openfl.geom.Transform - The Transform class provides access to color adjustment properties and two- or three-dimensional transformation objects that can be applied to a display object." href="../../openfl/geom/Transform.html">Transform</a></code></h3><div class="doc"><p>An object with properties pertaining to a display object's matrix, color
-transform, and pixel bounds. The specific properties  -  matrix,
+transform, and pixel bounds. The specific properties — matrix,
 colorTransform, and three read-only properties
 (<code>concatenatedMatrix</code>, <code>concatenatedColorTransform</code>,
-and <code>pixelBounds</code>)  -  are described in the entry for the
+and <code>pixelBounds</code>) — are described in the entry for the
 Transform class.</p>
 <p>Each of the transform object's properties is itself an object. This
 concept is important because the only way to set new values for the matrix
@@ -999,4 +984,4 @@ examines only the object to which it belongs, whereas the
 event specified by the <code>type</code> parameter.</p>
 <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
 only the listeners that the caller can access are considered.</p><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>type</code></th><td><p>The type of event.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>A value of <code>true</code> if a listener of the specified type
-will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
+will be triggered; <code>false</code> otherwise.</p></div></div></div></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>

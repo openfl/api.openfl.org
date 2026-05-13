@@ -187,11 +187,11 @@ already entered. A separate application or utility, such as a phone dialer must 
 available to process the URL.</p>
 <p>The following code shows how you can invoke the VIP Access and Connect Pro
 applications on Android:</p>
-<pre><code class="prettyprint as3">//Invoke the VIP Access Application.
-navigateToURL(new URLRequest("vipaccess://com.verisign.mvip.main?action=securitycode"));
+<pre><code class="prettyprint haxe">//Invoke the VIP Access Application.
+Lib.navigateToURL(new URLRequest("vipaccess://com.verisign.mvip.main?action=securitycode"));
 
 //Invoke the Connect Pro Application.
-navigateToURL(new URLRequest("connectpro://"));</code></pre><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>request</code></th><td><p>A URLRequest object that specifies the URL to navigate to.
+Lib.navigateToURL(new URLRequest("connectpro://"));</code></pre><p class="javadoc">Parameters:</p><table class="table table-bordered params"><tr><th style="width:25%;"><code>request</code></th><td><p>A URLRequest object that specifies the URL to navigate to.
 For content running in Adobe AIR, when using the <code>navigateToURL()</code> function, the
 runtime treats a URLRequest that uses the POST method (one that has its method
 property set to <code><a href="../openfl/net/URLRequestMethod.html#POST">URLRequestMethod.POST</a></code>) as using the GET method.</p></td></tr><tr><th style="width:25%;"><code>window</code></th><td><p>The browser window or HTML frame in which to display the document
@@ -288,4 +288,4 @@ the set timeout closure function will not be garbage collected.</p><p class="jav
 or parentheses, and do not specify parameters of the function to call. For
 example, use <code>functionName</code>, not <code>functionName()</code> or <code>functionName(param)</code>.</p></td></tr><tr><th style="width:25%;"><code>delay</code></th><td><p>The delay, in milliseconds, until the function is executed.</p></td></tr><tr><th style="width:25%;"><code>args</code></th><td><p>An optional list of arguments that are passed to the closure
 function.</p></td></tr></table><p class="javadoc">Returns:</p><div class="indent inline-content"><p>Unique numeric identifier for the timed process. Use this identifier to
-cancel the process, by calling the <code>clearTimeout()</code> method.</p></div></div></div><div class="field "><a name="trace"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#trace"><span class="identifier">trace</span></a>(<span style="white-space:nowrap">arg:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p></p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2025 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>
+cancel the process, by calling the <code>clearTimeout()</code> method.</p></div></div></div><div class="field "><a name="trace"></a><h3 class="anchor"><code><span class="label label-static">static</span><a href="#trace"><span class="identifier">trace</span></a>(<span style="white-space:nowrap">arg:<span class="type">Dynamic</span></span>):<span class="type">Void</span></code></h3><div class="doc"><p></p></div></div></div></div></div></div></div><footer class="section site-footer" style="background:#FAFAFA"><div class="container"><div class="copyright"><p style="color:#777777">&copy; 2026 &nbsp;<a style="color:#777777" href="https://www.openfl.org">https://www.openfl.org</a></p></div></div></footer><script src="..//highlighter.js"></script><link href="../highlighter.css" rel="stylesheet"/></body></html>
